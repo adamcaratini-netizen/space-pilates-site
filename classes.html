@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes — SPACE Pilates + Wellness Society</title>
+  <meta name="description" content="GROUND, GLIDE, and FORM — three class formats at SPACE Pilates + Wellness Society in downtown Sanford, FL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    /* ── CLASS SECTION ── */
+    .class-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+      border-bottom: 1px solid var(--line);
+    }
+    .class-section.reverse { direction: rtl; }
+    .class-section.reverse > * { direction: ltr; }
+
+    .class-photo {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 48px 48px 0;
+      background: var(--cream);
+    }
+    .class-photo-arch {
+      width: 100%;
+      max-width: 480px;
+      height: 100%;
+      border-radius: 40px 40px 0 0;
+      overflow: hidden;
+    }
+    .class-photo-arch img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.7s ease;
+    }
+    .class-section:hover .class-photo-arch img { transform: scale(1.04); }
+
+    .class-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px;
+      background: var(--white);
+    }
+    .class-section.cream .class-content { background: var(--cream); }
+
+    .class-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--line);
+      margin-bottom: 32px;
+    }
+
+    .class-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(4rem, 7vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .class-format {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .class-format::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--blush);
+    }
+
+    .class-desc {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--gray);
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+
+    .class-meta-row {
+      display: flex;
+      gap: 32px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .class-meta-item {}
+    .class-meta-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+    .class-meta-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .good-for {
+      margin-top: 8px;
+    }
+    .good-for-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+    .good-for-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .good-for-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--bone);
+      padding: 6px 14px;
+      border: 1px solid var(--line);
+    }
+
+    /* ── SCHEDULE STRIP ── */
+    .classes-schedule-strip {
+      background: var(--cream);
+      padding: 72px 64px;
+      border-bottom: 1px solid var(--line);
+    }
+    .classes-schedule-strip .label { margin-bottom: 20px; }
+    .classes-schedule-strip h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 44px;
+    }
+    .schedule-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .schedule-mini-col {
+      background: var(--white);
+      padding: 28px 28px;
+      border: 1px solid var(--line);
+    }
+    .schedule-mini-class {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .schedule-mini-item {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--gray);
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ── BOOK CTA ── */
+    .classes-cta {
+      background: var(--ink);
+      padding: 80px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .classes-cta h2 {
+      font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+      color: var(--cream);
+      max-width: 500px;
+    }
+    .classes-cta-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .class-section { grid-template-columns: 1fr; min-height: auto; }
+      .class-section.reverse { direction: ltr; }
+      .class-photo { height: auto; padding: 32px 24px 0; min-height: 320px; }
+      .class-photo-arch { max-width: 100%; height: 60vw; min-height: 260px; }
+      .class-content { padding: 56px 28px; }
+      .class-name { font-size: 4rem; }
+
+      .classes-schedule-strip { padding: 64px 28px; }
+      .schedule-mini { grid-template-columns: 1fr; }
+
+      .classes-cta { padding: 64px 28px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- NAV -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo"><span class="nav-logo-name">Space</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="classes.html" class="active">Classes <span class="drop-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="classes.html#ground">GROUND &mdash; Mat</a>
+          <a href="classes.html#glide">GLIDE &mdash; Heroboard</a>
+          <a href="classes.html#form">FORM &mdash; Strength</a>
+        </div>
+      </li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li class="has-dropdown">
+        <a href="membership.html">Membership <span class="drop-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="membership.html#founding">Founding &mdash; $99/mo</a>
+          <a href="membership.html#open">Open &mdash; $150/mo</a>
+          <a href="membership.html#daypass">Day Pass &mdash; $25</a>
+        </div>
+      </li>
+    </ul>
+    <a href="membership.html" class="nav-cta">Join the Society</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Close">&times;</button>
+    <a href="about.html">About</a>
+    <a href="classes.html">Classes</a>
+    <div class="mobile-sub">
+      <a href="classes.html#ground">GROUND</a>
+      <a href="classes.html#glide">GLIDE</a>
+      <a href="classes.html#form">FORM</a>
+    </div>
+    <a href="schedule.html">Schedule</a>
+    <a href="membership.html">Membership</a>
+  </div>
+
+  
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="label">The Classes</span>
+    <h1>Three formats.<br>One room.</h1>
+    <p>Mat, board, and strength — each one complete on its own, better together. Every class is fifteen people. Every instructor knows your name.</p>
+  </div>
+
+  <!-- GROUND -->
+  <section class="class-section" id="ground">
+    <div class="class-photo"><div class="class-photo-arch"><img
+        src="https://images.unsplash.com/photo-1593476550610-87baa860004a?auto=format&fit=crop&w=1200&q=85"
+        alt="GROUND classical mat Pilates class"
+        loading="lazy"
+      ></div></div>
+    <div class="class-content fade-up">
+      <span class="class-number">01</span>
+      <div class="class-name">GROUND</div>
+      <div class="class-format">Classical Mat</div>
+      <p class="class-desc">The original practice, on the floor, with nothing between you and the work. Classical mat repertoire with small props — rings, bands, weights — built to lengthen the spine, decompress the joints, and teach the body to move from its center. No equipment to learn. No machine to be intimidated by. Just the floor, your breath, and fifty minutes of undivided attention.</p>
+      <div class="class-meta-row">
+        <div class="class-meta-item">
+          <div class="class-meta-label">Duration</div>
+          <div class="class-meta-value">50 min</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Level</div>
+          <div class="class-meta-value">All Levels</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Class Size</div>
+          <div class="class-meta-value">Max 15</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Equipment</div>
+          <div class="class-meta-value">Mat + Props</div>
+        </div>
+      </div>
+      <div class="good-for">
+        <div class="good-for-label">Good For</div>
+        <div class="good-for-tags">
+          <span class="good-for-tag">First-timers</span>
+          <span class="good-for-tag">Returning after a break</span>
+          <span class="good-for-tag">Foundation work</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLIDE -->
+  <section class="class-section reverse cream" id="glide">
+    <div class="class-photo"><div class="class-photo-arch"><img
+        src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1200&q=85"
+        alt="GLIDE Heroboard reformer-style class"
+        loading="lazy"
+      ></div></div>
+    <div class="class-content fade-up">
+      <span class="class-number">02</span>
+      <div class="class-name">GLIDE</div>
+      <div class="class-format">Heroboard</div>
+      <p class="class-desc">Reformer-style resistance, on a platform that moves under you. GLIDE uses the Heroboard — a sliding platform that recreates the resistance-and-control of reformer work. The carriage moves, your body stabilizes, and everything gets harder than it looks. This is the class that builds control you can feel in the rest of your life. It is not a reformer, and we will never tell you it is. It is its own thing, and it is very good at what it does.</p>
+      <div class="class-meta-row">
+        <div class="class-meta-item">
+          <div class="class-meta-label">Duration</div>
+          <div class="class-meta-value">50 min</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Level</div>
+          <div class="class-meta-value">All Levels</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Class Size</div>
+          <div class="class-meta-value">Max 15</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Equipment</div>
+          <div class="class-meta-value">Heroboard</div>
+        </div>
+      </div>
+      <div class="good-for">
+        <div class="good-for-label">Good For</div>
+        <div class="good-for-tags">
+          <span class="good-for-tag">Pilates experience</span>
+          <span class="good-for-tag">Reformer-curious</span>
+          <span class="good-for-tag">Building control</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="class-section" id="form">
+    <div class="class-photo"><div class="class-photo-arch"><img
+        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=85"
+        alt="FORM strength class"
+        loading="lazy"
+      ></div></div>
+    <div class="class-content fade-up">
+      <span class="class-number">03</span>
+      <div class="class-name">FORM</div>
+      <div class="class-format">Strength</div>
+      <p class="class-desc">Pilates-informed strength work — dumbbells, rings, bands, and bodyweight, sequenced by a coach with fourteen years in strength and conditioning. Slower than a bootcamp. Heavier than a mat class. Built to make you durable. Strength is not the opposite of ease. It is what makes ease possible. A body that can carry more moves through the world with less strain.</p>
+      <div class="class-meta-row">
+        <div class="class-meta-item">
+          <div class="class-meta-label">Duration</div>
+          <div class="class-meta-value">50 min</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Level</div>
+          <div class="class-meta-value">All Levels</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Class Size</div>
+          <div class="class-meta-value">Max 15</div>
+        </div>
+        <div class="class-meta-item">
+          <div class="class-meta-label">Equipment</div>
+          <div class="class-meta-value">Weights + Props</div>
+        </div>
+      </div>
+      <div class="good-for">
+        <div class="good-for-label">Good For</div>
+        <div class="good-for-tags">
+          <span class="good-for-tag">Building capacity</span>
+          <span class="good-for-tag">Gym crossover</span>
+          <span class="good-for-tag">Anyone told to "get stronger"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <div class="classes-cta fade-up">
+    <h2>Ready to find your class?</h2>
+    <div class="classes-cta-actions">
+      <a href="schedule.html" class="btn-dark">See the Schedule</a>
+      <a href="membership.html" class="btn-outline-light">Membership Options</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="space-logo.jpg" alt="SPACE" class="footer-logo">
+        <p>A movement studio in downtown Sanford. Opening September 2026.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Classes</h5>
+          <ul>
+            <li><a href="#ground">GROUND</a></li>
+            <li><a href="#glide">GLIDE</a></li>
+            <li><a href="#form">FORM</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SPACE Pilates + Wellness Society</span>
+      <span>Downtown Sanford, FL</span>
+    </div>
+  </footer>
+
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

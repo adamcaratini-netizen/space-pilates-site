@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPACE Pilates + Wellness Society — Coming to Downtown Sanford</title>
+  <meta name="description" content="A Pilates and movement studio opening in downtown Sanford, FL this September. 40 founding memberships. Be first to know.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:   #1A1714;
+      --cream: #F4EBE4;
+      --bone:  #EBE0D7;
+      --blush: #C4937E;
+      --gray:  #8A807A;
+      --white: #FDFAF8;
+      --line:  rgba(244,235,228,0.12);
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      background: var(--ink);
+      color: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* LAYOUT */
+    .page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* LEFT — VISUAL */
+    .left {
+      position: relative;
+      overflow: hidden;
+    }
+    .left-img {
+      position: absolute;
+      inset: 0;
+    }
+    .left-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      filter: brightness(0.45);
+    }
+    .left-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 52px 56px;
+      height: 100%;
+      min-height: 100vh;
+    }
+    .wordmark {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+    .left-headline {
+      font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      color: var(--cream);
+    }
+    .left-headline em {
+      font-style: normal;
+      color: var(--blush);
+    }
+    .left-foot {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .opening-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(244,235,228,0.38);
+    }
+    .opening-date {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: rgba(244,235,228,0.65);
+    }
+
+    /* RIGHT — FORM */
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 64px;
+      background: var(--ink);
+      border-left: 1px solid var(--line);
+    }
+    .form-eyebrow {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 20px;
+    }
+    .form-heading {
+      font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .form-sub {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(244,235,228,0.52);
+      margin-bottom: 40px;
+      max-width: 360px;
+    }
+
+    /* FORM FIELDS */
+    .lead-form { display: flex; flex-direction: column; gap: 16px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(244,235,228,0.38);
+    }
+    input, select {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--cream);
+      background: rgba(244,235,228,0.05);
+      border: 1px solid rgba(244,235,228,0.14);
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    input::placeholder { color: rgba(244,235,228,0.22); }
+    input:focus, select:focus {
+      border-color: rgba(196,147,126,0.55);
+      background: rgba(244,235,228,0.08);
+    }
+    select {
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C4937E' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    select option { background: #1A1714; color: var(--cream); }
+
+    .submit-btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--cream);
+      border: none;
+      padding: 18px 32px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 6px;
+      width: 100%;
+    }
+    .submit-btn:hover { background: var(--blush); color: #fff; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .form-note {
+      font-size: 0.62rem;
+      font-weight: 400;
+      color: rgba(244,235,228,0.24);
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+
+    /* SUCCESS STATE */
+    .success-state {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .success-state.visible { display: flex; }
+    .lead-form.hidden { display: none; }
+    .success-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(196,147,126,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-icon svg { width: 18px; height: 18px; stroke: var(--blush); fill: none; }
+    .success-head {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+    }
+    .success-body {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(244,235,228,0.52);
+      max-width: 320px;
+    }
+
+    /* ERROR */
+    .field-error {
+      font-size: 0.6rem;
+      color: #E07070;
+      letter-spacing: 0.06em;
+    }
+    .form-error {
+      font-size: 0.72rem;
+      color: #E07070;
+      margin-top: 4px;
+      display: none;
+    }
+    .form-error.visible { display: block; }
+
+    /* MOBILE */
+    @media (max-width: 860px) {
+      .page { grid-template-columns: 1fr; }
+      .left {
+        min-height: 52vh;
+        height: 52vh;
+      }
+      .left-content { padding: 36px 28px; min-height: 52vh; }
+      .left-headline { font-size: clamp(2.2rem, 8vw, 3.4rem); }
+      .right { padding: 52px 28px 64px; }
+      .field-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- LEFT -->
+  <div class="left">
+    <div class="left-img">
+      <img
+        src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1400&q=85"
+        alt="Pilates studio"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </div>
+    <div class="left-content">
+      <div class="wordmark">Space</div>
+      <h1 class="left-headline">The studio<br>opens<br><em>this fall.</em></h1>
+      <div class="left-foot">
+        <span class="opening-label">Opening</span>
+        <span class="opening-date">September 2026 &mdash; Downtown Sanford, FL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <span class="form-eyebrow">Be First</span>
+    <h2 class="form-heading">Get early access<br>and founding pricing.</h2>
+    <p class="form-sub">We are holding 40 founding memberships before we open the doors. Tell us a little about yourself and we will reach out before the public announcement.</p>
+
+    <form class="lead-form" id="leadForm" novalidate>
+      <div class="field-row">
+        <div class="field">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Your name" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last name" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="interest">What brings you here?</label>
+        <select id="interest" name="interest">
+          <option value="" disabled selected>Select one</option>
+          <option value="Stress relief and recovery">Stress relief and recovery</option>
+          <option value="Strength and body composition">Strength and body composition</option>
+          <option value="Flexibility and joint health">Flexibility and joint health</option>
+          <option value="New to Pilates, just curious">New to Pilates, just curious</option>
+          <option value="Referred by a friend">Referred by a friend</option>
+          <option value="All of the above">All of the above</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">Claim My Spot</button>
+      <div class="form-error" id="formError">Something went wrong. Please try again or email us directly at xoxo@handlewithcarey.com.</div>
+      <p class="form-note">No spam. No pressure. We will reach out once, personally, with founding member details before we announce publicly.</p>
+    </form>
+
+    <div class="success-state" id="successState">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="success-head">You are on the list.</div>
+      <p class="success-body">We will be in touch before the public launch. Forty spots. You are ahead of the line.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const form = document.getElementById('leadForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formError = document.getElementById('formError');
+  const successState = document.getElementById('successState');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formError.classList.remove('visible');
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (!firstName || !email) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName,
+          lastName: document.getElementById('lastName').value.trim(),
+          email,
+          interest: document.getElementById('interest').value,
+        }),
+      });
+
+      if (res.ok) {
+        form.classList.add('hidden');
+        successState.classList.add('visible');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Claim My Spot';
+      formError.classList.add('visible');
+    }
+  });
+</script>
+</body>
+</html>

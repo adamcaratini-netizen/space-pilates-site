@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPACE Pilates + Wellness Society — Downtown Sanford, FL</title>
+  <meta name="description" content="A movement studio in downtown Sanford creating space in the body and the mind. Mat Pilates, Heroboard, and strength training. Opening September 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to top,
+        rgba(20,17,14,0.88) 0%,
+        rgba(20,17,14,0.45) 45%,
+        rgba(20,17,14,0.15) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 72px 80px;
+    }
+    .hero-logo-img { display: none; }
+    .hero-headline {
+      font-size: clamp(3.2rem, 6vw, 6.5rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      color: #fff;
+      margin-bottom: 18px;
+      max-width: 700px;
+    }
+    .hero-sub {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink);
+      background: #fff;
+      padding: 15px 30px;
+      border: 2px solid #fff;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-white:hover { background: transparent; color: #fff; }
+    .hero-scroll-hint {
+      position: absolute;
+      right: 56px;
+      bottom: 80px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-scroll-hint span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      writing-mode: vertical-rl;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 52px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    }
+    .hero-meta-badge {
+      position: absolute;
+      top: calc(var(--nav-h) + 28px);
+      right: 56px;
+      z-index: 2;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 16px;
+    }
+
+    /* ── STATEMENT ── */
+    .statement {
+      padding: 100px 72px;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .statement-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+    .statement-inner .label { margin-bottom: 28px; }
+    .statement-heading {
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .statement-body {
+      font-size: 0.97rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--gray);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ── CLASSES ── */
+    .classes-section {
+      padding: 100px 72px;
+      background: var(--cream);
+    }
+    .classes-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 52px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .classes-header .label { margin-bottom: 14px; }
+    .classes-header h2 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; }
+    .classes-arch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .class-arch-item {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .class-arch-img {
+      border-radius: 40px 40px 0 0;
+      overflow: hidden;
+      aspect-ratio: 3/5;
+      margin-bottom: 22px;
+    }
+    .class-arch-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .class-arch-item:hover .class-arch-img img { transform: scale(1.04); }
+    .class-arch-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 8px;
+    }
+    .class-arch-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .class-arch-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--gray);
+    }
+
+    /* ── FOUNDING ── */
+    .founding {
+      background: var(--ink);
+      padding: 100px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .founding-bg {
+      position: absolute;
+      right: -20px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(10rem, 20vw, 20rem);
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .founding-inner { position: relative; z-index: 1; max-width: 620px; }
+    .founding .label { color: var(--blush); margin-bottom: 22px; }
+    .founding-heading {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--cream);
+      margin-bottom: 18px;
+    }
+    .founding-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(244,235,228,0.5);
+      max-width: 500px;
+      margin-bottom: 44px;
+    }
+    .founding-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .founding-note {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(244,235,228,0.28);
+      margin-top: 20px;
+    }
+
+    /* ── TEAM ── */
+    .team-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+      min-height: 560px;
+    }
+    .team-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 72px;
+      background: var(--white);
+    }
+    .team-content .label { margin-bottom: 18px; }
+    .team-content h2 { font-size: clamp(2rem, 2.8vw, 2.8rem); font-weight: 800; margin-bottom: 20px; }
+    .team-content p { font-size: 0.92rem; font-weight: 300; line-height: 1.85; color: var(--gray); max-width: 380px; margin-bottom: 32px; }
+    .team-arches {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+      padding: 48px 40px 0;
+      gap: 20px;
+    }
+    .team-arch-col { display: flex; flex-direction: column; align-items: center; }
+    .team-arch-img {
+      border-radius: 30px 30px 0 0;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 2/3;
+      margin-bottom: 14px;
+    }
+    .team-arch-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .team-arch-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-align: center;
+    }
+    .team-arch-title { font-size: 0.65rem; font-weight: 300; color: var(--gray); text-align: center; margin-top: 3px; }
+
+    /* ── FIRST VISIT ── */
+    .first-visit {
+      background: var(--cream);
+      padding: 80px 72px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 64px;
+      align-items: center;
+    }
+    .first-visit .label { margin-bottom: 14px; }
+    .first-visit h2 { font-size: clamp(1.8rem, 2.4vw, 2.4rem); font-weight: 800; white-space: nowrap; }
+    .first-visit-body { font-size: 0.9rem; font-weight: 300; line-height: 1.82; color: var(--gray); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1080px) {
+      .hero-content { padding: 0 28px 72px; }
+      .hero-meta-badge { display: none; }
+      .hero-scroll-hint { display: none; }
+      .hero-logo-img { height: 40px; }
+      .hero-headline { font-size: 3rem; }
+
+      .statement { padding: 72px 28px; }
+      .classes-section { padding: 72px 28px; }
+      .classes-arch-grid { grid-template-columns: 1fr; gap: 40px; }
+      .class-arch-img { aspect-ratio: 4/5; border-radius: 30px 30px 0 0; }
+
+      .founding { padding: 72px 28px; }
+      .team-section { grid-template-columns: 1fr; }
+      .team-content { padding: 64px 28px; }
+      .team-arches { padding: 32px 24px 0; gap: 14px; }
+      .team-arch-img { aspect-ratio: 2/3; }
+
+      .first-visit { grid-template-columns: 1fr; gap: 24px; padding: 64px 28px; }
+      .first-visit h2 { white-space: normal; }
+    }
+    @media (max-width: 600px) {
+      .hero-headline { font-size: 2.6rem; }
+      .hero-logo-img { height: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Space</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="classes.html">Classes <span class="drop-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="classes.html#ground">GROUND &mdash; Mat</a>
+          <a href="classes.html#glide">GLIDE &mdash; Heroboard</a>
+          <a href="classes.html#form">FORM &mdash; Strength</a>
+        </div>
+      </li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li class="has-dropdown">
+        <a href="membership.html">Membership <span class="drop-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="membership.html#founding">Founding &mdash; $99/mo</a>
+          <a href="membership.html#open">Open &mdash; $150/mo</a>
+          <a href="membership.html#daypass">Day Pass &mdash; $25</a>
+        </div>
+      </li>
+    </ul>
+    <a href="membership.html" class="nav-cta">Join the Society</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Close">&times;</button>
+    <a href="about.html">About</a>
+    <a href="classes.html">Classes</a>
+    <div class="mobile-sub">
+      <a href="classes.html#ground">GROUND</a>
+      <a href="classes.html#glide">GLIDE</a>
+      <a href="classes.html#form">FORM</a>
+    </div>
+    <a href="schedule.html">Schedule</a>
+    <a href="membership.html">Membership</a>
+    <a href="membership.html" style="margin-top:8px;" class="btn-dark">Join the Society</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1800&q=85"
+        alt="Pilates class in a calm, light studio"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-meta-badge">Opening September 2026 &mdash; Downtown Sanford, FL</div>
+    <div class="hero-content">
+
+      <h1 class="hero-headline">Come into<br>your space.</h1>
+      <p class="hero-sub">Mat, board, and strength classes built to lengthen the spine, decompress the joints, and quiet the noise. Fifteen people, one room.</p>
+      <div class="hero-actions">
+        <a href="membership.html" class="btn-white">Join the Society</a>
+        <a href="classes.html" class="btn-outline-light">See Classes</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">GROUND <span class="marquee-dot"></span> Classical Mat</span>
+      <span class="marquee-item">GLIDE <span class="marquee-dot"></span> Heroboard</span>
+      <span class="marquee-item">FORM <span class="marquee-dot"></span> Strength</span>
+      <span class="marquee-item">Downtown Sanford <span class="marquee-dot"></span> September 2026</span>
+      <span class="marquee-item">15 Per Class <span class="marquee-dot"></span> No Mirrors</span>
+      <span class="marquee-item">Founding Members — 40 Only <span class="marquee-dot"></span> $99/Month</span>
+      <span class="marquee-item">GROUND <span class="marquee-dot"></span> Classical Mat</span>
+      <span class="marquee-item">GLIDE <span class="marquee-dot"></span> Heroboard</span>
+      <span class="marquee-item">FORM <span class="marquee-dot"></span> Strength</span>
+      <span class="marquee-item">Downtown Sanford <span class="marquee-dot"></span> September 2026</span>
+      <span class="marquee-item">15 Per Class <span class="marquee-dot"></span> No Mirrors</span>
+      <span class="marquee-item">Founding Members — 40 Only <span class="marquee-dot"></span> $99/Month</span>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="statement-inner fade-up">
+      <span class="label">The Idea</span>
+      <h2 class="statement-heading">SPACE is the pause<br>between everything else.</h2>
+      <p class="statement-body">In Pilates, finding space means lengthening the spine, decompressing the joints, and finding mental clarity. Movement here is not about changing yourself. It is about coming back into alignment with yourself.</p>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="classes-section">
+    <div class="classes-header fade-up">
+      <div>
+        <span class="label">The Classes</span>
+        <h2>Three formats.<br>One studio.</h2>
+      </div>
+      <a href="classes.html" class="btn-text">See all classes</a>
+    </div>
+    <div class="classes-arch-grid">
+      <a class="class-arch-item fade-up d1" href="classes.html#ground">
+        <div class="class-arch-img">
+          <img src="https://images.unsplash.com/photo-1593476550610-87baa860004a?auto=format&fit=crop&w=700&q=85" alt="GROUND mat Pilates" loading="lazy">
+        </div>
+        <div class="class-arch-tag">Classical Mat</div>
+        <div class="class-arch-name">GROUND</div>
+        <div class="class-arch-desc">The original practice. The floor, your breath, and fifty minutes of undivided attention.</div>
+      </a>
+      <a class="class-arch-item fade-up d2" href="classes.html#glide">
+        <div class="class-arch-img">
+          <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=700&q=85" alt="GLIDE Heroboard" loading="lazy">
+        </div>
+        <div class="class-arch-tag">Heroboard</div>
+        <div class="class-arch-name">GLIDE</div>
+        <div class="class-arch-desc">Reformer-style resistance on a platform that moves. Everything gets harder than it looks.</div>
+      </a>
+      <a class="class-arch-item fade-up d3" href="classes.html#form">
+        <div class="class-arch-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=85" alt="FORM strength" loading="lazy">
+        </div>
+        <div class="class-arch-tag">Strength</div>
+        <div class="class-arch-name">FORM</div>
+        <div class="class-arch-desc">Strength is not the opposite of ease. It is what makes ease possible.</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOUNDING -->
+  <section class="founding">
+    <div class="founding-bg" aria-hidden="true">40</div>
+    <div class="founding-inner fade-up">
+      <span class="label">Founding Members</span>
+      <h2 class="founding-heading">Forty people.<br>Then never again.</h2>
+      <p class="founding-body">Before we open, forty people get in at $99 a month — unlimited, locked for a full year. After forty, this rate goes away and does not come back.</p>
+      <div class="founding-actions">
+        <a href="membership.html" class="btn-dark">Claim Your Spot</a>
+        <a href="membership.html" class="btn-outline-light">See All Options</a>
+      </div>
+      <span class="founding-note">$99 / Month &nbsp;&middot;&nbsp; Open Access &nbsp;&middot;&nbsp; 40 Spots Only</span>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section">
+    <div class="team-content fade-up">
+      <span class="label">Who's Behind It</span>
+      <h2>Carey and Adam.</h2>
+      <p>Between us, we have spent a long time watching people push themselves in rooms that never gave anything back. We wanted to build the other kind of room.</p>
+      <a href="about.html" class="btn-text">Read the full story</a>
+    </div>
+    <div class="team-arches">
+      <div class="team-arch-col">
+        <div class="team-arch-img">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Carey" loading="lazy">
+        </div>
+        <div class="team-arch-name">Carey</div>
+        <div class="team-arch-title">Instructor &amp; Counselor</div>
+      </div>
+      <div class="team-arch-col">
+        <div class="team-arch-img">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Adam" loading="lazy">
+        </div>
+        <div class="team-arch-name">Adam</div>
+        <div class="team-arch-title">Strength Coach, 14 Years</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST VISIT -->
+  <section class="first-visit fade-up">
+    <div>
+      <span class="label">Your First Visit</span>
+      <h2>Never done<br>Pilates? Good.</h2>
+    </div>
+    <div class="first-visit-body">
+      That is most of the people who walk in. Wear something you can move in. Arrive ten minutes early. Tell whoever greets you it is your first time — you will get a walk-through and the instructor will keep an eye on you. You can stop, rest, or modify at any point, and nobody will say a word about it.
+    </div>
+    <a href="membership.html" class="btn-outline">Book First Class Free</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="space-logo.jpg" alt="SPACE" class="footer-logo">
+        <p>A movement studio in downtown Sanford creating space in the body, the mind, and the life you are rushing through. Opening September 2026.</p>
+      </div>
+      <div class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Classes</h5>
+          <ul>
+            <li><a href="classes.html#ground">GROUND</a></li>
+            <li><a href="classes.html#glide">GLIDE</a></li>
+            <li><a href="classes.html#form">FORM</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="membership.html#contact-form">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SPACE Pilates + Wellness Society. All rights reserved.</span>
+      <span>Downtown Sanford, FL</span>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
