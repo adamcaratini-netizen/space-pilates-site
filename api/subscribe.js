@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   try {
     await transport.sendMail({
       from: '"SPACE Pilates" <adam.caratini@gmail.com>',
-      to: 'xoxo@handlewithcarey.com',
+      to: 'hi@spacepilatesandwellness.com',
       subject: `New lead: ${name} — SPACE Pilates`,
       text: `New founding member inquiry\n\nName: ${name}\nEmail: ${email}${interestLine}\n\nSubmitted via space-pilates.vercel.app/coming-soon`,
       html: `
