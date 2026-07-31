@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule — SPACE Pilates + Wellness Society</title>
+  <meta name="description" content="Schedule information for SPACE Pilates + Wellness Society — GROUND, GLIDE, and FORM classes Monday through Saturday in downtown Sanford, FL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
+  <script src="global.js"></script>
+  <style>
+    .mt-section{
+      padding-top: 70px;
+    }
+  </style>
+
+</head>
+<body>
+
+    <!-- NAV -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-logo"><span class="nav-logo-name">Space</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="classes.html">Classes <span class="drop-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="classes.html#ground">GROUND &mdash; Mat</a>
+          <a href="classes.html#glide">GLIDE &mdash; Heroboard</a>
+          <a href="classes.html#form">FORM &mdash; Strength</a>
+        </div>
+      </li>
+      <li><a href="schedule.html" class="active">Schedule</a></li>
+      <li class="has-dropdown">
+        <a href="membership.html">Membership <span class="drop-arrow"></span></a>
+        <div class="dropdown-menu">
+          <a href="membership.html#founding">Founding &mdash; $99/mo</a>
+          <a href="membership.html#open">Open &mdash; $150/mo</a>
+          <a href="membership.html#daypass">Day Pass &mdash; $25</a>
+        </div>
+      </li>
+    </ul>
+    <a href="membership.html" class="nav-cta">Join the Society</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Close">&times;</button>
+    <a href="about.html">About</a>
+    <a href="classes.html">Classes</a>
+    <div class="mobile-sub">
+      <a href="classes.html#ground">GROUND</a>
+      <a href="classes.html#glide">GLIDE</a>
+      <a href="classes.html#form">FORM</a>
+    </div>
+    <a href="schedule.html">Schedule</a>
+    <a href="membership.html">Membership</a>
+  </div>
+
+  
+  <!-- PAGE HEADER -->
+ <div class="mt-section">
+<div data-mariana-integrations="/schedule/daily/48547?locations=48730"></div>
+ </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="space-logo.jpg" alt="SPACE" class="footer-logo">
+        <p>A movement studio in downtown Sanford. Opening September 2026.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>Studio</h5>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SPACE Pilates + Wellness Society</span>
+      <span>Downtown Sanford, FL</span>
+    </div>
+  </footer>
+
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
