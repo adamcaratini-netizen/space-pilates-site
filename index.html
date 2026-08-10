@@ -16,44 +16,43 @@
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        to top,
-        rgba(20,17,14,0.88) 0%,
-        rgba(20,17,14,0.45) 45%,
-        rgba(20,17,14,0.15) 100%
+      background: radial-gradient(ellipse 90% 85% at 50% 44%,
+        #BFC9EB 0%,
+        #C3CCEC 20%,
+        #CBCAED 38%,
+        #D8D5F2 55%,
+        #E6E1F4 70%,
+        #EEE9F5 82%,
+        #F4F1F8 100%
       );
     }
+    .hero-bg { display: none; }
+    .hero-overlay { display: none; }
     .hero-content {
       position: relative;
       z-index: 2;
       width: 100%;
-      padding: 0 72px 80px;
+      padding: 120px 72px 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    .hero-logo-img { display: none; }
+    .hero-logo-img {
+      display: block;
+      width: min(520px, 74vw);
+      margin: 0 auto 14px;
+      mix-blend-mode: multiply;
+    }
     .hero-headline {
-      font-size: clamp(3.2rem, 6vw, 6.5rem);
+      font-size: clamp(2.8rem, 5.5vw, 5.8rem);
       font-weight: 800;
       letter-spacing: -0.035em;
       line-height: 1.02;
-      color: #fff;
+      color: #2A2540;
       margin-bottom: 18px;
       max-width: 700px;
     }
@@ -61,14 +60,15 @@
       font-size: 0.97rem;
       font-weight: 300;
       line-height: 1.75;
-      color: rgba(255,255,255,0.65);
-      max-width: 480px;
+      color: rgba(42,37,64,0.52);
+      max-width: 440px;
       margin-bottom: 36px;
     }
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .btn-white {
       display: inline-block;
@@ -78,17 +78,25 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       text-decoration: none;
-      color: var(--ink);
-      background: #fff;
+      color: #fff;
+      background: #2A2540;
       padding: 15px 30px;
-      border: 2px solid #fff;
+      border: 2px solid #2A2540;
       transition: background 0.2s, color 0.2s;
     }
-    .btn-white:hover { background: transparent; color: #fff; }
+    .btn-white:hover { background: transparent; color: #2A2540; }
+    .hero .btn-outline-light {
+      border: 2px solid rgba(42,37,64,0.32);
+      color: rgba(42,37,64,0.65);
+    }
+    .hero .btn-outline-light:hover {
+      background: rgba(42,37,64,0.07);
+      border-color: rgba(42,37,64,0.5);
+    }
     .hero-scroll-hint {
       position: absolute;
       right: 56px;
-      bottom: 80px;
+      bottom: 60px;
       z-index: 2;
       display: flex;
       flex-direction: column;
@@ -101,13 +109,13 @@
       font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: rgba(42,37,64,0.3);
       writing-mode: vertical-rl;
     }
     .hero-scroll-line {
       width: 1px;
       height: 52px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      background: linear-gradient(to bottom, rgba(42,37,64,0.25), transparent);
     }
     .hero-meta-badge {
       position: absolute;
@@ -119,9 +127,11 @@
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(42,37,64,0.45);
+      border: 1px solid rgba(42,37,64,0.18);
       padding: 8px 16px;
+      background: rgba(255,255,255,0.38);
+      backdrop-filter: blur(4px);
     }
 
     /* ── STATEMENT ── */
@@ -396,18 +406,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg">
-      <img
-        src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1800&q=85"
-        alt="Pilates class in a calm, light studio"
-        loading="eager"
-        fetchpriority="high"
-      >
-    </div>
-    <div class="hero-overlay"></div>
     <div class="hero-meta-badge">Opening September 2026 &mdash; Downtown Sanford, FL</div>
     <div class="hero-content">
-
+      <img src="/logo-new.png" alt="SPACE Pilates + Wellness Society" class="hero-logo-img">
       <h1 class="hero-headline">Come into<br>your space.</h1>
       <p class="hero-sub">Mat, board, and strength classes built to lengthen the spine, decompress the joints, and quiet the noise. Fifteen people, one room.</p>
       <div class="hero-actions">
