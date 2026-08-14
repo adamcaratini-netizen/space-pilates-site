@@ -5,6 +5,14 @@
     { "src": "/terms", "dest": "/terms-and-conditions.html" },
     { "src": "/terms-and-conditions", "dest": "/terms-and-conditions.html" },
     { "src": "/coming-soon", "dest": "/coming-soon.html" },
+    { "src": "/register", "dest": "/register.html" },
+    { "src": "/book-now", "dest": "/book-now.html" },
+    { "src": "/buy-now", "dest": "/buy-now.html" },
+    { "src": "/account", "dest": "/account.html" },
+    { "src": "/membership", "dest": "/membership.html" },
+    { "src": "/classes", "dest": "/classes.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/schedule", "dest": "/schedule.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
