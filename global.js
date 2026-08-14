@@ -1,6 +1,6 @@
    (function () {
         // Set tenant name here
-        var TENANT_NAME = 'space.sandbox';
+        var TENANT_NAME = 'space';
 
         var d = document;
         var sA = ['polyfills', 'js'];
