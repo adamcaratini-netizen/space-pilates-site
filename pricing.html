@@ -232,12 +232,13 @@
     .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
     .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
     .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
     .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
     .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
-    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } .price-table th:nth-child(3), .price-table td:nth-child(3) { display: none; } }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
 {
@@ -390,14 +391,14 @@
       <h2>Prices</h2>
       <p>Every option includes all four formats: Space Pilates, Space Sculpt, Space Strength and Space Yoga. Classes are capped at 15 people.</p>
       <table class="price-table">
-        <thead><tr><th>Option</th><th>Price</th><th>What you get</th></tr></thead>
+        <thead><tr><th>Option</th><th>Price</th></tr></thead>
         <tbody>
-          <tr><td>Two Week Intro Offer</td><td class="price">$69</td><td>Unlimited classes for 2 weeks. New members, one time.</td></tr>
-          <tr><td>Lifestyle</td><td class="price">$199</td><td>Unlimited classes, billed monthly.</td></tr>
-          <tr><td>Routine</td><td class="price">$149</td><td>8 classes per month, billed monthly.</td></tr>
-          <tr><td>Reset</td><td class="price">$89</td><td>4 classes per month, billed monthly.</td></tr>
-          <tr><td>Drop In Class</td><td class="price">$29</td><td>One class.</td></tr>
-          <tr><td>10 Class Pack</td><td class="price">$230</td><td>10 classes ($23 per class).</td></tr>
+          <tr><td>Two Week Intro Offer<span class="price-desc">Unlimited classes for 2 weeks. New members, one time.</span></td><td class="price">$69</td></tr>
+          <tr><td>Lifestyle<span class="price-desc">Unlimited classes, billed monthly.</span></td><td class="price">$199</td></tr>
+          <tr><td>Routine<span class="price-desc">8 classes per month, billed monthly.</span></td><td class="price">$149</td></tr>
+          <tr><td>Reset<span class="price-desc">4 classes per month, billed monthly.</span></td><td class="price">$89</td></tr>
+          <tr><td>Drop In Class<span class="price-desc">One class.</span></td><td class="price">$29</td></tr>
+          <tr><td>10 Class Pack<span class="price-desc">10 classes ($23 per class).</span></td><td class="price">$230</td></tr>
         </tbody>
       </table>
       <p><a href="/intro">Start the 2 week intro for $69</a> &nbsp;·&nbsp; <a href="/buy-now">Buy a membership or pack</a></p>

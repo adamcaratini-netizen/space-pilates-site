@@ -117,12 +117,13 @@ EXTRA_CSS = """
     .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
     .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
     .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
     .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
     .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
-    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } .price-table th:nth-child(3), .price-table td:nth-child(3) { display: none; } }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
 """
 
 FOOTER_LINKS = """      <a href="/">Home</a>
@@ -210,7 +211,7 @@ built = []
 
 # ---- /pricing
 rows = "\n".join(
-    f"          <tr><td>{esc(n)}</td><td class=\"price\">${p}</td><td>{esc(d)}</td></tr>" for n, p, d, _ in PRICES)
+    f"          <tr><td>{esc(n)}<span class=\"price-desc\">{esc(d)}</span></td><td class=\"price\">${p}</td></tr>" for n, p, d, _ in PRICES)
 pricing_qas = [
     ("How much is a class at Space Pilates in Sanford?", "A single drop-in class is $29. A 10 class pack is $230, which works out to $23 per class. New members can take unlimited classes for 2 weeks for $69."),
     ("What is the best option for a new member?", "The Two Week Intro Offer: unlimited classes across all four formats (Space Pilates, Space Sculpt, Space Strength and Space Yoga) for $69, so you can find your favorites before choosing a membership."),
@@ -220,7 +221,7 @@ pricing_qas = [
 body = f"""      <h2>Prices</h2>
       <p>Every option includes all four formats: Space Pilates, Space Sculpt, Space Strength and Space Yoga. Classes are capped at {FACTS['class_size']} people.</p>
       <table class="price-table">
-        <thead><tr><th>Option</th><th>Price</th><th>What you get</th></tr></thead>
+        <thead><tr><th>Option</th><th>Price</th></tr></thead>
         <tbody>
 {rows}
         </tbody>
