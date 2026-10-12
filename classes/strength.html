@@ -238,6 +238,13 @@
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
     @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
@@ -268,6 +275,44 @@
         "description": "Drop-in class",
         "url": "https://spacepilatesandwellness.com/buy-now"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/classes/strength#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need lifting experience?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Space Strength is open to all levels, and coaches teach form and offer lighter options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who programs Space Strength?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Co-founder Adam Caratini, who has 14 years of experience coaching strength and conditioning, functional fitness and personal training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What equipment is used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Heavier dumbbells, kettlebells and resistance bands. Everything is provided."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it fit with Pilates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilates builds control and alignment; Strength adds load. Most members rotate through both during the week."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -306,7 +351,9 @@
     </div>
     <div class="nav-right">
       <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
       <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
       <a class="nav-cta" href="/#join">Join the Society</a>
     </div>
   </nav>
@@ -342,8 +389,29 @@
       <p>Anyone who wants to get stronger and more durable for daily life. No lifting experience needed.</p>
       <h2>Who teaches it</h2>
       <p>Carey Caratini, Adam Caratini. Meet them on <a href="/team">the team page</a>.</p>
+      <h2>Benefits</h2>
+      <ul>
+        <li><strong>Strength for daily life:</strong> lifting, carrying and climbing with more ease</li>
+        <li><strong>Stability:</strong> control around the hips, shoulders and core under load</li>
+        <li><strong>Progression:</strong> programming that builds week to week</li>
+        <li><strong>Confidence with weights:</strong> coaching on form from experienced coaches</li>
+      </ul>
       <h2>Book it</h2>
       <p>Classes run from 6:00 AM to 6:30 PM on weekdays, with Saturday and Sunday morning classes. <a href="/book-now">See the live schedule</a>. New to Space? <a href="/intro">Try 2 weeks unlimited for $69</a>.</p>
+      <h2>Questions</h2>
+      <h3>Do I need lifting experience?</h3>
+      <p>No. Space Strength is open to all levels, and coaches teach form and offer lighter options.</p>
+      <h3>Who programs Space Strength?</h3>
+      <p>Co-founder Adam Caratini, who has 14 years of experience coaching strength and conditioning, functional fitness and personal training.</p>
+      <h3>What equipment is used?</h3>
+      <p>Heavier dumbbells, kettlebells and resistance bands. Everything is provided.</p>
+      <h3>How does it fit with Pilates?</h3>
+      <p>Pilates builds control and alignment; Strength adds load. Most members rotate through both during the week.</p>
+      <h2 class="related">Read more</h2>
+      <div class="card-list">
+        <a href="/learn/pilates-and-strength-training"><strong>Pilates and Strength Training: Why the Combination Works</strong><span>Why Pilates and strength training work better together: control and alignment plus load, a sample weekly mix, and how a slower, heavier strength class is built.</span></a>
+        <a href="/learn/strength-training-for-women"><strong>Strength Training for Women: A Calm, Complete Guide to Start</strong><span>A practical guide to strength training for women: why strength matters at every age, how to start, progressive overload, recovery, and where Pilates fits.</span></a>
+      </div>
       <p>Other formats: <a href="/classes/pilates">Space Pilates</a> &nbsp;·&nbsp; <a href="/classes/sculpt">Space Sculpt</a> &nbsp;·&nbsp; <a href="/classes/yoga">Space Yoga</a></p>
       <p class="updated">Updated October 2026.</p>
     </div>
@@ -367,6 +435,7 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
       <a href="/book-now">Schedule</a>

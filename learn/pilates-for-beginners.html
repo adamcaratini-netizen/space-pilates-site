@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>Pilates for Beginners: What to Expect at Your First Class | Space Pilates Sanford</title>
+  <meta name="description" content="New to Pilates? What happens in your first class, how to prepare, the beginner moves explained in plain words, and how to choose a class that fits you." />
+  <link rel="canonical" href="https://spacepilatesandwellness.com/learn/pilates-for-beginners" />
+  <meta property="og:title" content="Pilates for Beginners: What to Expect at Your First Class | Space Pilates Sanford" />
+  <meta property="og:description" content="New to Pilates? What happens in your first class, how to prepare, the beginner moves explained in plain words, and how to choose a class that fits you." />
+  <meta property="og:image" content="https://spacepilatesandwellness.com/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://spacepilatesandwellness.com/learn/pilates-for-beginners" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-link {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.15s; }
+    .reveal-delay-3 { transition-delay: 0.2s; }
+    .reveal-delay-4 { transition-delay: 0.25s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 100px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-subtitle {
+      margin-top: 32px; max-width: 520px;
+      font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 60px;
+    }
+
+    /* ─── FOUNDER FEATURE ─── */
+    .founder { padding: 80px 40px 0; border-bottom: 1px solid var(--line); }
+    .founder-inner { max-width: 680px; margin: 0 auto; padding-bottom: 80px; text-align: center; }
+    .founder-layout { display: flex; flex-direction: column; align-items: center; }
+    .founder-photo-wrap {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      background: var(--line);
+      margin-bottom: 32px;
+    }
+    .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .founder-text { width: 100%; }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .founder-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 28px;
+    }
+    .founder-bio {
+      font-size: 0.92rem; font-weight: 300; line-height: 1.95; color: var(--text-mid); text-align: left;
+    }
+    .founder-bio p + p { margin-top: 18px; }
+
+    /* ─── TEAM GRID ─── */
+    .instructors { padding: 80px 40px 100px; }
+    .instructors-inner { max-width: 1100px; margin: 0 auto; }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 72px;
+      align-items: start;
+    }
+
+    /* ─── ARCHED PHOTO — instructors ─── */
+    .instructor-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      margin-bottom: 20px;
+      background: var(--line);
+    }
+    .instructor-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .instructor-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px;
+    }
+    .instructor-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block;
+    }
+    .instructor-bio {
+      margin-top: 16px;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 120px 40px; text-align: center;
+    }
+    .closing-cta-inner { max-width: 600px; margin: 0 auto; }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark); padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fce8ec; padding: 48px 40px; text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .page-header { padding: 130px 24px 72px; }
+      .instructors { padding: 60px 24px 80px; }
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+
+    .content { background: var(--white); padding: 72px 24px 96px; }
+    .content-inner { max-width: 760px; margin: 0 auto; }
+    .content h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; color: var(--text-dark); margin: 48px 0 16px; }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 1.2rem; color: var(--text-dark); margin: 28px 0 10px; }
+    .content p, .content li { font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+    .content p { margin-bottom: 16px; }
+    .content ul { margin: 0 0 20px 20px; }
+    .content li { margin-bottom: 8px; }
+    .content a { color: var(--text-dark); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 24px 0 32px; }
+    .facts div { background: var(--cream); padding: 16px 18px; }
+    .facts dt { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .facts dd { font-size: 0.98rem; color: var(--text-dark); }
+    .price-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+    .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+    .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
+    .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
+    .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
+    .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+    .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://spacepilatesandwellness.com/learn/pilates-for-beginners#article",
+      "headline": "Pilates for Beginners: What to Expect at Your First Class",
+      "description": "New to Pilates? What happens in your first class, how to prepare, the beginner moves explained in plain words, and how to choose a class that fits you.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://spacepilatesandwellness.com/team#carey",
+        "name": "Carey Caratini",
+        "jobTitle": "Founder and Pilates instructor, licensed mental health therapist",
+        "description": "Pilates instructor, NASM certified personal trainer and licensed mental health therapist with a master's in Clinical Mental Health Counseling.",
+        "worksFor": {
+          "@id": "https://spacepilatesandwellness.com/#studio"
+        },
+        "url": "https://spacepilatesandwellness.com/team"
+      },
+      "publisher": {
+        "@type": "ExerciseGym",
+        "@id": "https://spacepilatesandwellness.com/#studio",
+        "name": "Space Pilates + Wellness Society"
+      },
+      "datePublished": "2026-10-12",
+      "dateModified": "2026-10-12",
+      "mainEntityOfPage": "https://spacepilatesandwellness.com/learn/pilates-for-beginners",
+      "image": "https://spacepilatesandwellness.com/assets/og-cover.jpg",
+      "wordCount": 1367,
+      "about": {
+        "@type": "Thing",
+        "name": "Benefits of Pilates"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spacepilatesandwellness.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://spacepilatesandwellness.com/learn"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Benefits of Pilates",
+          "item": "https://spacepilatesandwellness.com/learn/benefits-of-pilates"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pilates for Beginners: What to Expect at Your First Class",
+          "item": "https://spacepilatesandwellness.com/learn/pilates-for-beginners"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/learn/pilates-for-beginners#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to be in shape to start Pilates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Pilates is designed to meet you where you are. Every exercise has simpler options, and many people start Pilates precisely because they want a gentle, structured way to build strength."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Pilates hard for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be challenging, but in a manageable way. The movements are slow and small, so the difficulty comes from control. You can always make an exercise easier by reducing the range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Pilates classes before I see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It varies from person to person. Many people feel more aware of their posture and breathing within a few classes, while strength and mobility build gradually with steady practice over weeks and months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I do mat or reformer Pilates first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Either can work, but mat Pilates is a natural place to learn the fundamentals because you are supporting your own body weight without a machine guiding you."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div></div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" /></a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
+      <a class="nav-cta" href="/#join">Join the Society</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Learn</span>
+      <h1 class="page-title">Pilates for Beginners: What to Expect at Your First Class</h1>
+      <p class="page-subtitle">New to Pilates? What happens in your first class, how to prepare, the beginner moves explained in plain words, and how to choose a class that fits you.</p>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="content-inner">
+      <p class="byline">By <strong>Carey Caratini</strong>, founder of Space Pilates + Wellness Society. Pilates instructor, NASM certified personal trainer and licensed mental health therapist.</p>
+      <p>In your first Pilates class you can expect slow, controlled exercises done mostly on a mat, guided step by step by an instructor who cues your breathing and alignment. You do not need to be flexible, strong, or experienced. Arrive a few minutes early, wear something you can move in, tell the instructor it is your first time, and work at whatever level feels right for you today.</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Pilates is beginner friendly: every exercise can be made smaller or simpler, and a good instructor will show you how.</li>
+        <li>A typical mat class moves through breathing, core work, spinal movement, leg and hip work, and a short stretch.</li>
+        <li>The classic beginner moves, like the hundred, roll-up, single-leg stretch and bridge, all train control of your center.</li>
+        <li>Expect to feel challenged by small movements. Slow and precise is harder than it looks.</li>
+        <li>Pick a class with a qualified instructor and a small group so you get real attention.</li>
+      </ul>
+      <h2>What a beginner Pilates class looks like</h2>
+      <p>Most mat Pilates classes follow a familiar arc. You start lying on your back, finding your breath and a neutral position for your spine and pelvis. From there the instructor builds through core exercises, movements that roll and articulate the spine, leg work lying on your back and side, and often a few exercises lying on your stomach for the back body.</p>
+      <p>Classes usually end with something slower to let your body settle. Throughout, the instructor will talk you through each movement, offer options, and walk the room to adjust cues. You will rarely be asked to move fast. The challenge comes from control, not speed.</p>
+      <h3>How it feels</h3>
+      <p>Many first-timers are surprised by how hard slow, small movements can be. Your stomach muscles may shake during the hundred. You may find one side of your body is noticeably different from the other. That is all normal, and it is useful information. Nothing about Pilates asks you to prove anything.</p>
+      <h2>How to prepare for your first class</h2>
+      <p>A little preparation makes your first class easier.</p>
+      <ol>
+        <li><strong>Arrive about 10 minutes early.</strong> You will have time to check in, find your spot, and ask questions.</li>
+        <li><strong>Wear clothes you can move in.</strong> Fitted is better than baggy, so the instructor can see your alignment. Our guide on <a href="/learn/what-to-wear-to-pilates">what to wear to Pilates</a> has more detail.</li>
+        <li><strong>Bring grippy socks.</strong> Many studios require them for hygiene and safety on the mat.</li>
+        <li><strong>Bring water.</strong></li>
+        <li><strong>Tell the instructor it is your first time.</strong> Mention any injuries, pain, pregnancy, or recent surgery too.</li>
+        <li><strong>Eat lightly.</strong> A big meal right before lying on your stomach is not much fun.</li>
+      </ol>
+      <p>At Space, grippy socks are required and sold at the studio, and mats and props are provided, so you only need to bring yourself and a water bottle.</p>
+      <h3>If you have an injury or condition</h3>
+      <p>If you have pain, a recent injury, are pregnant or postpartum, or have any medical condition, talk to your doctor or physical therapist before starting. Then let your instructor know before class. Pilates instructors offer modifications, and they would much rather hear about it beforehand than guess.</p>
+      <h2>Beginner Pilates moves, explained in plain words</h2>
+      <p>You will hear a lot of exercise names in class. Here is what the common ones actually are.</p>
+      <h3>The hundred</h3>
+      <p>You lie on your back, lift your head and shoulders, and either keep your knees bent or extend your legs. Your arms reach long by your sides and pump up and down in small beats while you breathe in for five counts and out for five, for a total of one hundred beats. It warms you up and teaches you to breathe while your core works. Beginners keep the head down or the feet on the floor.</p>
+      <h3>The roll-up</h3>
+      <p>From lying flat with your arms overhead, you peel your spine off the mat one bone at a time until you are sitting up and reaching toward your toes, then roll back down the same way. It is harder than it sounds. Bending your knees or holding the backs of your thighs makes it more accessible.</p>
+      <h3>Single-leg stretch</h3>
+      <p>Lying on your back with your head and shoulders lifted, you hug one knee toward your chest while the other leg extends away, then switch in a steady rhythm. Your trunk stays still while your legs move. That is the whole point: a quiet center with moving limbs.</p>
+      <h3>Bridge</h3>
+      <p>You lie on your back with your knees bent and feet on the floor, then lift your hips by rolling your spine up off the mat, pause, and roll back down. It works the glutes and the back of the legs and teaches you to move your spine with control.</p>
+      <h3>Leg circles</h3>
+      <p>Lying on your back, you lift one leg toward the ceiling and draw small circles with it, keeping your pelvis steady. It builds hip mobility and stability. The circle stays small enough that your hips do not rock.</p>
+      <h3>Side-lying leg series</h3>
+      <p>You lie on your side, stacked from head to heel, and lift, lower, or circle the top leg. These look simple and are often the ones people feel most the next day. They train the outer hips, which help with balance and walking.</p>
+      <h3>Swan</h3>
+      <p>Lying on your stomach, you press gently through your hands to lift your chest, lengthening your spine rather than crunching into your lower back. It strengthens the back body and balances out all the forward bending in the rest of class.</p>
+      <h2>How to pick a Pilates class as a beginner</h2>
+      <p>Not every class is a good starting point. Here is what to look for.</p>
+      <ul>
+        <li><strong>Mat or reformer.</strong> Mat Pilates uses your body weight and light props and is an easy place to learn the fundamentals. See <a href="/learn/mat-vs-reformer-pilates">mat vs reformer Pilates</a> for how they compare.</li>
+        <li><strong>Instructor training.</strong> Look for teachers with real Pilates-specific training. You can usually read about them on the studio's website.</li>
+        <li><strong>Class size.</strong> Smaller groups mean the instructor can actually see you.</li>
+        <li><strong>Tone.</strong> You want a room that encourages you to work at your own level.</li>
+        <li><strong>Timing.</strong> Choose a time you can repeat each week. Consistency is what makes progress.</li>
+      </ul>
+      <p>Space's <a href="/classes/pilates">Pilates classes</a> are classical mat Pilates with rings, bands and light weights, 45 to 50 minutes long, and capped at 15 people. You can read about the instructors on our <a href="/team">team page</a>.</p>
+      <h2>What to expect after your first class</h2>
+      <p>You might feel some muscles you did not know you had, especially your deep abdominals, glutes, and outer hips. Mild soreness for a day or two is common. Many people also notice they feel taller, calmer, or more aware of how they are sitting.</p>
+      <p>Try to come back within a few days while the cues are fresh. The fundamentals click faster with repetition, and the second and third classes usually feel very different from the first. For a sense of how often to practice, see <a href="/learn/how-often-should-you-do-pilates">how often you should do Pilates</a>.</p>
+      <h2>Questions</h2>
+      <h3>Do I need to be in shape to start Pilates?</h3>
+      <p>No. Pilates is designed to meet you where you are. Every exercise has simpler options, and many people start Pilates precisely because they want a gentle, structured way to build strength.</p>
+      <h3>Is Pilates hard for beginners?</h3>
+      <p>It can be challenging, but in a manageable way. The movements are slow and small, so the difficulty comes from control. You can always make an exercise easier by reducing the range.</p>
+      <h3>How many Pilates classes before I see results?</h3>
+      <p>It varies from person to person. Many people feel more aware of their posture and breathing within a few classes, while strength and mobility build gradually with steady practice over weeks and months.</p>
+      <h3>Should I do mat or reformer Pilates first?</h3>
+      <p>Either can work, but mat Pilates is a natural place to learn the fundamentals because you are supporting your own body weight without a machine guiding you.</p>
+      <p>If you are ready to try it, <a href="/intro">2 weeks of unlimited classes for $69</a> gives you time to take several beginner-friendly Pilates classes, get comfortable with the moves, and see how it feels to come into your space.</p>
+      <div class="cta-box">
+        <p><strong>Try it at Space.</strong> Space Pilates: classical mat pilates, 45 to 50 minutes. <a href="/classes/pilates">About the class</a> &nbsp;·&nbsp; <a href="/intro">2 weeks unlimited for $69</a></p>
+      </div>
+      <p>Part of the guide: <a href="/learn/benefits-of-pilates">Benefits of Pilates: A Complete Guide to What It Builds in You</a></p>
+      <h2 class="related">Related reading</h2>
+      <div class="card-list">
+        <a href="/learn/benefits-of-pilates"><strong>Benefits of Pilates: A Complete Guide to What It Builds in You</strong><span>The benefits of Pilates, explained plainly: core strength, posture, mobility, balance, breathing and focus, and why it suits beginners and older adults.</span></a>
+        <a href="/learn/what-to-wear-to-pilates"><strong>What to Wear to Pilates: Clothes, Grippy Socks and What to Bring</strong><span>What to wear to Pilates, sculpt, strength and yoga classes: fitted clothes you can move in, why grippy socks matter, hair, what to bring and what to leave home.</span></a>
+        <a href="/learn/how-often-should-you-do-pilates"><strong>How Often Should You Do Pilates? A Weekly Guide by Your Goal</strong><span>How often should you do Pilates? For most people, two to three times a week. Here is how to set your frequency by goal, pair it with other training, and rest.</span></a>
+      </div>
+      <p class="updated">Updated October 2026.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/intro">Try 2 Weeks for $69</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--cream); border-top: 1px solid var(--line);">
+    <div class="footer-logo">
+      <img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">307 E 2nd St, Sanford FL 32771<br>Downtown Sanford, FL — Historic District<br><a href="tel:+13212492262">(321) 249-2262</a><br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/team">The Team</a>
+      <a href="/book-now">Schedule</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

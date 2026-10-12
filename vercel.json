@@ -15,6 +15,13 @@
   ],
   "routes": [
     {
+      "src": "/mat-vs-reformer-pilates",
+      "status": 301,
+      "headers": {
+        "Location": "/learn/mat-vs-reformer-pilates"
+      }
+    },
+    {
       "src": "/api/chat",
       "dest": "/api/chat.js"
     },
@@ -97,10 +104,6 @@
       "dest": "/classes/yoga.html"
     },
     {
-      "src": "/mat-vs-reformer-pilates",
-      "dest": "/mat-vs-reformer-pilates.html"
-    },
-    {
       "src": "/pilates-lake-mary",
       "dest": "/pilates-lake-mary.html"
     },
@@ -117,6 +120,14 @@
       "headers": {
         "Content-Type": "text/plain; charset=utf-8"
       }
+    },
+    {
+      "src": "/learn",
+      "dest": "/learn.html"
+    },
+    {
+      "src": "/learn/(?<slug>[a-z0-9-]+)",
+      "dest": "/learn/$slug.html"
     },
     {
       "src": "/(.*)",

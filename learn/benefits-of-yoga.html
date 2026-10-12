@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>Benefits of Yoga: A Complete Guide to Body, Breath and Mind | Space Pilates Sanford</title>
+  <meta name="description" content="The benefits of yoga explained: flexibility, strength, balance, breath, stress relief, sleep routines and recovery, plus a plain guide to the main yoga styles." />
+  <link rel="canonical" href="https://spacepilatesandwellness.com/learn/benefits-of-yoga" />
+  <meta property="og:title" content="Benefits of Yoga: A Complete Guide to Body, Breath and Mind | Space Pilates Sanford" />
+  <meta property="og:description" content="The benefits of yoga explained: flexibility, strength, balance, breath, stress relief, sleep routines and recovery, plus a plain guide to the main yoga styles." />
+  <meta property="og:image" content="https://spacepilatesandwellness.com/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://spacepilatesandwellness.com/learn/benefits-of-yoga" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-link {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.15s; }
+    .reveal-delay-3 { transition-delay: 0.2s; }
+    .reveal-delay-4 { transition-delay: 0.25s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 100px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-subtitle {
+      margin-top: 32px; max-width: 520px;
+      font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 60px;
+    }
+
+    /* ─── FOUNDER FEATURE ─── */
+    .founder { padding: 80px 40px 0; border-bottom: 1px solid var(--line); }
+    .founder-inner { max-width: 680px; margin: 0 auto; padding-bottom: 80px; text-align: center; }
+    .founder-layout { display: flex; flex-direction: column; align-items: center; }
+    .founder-photo-wrap {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      background: var(--line);
+      margin-bottom: 32px;
+    }
+    .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .founder-text { width: 100%; }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .founder-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 28px;
+    }
+    .founder-bio {
+      font-size: 0.92rem; font-weight: 300; line-height: 1.95; color: var(--text-mid); text-align: left;
+    }
+    .founder-bio p + p { margin-top: 18px; }
+
+    /* ─── TEAM GRID ─── */
+    .instructors { padding: 80px 40px 100px; }
+    .instructors-inner { max-width: 1100px; margin: 0 auto; }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 72px;
+      align-items: start;
+    }
+
+    /* ─── ARCHED PHOTO — instructors ─── */
+    .instructor-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      margin-bottom: 20px;
+      background: var(--line);
+    }
+    .instructor-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .instructor-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px;
+    }
+    .instructor-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block;
+    }
+    .instructor-bio {
+      margin-top: 16px;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 120px 40px; text-align: center;
+    }
+    .closing-cta-inner { max-width: 600px; margin: 0 auto; }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark); padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fce8ec; padding: 48px 40px; text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .page-header { padding: 130px 24px 72px; }
+      .instructors { padding: 60px 24px 80px; }
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+
+    .content { background: var(--white); padding: 72px 24px 96px; }
+    .content-inner { max-width: 760px; margin: 0 auto; }
+    .content h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; color: var(--text-dark); margin: 48px 0 16px; }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 1.2rem; color: var(--text-dark); margin: 28px 0 10px; }
+    .content p, .content li { font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+    .content p { margin-bottom: 16px; }
+    .content ul { margin: 0 0 20px 20px; }
+    .content li { margin-bottom: 8px; }
+    .content a { color: var(--text-dark); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 24px 0 32px; }
+    .facts div { background: var(--cream); padding: 16px 18px; }
+    .facts dt { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .facts dd { font-size: 0.98rem; color: var(--text-dark); }
+    .price-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+    .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+    .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
+    .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
+    .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
+    .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+    .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://spacepilatesandwellness.com/learn/benefits-of-yoga#article",
+      "headline": "Benefits of Yoga: A Complete Guide to Body, Breath and Mind",
+      "description": "The benefits of yoga explained: flexibility, strength, balance, breath, stress relief, sleep routines and recovery, plus a plain guide to the main yoga styles.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://spacepilatesandwellness.com/team#carey",
+        "name": "Carey Caratini",
+        "jobTitle": "Founder and Pilates instructor, licensed mental health therapist",
+        "description": "Pilates instructor, NASM certified personal trainer and licensed mental health therapist with a master's in Clinical Mental Health Counseling.",
+        "worksFor": {
+          "@id": "https://spacepilatesandwellness.com/#studio"
+        },
+        "url": "https://spacepilatesandwellness.com/team"
+      },
+      "publisher": {
+        "@type": "ExerciseGym",
+        "@id": "https://spacepilatesandwellness.com/#studio",
+        "name": "Space Pilates + Wellness Society"
+      },
+      "datePublished": "2026-10-12",
+      "dateModified": "2026-10-12",
+      "mainEntityOfPage": "https://spacepilatesandwellness.com/learn/benefits-of-yoga",
+      "image": "https://spacepilatesandwellness.com/assets/og-cover.jpg",
+      "wordCount": 1943,
+      "about": {
+        "@type": "Thing",
+        "name": "Benefits of Yoga"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spacepilatesandwellness.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://spacepilatesandwellness.com/learn"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Benefits of Yoga: A Complete Guide to Body, Breath and Mind",
+          "item": "https://spacepilatesandwellness.com/learn/benefits-of-yoga"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/learn/benefits-of-yoga#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to be flexible to start yoga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Flexibility is something yoga develops over time. Every pose can be modified with props or a smaller range, and good instructors will show you how."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I practice yoga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consistency matters more than volume. Even one or two classes a week can help you build a habit, and a short home routine on other days adds to it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can yoga replace strength training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yoga builds stabilizing strength with your body weight, but it does not offer the progressive loading that weights do. Most people get the most from combining both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is restorative yoga a real workout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Restorative yoga is not designed to be intense. Its value is in mobility, breath and recovery, which supports the harder training you do on other days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I bring to my first yoga class?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wear something you can move in comfortably and bring water. Most studios provide mats and props, so check what yours offers before you go."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div></div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" /></a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
+      <a class="nav-cta" href="/#join">Join the Society</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Guide</span>
+      <h1 class="page-title">Benefits of Yoga: A Complete Guide to Body, Breath and Mind</h1>
+      <p class="page-subtitle">The benefits of yoga explained: flexibility, strength, balance, breath, stress relief, sleep routines and recovery, plus a plain guide to the main yoga styles.</p>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="content-inner">
+      <p class="byline">By <strong>Carey Caratini</strong>, founder of Space Pilates + Wellness Society. Pilates instructor, NASM certified personal trainer and licensed mental health therapist.</p>
+      <p>The benefits of yoga reach well past flexibility. A regular practice can help you move with more ease, build strength and balance, breathe more deliberately, and give your nervous system a reliable way to slow down. It also makes a steady companion to strength training and Pilates, because it restores what harder sessions take out of you.</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Yoga builds mobility and flexibility gradually, through consistent practice rather than forcing range.</li>
+        <li>Holding and transitioning between poses develops strength, stability and balance using your own body weight.</li>
+        <li>Slow, intentional breathing is the thread that connects every style, and it is a skill you can carry into the rest of your day.</li>
+        <li>Many people find yoga helps them unwind, and a calmer evening can support a better sleep routine.</li>
+        <li>For people who lift, run or take Pilates, gentler yoga styles work well as active recovery.</li>
+        <li>Styles range from deeply restful (restorative, yin) to flowing and active (vinyasa), so there is a pace for almost everyone.</li>
+      </ul>
+      <h2>What yoga actually is</h2>
+      <p>Yoga is a practice that combines physical postures, breath and focused attention. In most modern studios, a class moves you through a sequence of poses, links them with your breathing, and closes with a few minutes of stillness.</p>
+      <p>The physical side is what most people notice first. The deeper benefit often comes from the combination: moving your body while paying attention to your breath trains you to stay present, even when something feels challenging.</p>
+      <p>You do not need to be flexible to start. Flexibility is something yoga develops, not a requirement to walk in the door. There is nothing to prove on the mat.</p>
+      <h2>Flexibility and mobility</h2>
+      <p>Flexibility is how far a muscle can lengthen. Mobility is how well you can move a joint through its range with control. Yoga supports both.</p>
+      <p>Poses like low lunges, forward folds and gentle twists ask your hips, hamstrings and spine to move in directions that daily life rarely requires. Sitting at a desk, driving and looking at a phone all keep the body in a narrow set of shapes. Yoga invites it back into a fuller range.</p>
+      <p>The key is patience. Range improves through regular, comfortable practice, not by pushing into pain. A good rule: you should be able to breathe smoothly in any stretch. If your breath gets choppy or you start holding it, ease off.</p>
+      <h3>Why mobility matters day to day</h3>
+      <p>More mobility can make ordinary things feel easier: reaching to a high shelf, getting up from the floor, turning to check your blind spot. For people who train, better hip and shoulder mobility can also help you find cleaner positions in squats, presses and Pilates work.</p>
+      <h2>Strength and stability</h2>
+      <p>Yoga is often filed under stretching, but many poses are demanding strength work. Holding a plank, lowering slowly from a high push-up, balancing in a warrior pose or pressing up into a bridge all ask your muscles to work under your own body weight.</p>
+      <p>Much of this strength is <em>stabilizing</em> strength: the deep muscles around your hips, shoulders and trunk that keep joints supported. That kind of strength is easy to overlook and valuable for everything else you do.</p>
+      <p>Yoga will not replace progressive strength training with weights. If building strength is a priority, pairing yoga with a dedicated strength format gives you both capacity and range. Our guide to <a href="/learn/strength-training-for-women">strength training for women</a> covers that side in more detail.</p>
+      <h2>Balance and body awareness</h2>
+      <p>Standing balances like tree pose, warrior three or a simple single-leg stand train the small adjustments your feet, ankles and hips make to keep you upright. Balance is a skill, and like any skill it responds to practice.</p>
+      <p>Yoga also builds body awareness, sometimes called proprioception: your sense of where your body is in space. When you are cued to soften your shoulders, lengthen your spine or spread your toes, you are learning to notice and adjust habits you may not have felt before.</p>
+      <p>That awareness tends to follow you off the mat. Many people find they notice slouching sooner, or catch themselves bracing their jaw during a stressful moment.</p>
+      <h2>Breath: the thread through every practice</h2>
+      <p>Breath is central to yoga. Classes often begin by settling your breathing, then ask you to link movement to it: inhale to lengthen, exhale to fold or twist.</p>
+      <p>Learning to breathe slowly and fully, especially through a longer exhale, is one of the most transferable things yoga teaches. You can use it before a meeting, in traffic or while lying awake at night. Common techniques include:</p>
+      <ul>
+        <li><strong>Ujjayi breath:</strong> a slow breath through the nose with a slight constriction at the back of the throat, creating a soft, steady sound.</li>
+        <li><strong>Extended exhale:</strong> breathing out for longer than you breathe in, which many people find calming.</li>
+        <li><strong>Belly and rib breathing:</strong> letting the breath expand the abdomen and the sides of the ribcage rather than lifting the shoulders.</li>
+      </ul>
+      <p>For a deeper look at how breathing differs between disciplines, read <a href="/learn/breathwork-in-pilates-and-yoga">breathwork in Pilates and yoga</a>.</p>
+      <h2>Stress and relaxation</h2>
+      <p>It is well established that slow breathing and gentle movement can help many people feel calmer. Yoga gives you a structured, repeatable way to practice both, along with a dedicated block of time away from screens and demands.</p>
+      <p>That time matters as much as the poses. An hour where nothing is asked of you except to move and breathe can feel like the pause between everything else. Many people describe leaving class feeling clearer and more settled.</p>
+      <p>Yoga is a wellness practice, not a treatment. It is not a substitute for care from a doctor or a licensed mental health professional. If stress or anxiety feels persistent or overwhelming, reach out to a professional.</p>
+      <h2>Sleep routines</h2>
+      <p>Yoga is not a sleep treatment, but it can be a helpful part of a consistent evening routine. Gentle stretches and slow breathing before bed give your body a clear signal that the day is winding down.</p>
+      <p>A short sequence of supported poses, such as a reclined twist, legs up the wall or child's pose, paired with a few minutes of extended-exhale breathing, is an easy place to start. Consistency matters more than length. Our guide to <a href="/learn/yoga-for-stress-and-sleep">yoga for stress and sleep</a> includes a full wind-down routine.</p>
+      <p>If you have ongoing trouble sleeping, talk with your doctor.</p>
+      <h2>Recovery for people who train</h2>
+      <p>If you lift weights, run, play a sport or take Pilates several times a week, gentler yoga can be a smart part of your week. It keeps you moving on lighter days without adding much training stress.</p>
+      <p>Restorative and gentle styles focus on easing tight areas, restoring range in the hips and upper back, and downshifting after harder sessions. Think of it as building capacity, not performance: the goal is to come back to your next workout feeling more ready, not more tired.</p>
+      <p>Yoga also pairs naturally with Pilates. Pilates emphasizes controlled core strength and precise movement, while yoga adds longer holds, deeper stretches and breath-led relaxation. Together they help you feel longer and stronger. See our overview of the <a href="/learn/benefits-of-pilates">benefits of Pilates</a> for the other half of that pairing.</p>
+      <h2>Focus and attention</h2>
+      <p>Holding a balance or moving slowly through a sequence requires attention. When your mind wanders, the pose usually tells you. That gentle feedback loop trains focus in a way that feels natural rather than forced.</p>
+      <p>Many classes end with a few minutes of quiet rest. Lying still without reaching for your phone can be surprisingly hard at first, and it gets easier with practice. Learning to stay with your breath for a few minutes is a small skill with wide reach.</p>
+      <h2>Community</h2>
+      <p>Practicing in a room with other people adds something a video at home cannot. A teacher can see your alignment and offer modifications. The shared quiet of a class makes it easier to settle in.</p>
+      <p>Small classes help most. In a group capped at 15, as classes are at Space, instructors can notice when something is not working for your body and adjust it. Over time, a regular class becomes a place where people know you, which is one of the strongest reasons people keep showing up.</p>
+      <h2>Yoga styles: a plain overview</h2>
+      <p>Yoga comes in many styles. Here are the ones you will most often see on a studio schedule.</p>
+      <h3>Restorative yoga</h3>
+      <p>Restorative yoga uses props such as bolsters, blocks and blankets to fully support the body in a small number of poses, often held for several minutes. The emphasis is on release and rest rather than effort. It is one of the most accessible styles for beginners and a natural fit for recovery days.</p>
+      <h3>Gentle vinyasa</h3>
+      <p>Gentle vinyasa links poses with the breath at an unhurried pace. It includes more movement than restorative yoga but keeps intensity moderate, with plenty of options to modify. It is a good bridge between stillness and flow.</p>
+      <h3>Vinyasa</h3>
+      <p>Vinyasa is a flowing, breath-linked style that moves steadily from pose to pose. It tends to be more active and can build heat and strength through repetition. Pace varies by teacher. Read <a href="/learn/restorative-yoga-vs-vinyasa">restorative yoga vs vinyasa</a> for a side-by-side comparison.</p>
+      <h3>Yin yoga</h3>
+      <p>Yin yoga holds mostly seated and reclined poses for longer periods, often several minutes, with muscles relatively relaxed. It shares the slow pace of restorative yoga but usually uses fewer props and asks you to sit with more sensation.</p>
+      <h3>Hot yoga</h3>
+      <p>Hot yoga is practiced in a heated room. Some people enjoy the warmth; others find it uncomfortable. If you have a heart condition, are pregnant or have trouble with heat, talk with your doctor before trying it.</p>
+      <h2>How to choose the right class</h2>
+      <p>Start with what you need most right now. If you want to unwind, recover from training or ease into movement, restorative or gentle styles are a strong choice. If you want more movement and heat from effort, look at vinyasa.</p>
+      <p>Space Yoga is a restorative class that draws from restorative and gentle vinyasa, focused on mobility, breath and release. You can see the details on the <a href="/classes/yoga">yoga class page</a>.</p>
+      <p>If you have pain, an injury, are pregnant, or manage a medical or mental health condition, check with your doctor or a licensed professional before starting. Then let your instructor know before class so they can offer modifications.</p>
+      <h2>Questions</h2>
+      <h3>Do I need to be flexible to start yoga?</h3>
+      <p>No. Flexibility is something yoga develops over time. Every pose can be modified with props or a smaller range, and good instructors will show you how.</p>
+      <h3>How often should I practice yoga?</h3>
+      <p>Consistency matters more than volume. Even one or two classes a week can help you build a habit, and a short home routine on other days adds to it.</p>
+      <h3>Can yoga replace strength training?</h3>
+      <p>Yoga builds stabilizing strength with your body weight, but it does not offer the progressive loading that weights do. Most people get the most from combining both.</p>
+      <h3>Is restorative yoga a real workout?</h3>
+      <p>Restorative yoga is not designed to be intense. Its value is in mobility, breath and recovery, which supports the harder training you do on other days.</p>
+      <h3>What should I bring to my first yoga class?</h3>
+      <p>Wear something you can move in comfortably and bring water. Most studios provide mats and props, so check what yours offers before you go.</p>
+      <p>Ready to come into your space? Try classes at Space Pilates + Wellness Society in Sanford with <a href="/intro">2 weeks of unlimited classes for $69</a>. Arrive 10 minutes early, bring water and grippy socks, and we will take care of the rest.</p>
+      <div class="cta-box">
+        <p><strong>Try it at Space.</strong> Space Yoga: restorative yoga, 45 to 60 minutes. <a href="/classes/yoga">About the class</a> &nbsp;·&nbsp; <a href="/intro">2 weeks unlimited for $69</a></p>
+      </div>
+      <h2 class="related">Related reading</h2>
+      <div class="card-list">
+        <a href="/learn/restorative-yoga-vs-vinyasa"><strong>Restorative Yoga vs Vinyasa: Pace, Props and Who Each Suits</strong><span>Restorative yoga vs vinyasa: how they differ in pace, intensity, props and holds, who each suits, and how both fit alongside strength training and Pilates.</span></a>
+        <a href="/learn/yoga-for-stress-and-sleep"><strong>Yoga for Stress and Sleep: An Evening Wind-Down Routine</strong><span>How yoga for stress and sleep works: slow movement, calming breathing techniques, a simple evening wind-down routine, and when to seek professional support.</span></a>
+        <a href="/learn/breathwork-in-pilates-and-yoga"><strong>Breathwork in Pilates and Yoga: How Each Uses the Breath</strong><span>Breathwork in Pilates and yoga compared: lateral ribcage breathing, ujjayi, the extended exhale, simple drills, and mistakes like holding your breath.</span></a>
+      </div>
+      <p class="updated">Updated October 2026.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/intro">Try 2 Weeks for $69</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--cream); border-top: 1px solid var(--line);">
+    <div class="footer-logo">
+      <img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">307 E 2nd St, Sanford FL 32771<br>Downtown Sanford, FL — Historic District<br><a href="tel:+13212492262">(321) 249-2262</a><br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/team">The Team</a>
+      <a href="/book-now">Schedule</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

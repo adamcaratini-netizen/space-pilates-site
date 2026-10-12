@@ -238,6 +238,13 @@
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
     @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
@@ -268,6 +275,36 @@
         "description": "Drop-in class",
         "url": "https://spacepilatesandwellness.com/buy-now"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/classes/yoga#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to be flexible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Space Yoga is restorative and open to all levels. Flexibility is something you build, not a requirement to start."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Space Yoga a workout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a restoration, not a challenge to push through: mobility, breath and release, drawn from restorative and gentle vinyasa yoga."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I take yoga?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good starting pattern is one yoga class a week alongside Pilates, Sculpt or Strength, as a recovery day."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -306,7 +343,9 @@
     </div>
     <div class="nav-right">
       <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
       <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
       <a class="nav-cta" href="/#join">Join the Society</a>
     </div>
   </nav>
@@ -341,8 +380,28 @@
       <p>Anyone who wants recovery, mobility and a reset. Pairs well with the other three formats.</p>
       <h2>Who teaches it</h2>
       <p>Jenny Jump. Meet them on <a href="/team">the team page</a>.</p>
+      <h2>Benefits</h2>
+      <ul>
+        <li><strong>Mobility:</strong> easing stiffness through hips, back and shoulders</li>
+        <li><strong>Breath:</strong> slower, fuller breathing practiced on purpose</li>
+        <li><strong>Recovery:</strong> a counterweight to Sculpt and Strength days</li>
+        <li><strong>A pause:</strong> time to slow down, reset and reconnect</li>
+      </ul>
       <h2>Book it</h2>
       <p>Classes run from 6:00 AM to 6:30 PM on weekdays, with Saturday and Sunday morning classes. <a href="/book-now">See the live schedule</a>. New to Space? <a href="/intro">Try 2 weeks unlimited for $69</a>.</p>
+      <h2>Questions</h2>
+      <h3>Do I need to be flexible?</h3>
+      <p>No. Space Yoga is restorative and open to all levels. Flexibility is something you build, not a requirement to start.</p>
+      <h3>Is Space Yoga a workout?</h3>
+      <p>It is a restoration, not a challenge to push through: mobility, breath and release, drawn from restorative and gentle vinyasa yoga.</p>
+      <h3>How often should I take yoga?</h3>
+      <p>A good starting pattern is one yoga class a week alongside Pilates, Sculpt or Strength, as a recovery day.</p>
+      <h2 class="related">Read more</h2>
+      <div class="card-list">
+        <a href="/learn/benefits-of-yoga"><strong>Benefits of Yoga: A Complete Guide to Body, Breath and Mind</strong><span>The benefits of yoga explained: flexibility, strength, balance, breath, stress relief, sleep routines and recovery, plus a plain guide to the main yoga styles.</span></a>
+        <a href="/learn/restorative-yoga-vs-vinyasa"><strong>Restorative Yoga vs Vinyasa: Pace, Props and Who Each Suits</strong><span>Restorative yoga vs vinyasa: how they differ in pace, intensity, props and holds, who each suits, and how both fit alongside strength training and Pilates.</span></a>
+        <a href="/learn/yoga-for-stress-and-sleep"><strong>Yoga for Stress and Sleep: An Evening Wind-Down Routine</strong><span>How yoga for stress and sleep works: slow movement, calming breathing techniques, a simple evening wind-down routine, and when to seek professional support.</span></a>
+      </div>
       <p>Other formats: <a href="/classes/pilates">Space Pilates</a> &nbsp;·&nbsp; <a href="/classes/sculpt">Space Sculpt</a> &nbsp;·&nbsp; <a href="/classes/strength">Space Strength</a></p>
       <p class="updated">Updated October 2026.</p>
     </div>
@@ -366,6 +425,7 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
       <a href="/book-now">Schedule</a>

@@ -238,6 +238,13 @@
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
     @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
@@ -268,6 +275,36 @@
         "description": "Drop-in class",
         "url": "https://spacepilatesandwellness.com/buy-now"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/classes/sculpt#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Space Sculpt good for beginners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It is listed for beginner to advanced, and instructors cue lighter options throughout. If you are brand new, a Space Pilates class first is a good way to learn the basics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the music like?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sculpt is music-led. Expect upbeat playlists; Carey's classes lean on hip hop and dance remixes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Sculpt different from Space Strength?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sculpt is faster and continuous, set to music. Space Strength is slower and heavier, with fewer movements done at a deliberate pace."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -306,7 +343,9 @@
     </div>
     <div class="nav-right">
       <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
       <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
       <a class="nav-cta" href="/#join">Join the Society</a>
     </div>
   </nav>
@@ -342,8 +381,23 @@
       <p>People who like to move to music and want strength and stamina in one class. New members are welcome; instructors cue lighter options throughout.</p>
       <h2>Who teaches it</h2>
       <p>Carey Caratini, Alejandra Arispe, Jayson LaFortune, Camryn Stephens. Meet them on <a href="/team">the team page</a>.</p>
+      <h2>Benefits</h2>
+      <ul>
+        <li><strong>Strength and endurance:</strong> continuous work with dumbbells, bands and bodyweight</li>
+        <li><strong>Full-body control:</strong> Pilates principles applied at a faster pace</li>
+        <li><strong>Coordination:</strong> moving with the rhythm of the room</li>
+        <li><strong>Scalable:</strong> lighter options cued for every move, beginner to advanced</li>
+      </ul>
       <h2>Book it</h2>
       <p>Classes run from 6:00 AM to 6:30 PM on weekdays, with Saturday and Sunday morning classes. <a href="/book-now">See the live schedule</a>. New to Space? <a href="/intro">Try 2 weeks unlimited for $69</a>.</p>
+      <h2>Questions</h2>
+      <h3>Is Space Sculpt good for beginners?</h3>
+      <p>Yes. It is listed for beginner to advanced, and instructors cue lighter options throughout. If you are brand new, a Space Pilates class first is a good way to learn the basics.</p>
+      <h3>What is the music like?</h3>
+      <p>Sculpt is music-led. Expect upbeat playlists; Carey&#x27;s classes lean on hip hop and dance remixes.</p>
+      <h3>How is Sculpt different from Space Strength?</h3>
+      <p>Sculpt is faster and continuous, set to music. Space Strength is slower and heavier, with fewer movements done at a deliberate pace.</p>
+
       <p>Other formats: <a href="/classes/pilates">Space Pilates</a> &nbsp;·&nbsp; <a href="/classes/strength">Space Strength</a> &nbsp;·&nbsp; <a href="/classes/yoga">Space Yoga</a></p>
       <p class="updated">Updated October 2026.</p>
     </div>
@@ -367,6 +421,7 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
       <a href="/book-now">Schedule</a>

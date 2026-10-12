@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>Pilates and Strength Training: Why the Combination Works | Space Pilates Sanford</title>
+  <meta name="description" content="Why Pilates and strength training work better together: control and alignment plus load, a sample weekly mix, and how a slower, heavier strength class is built." />
+  <link rel="canonical" href="https://spacepilatesandwellness.com/learn/pilates-and-strength-training" />
+  <meta property="og:title" content="Pilates and Strength Training: Why the Combination Works | Space Pilates Sanford" />
+  <meta property="og:description" content="Why Pilates and strength training work better together: control and alignment plus load, a sample weekly mix, and how a slower, heavier strength class is built." />
+  <meta property="og:image" content="https://spacepilatesandwellness.com/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://spacepilatesandwellness.com/learn/pilates-and-strength-training" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-link {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.15s; }
+    .reveal-delay-3 { transition-delay: 0.2s; }
+    .reveal-delay-4 { transition-delay: 0.25s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 100px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-subtitle {
+      margin-top: 32px; max-width: 520px;
+      font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 60px;
+    }
+
+    /* ─── FOUNDER FEATURE ─── */
+    .founder { padding: 80px 40px 0; border-bottom: 1px solid var(--line); }
+    .founder-inner { max-width: 680px; margin: 0 auto; padding-bottom: 80px; text-align: center; }
+    .founder-layout { display: flex; flex-direction: column; align-items: center; }
+    .founder-photo-wrap {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      background: var(--line);
+      margin-bottom: 32px;
+    }
+    .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .founder-text { width: 100%; }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .founder-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 28px;
+    }
+    .founder-bio {
+      font-size: 0.92rem; font-weight: 300; line-height: 1.95; color: var(--text-mid); text-align: left;
+    }
+    .founder-bio p + p { margin-top: 18px; }
+
+    /* ─── TEAM GRID ─── */
+    .instructors { padding: 80px 40px 100px; }
+    .instructors-inner { max-width: 1100px; margin: 0 auto; }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 72px;
+      align-items: start;
+    }
+
+    /* ─── ARCHED PHOTO — instructors ─── */
+    .instructor-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      margin-bottom: 20px;
+      background: var(--line);
+    }
+    .instructor-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .instructor-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px;
+    }
+    .instructor-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block;
+    }
+    .instructor-bio {
+      margin-top: 16px;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 120px 40px; text-align: center;
+    }
+    .closing-cta-inner { max-width: 600px; margin: 0 auto; }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark); padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fce8ec; padding: 48px 40px; text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .page-header { padding: 130px 24px 72px; }
+      .instructors { padding: 60px 24px 80px; }
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+
+    .content { background: var(--white); padding: 72px 24px 96px; }
+    .content-inner { max-width: 760px; margin: 0 auto; }
+    .content h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; color: var(--text-dark); margin: 48px 0 16px; }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 1.2rem; color: var(--text-dark); margin: 28px 0 10px; }
+    .content p, .content li { font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+    .content p { margin-bottom: 16px; }
+    .content ul { margin: 0 0 20px 20px; }
+    .content li { margin-bottom: 8px; }
+    .content a { color: var(--text-dark); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 24px 0 32px; }
+    .facts div { background: var(--cream); padding: 16px 18px; }
+    .facts dt { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .facts dd { font-size: 0.98rem; color: var(--text-dark); }
+    .price-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+    .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+    .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
+    .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
+    .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
+    .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+    .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://spacepilatesandwellness.com/learn/pilates-and-strength-training#article",
+      "headline": "Pilates and Strength Training: Why the Combination Works",
+      "description": "Why Pilates and strength training work better together: control and alignment plus load, a sample weekly mix, and how a slower, heavier strength class is built.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://spacepilatesandwellness.com/team#carey",
+        "name": "Carey Caratini",
+        "jobTitle": "Founder and Pilates instructor, licensed mental health therapist",
+        "description": "Pilates instructor, NASM certified personal trainer and licensed mental health therapist with a master's in Clinical Mental Health Counseling.",
+        "worksFor": {
+          "@id": "https://spacepilatesandwellness.com/#studio"
+        },
+        "url": "https://spacepilatesandwellness.com/team"
+      },
+      "publisher": {
+        "@type": "ExerciseGym",
+        "@id": "https://spacepilatesandwellness.com/#studio",
+        "name": "Space Pilates + Wellness Society"
+      },
+      "datePublished": "2026-10-12",
+      "dateModified": "2026-10-12",
+      "mainEntityOfPage": "https://spacepilatesandwellness.com/learn/pilates-and-strength-training",
+      "image": "https://spacepilatesandwellness.com/assets/og-cover.jpg",
+      "wordCount": 1145,
+      "about": {
+        "@type": "Thing",
+        "name": "Strength Training for Women"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spacepilatesandwellness.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://spacepilatesandwellness.com/learn"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Strength Training for Women",
+          "item": "https://spacepilatesandwellness.com/learn/strength-training-for-women"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Pilates and Strength Training: Why the Combination Works",
+          "item": "https://spacepilatesandwellness.com/learn/pilates-and-strength-training"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/learn/pilates-and-strength-training#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can beginners do both Pilates and strength training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Start with one session of each per week, learn the fundamentals, and add more as you feel ready. Coaches can scale any movement to your current level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I do Pilates or strength training first in the week?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many people prefer to do their heaviest strength session when they feel most rested, often early in the week. Beyond that, spread the two so you are not doing hard sessions back to back."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a sculpt class and a strength class?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sculpt is rhythm-driven and set to music, with more movement variety and a quicker pace. Strength is slower and heavier, with fewer movements and more rest, so you can work with bigger loads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need experience with weights to join a strength class?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Coaches teach the movements and help you choose a load you can control. If you have an injury, pain or a medical condition, check with your doctor or physical therapist first so coaches can offer the right modifications."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div></div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" /></a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
+      <a class="nav-cta" href="/#join">Join the Society</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Learn</span>
+      <h1 class="page-title">Pilates and Strength Training: Why the Combination Works</h1>
+      <p class="page-subtitle">Why Pilates and strength training work better together: control and alignment plus load, a sample weekly mix, and how a slower, heavier strength class is built.</p>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="content-inner">
+      <p class="byline">By <strong>Carey Caratini</strong>, founder of Space Pilates + Wellness Society. Pilates instructor, NASM certified personal trainer and licensed mental health therapist.</p>
+      <p>Pilates and strength training work well together because each supplies what the other lacks. Pilates builds control, alignment and breath, and strength training adds load. Combine them and you move well, then learn to move well while carrying more.</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Pilates teaches you to organize your body: trunk stability, alignment and coordinated breath.</li>
+        <li>Strength training asks your muscles to handle more than bodyweight, which builds a different kind of capacity.</li>
+        <li>The control from Pilates makes lifting safer and cleaner, and strength makes Pilates feel more supported.</li>
+        <li>A balanced week can include both, plus a restorative session and at least one rest day.</li>
+        <li>Good strength programming favors fewer, heavier movements done at a deliberate pace.</li>
+      </ul>
+      <h2>Two methods, one goal</h2>
+      <p>It is easy to think of Pilates and strength training as opposites. One looks quiet and precise, the other looks like dumbbells and kettlebells. But they share a goal: a body that is capable, steady and ready for daily life.</p>
+      <p>The difference is in emphasis. Pilates emphasizes <em>how</em> you move. Strength training emphasizes <em>how much</em> you can move. You need both.</p>
+      <h2>What Pilates brings: control and alignment</h2>
+      <p>Classical mat Pilates trains you to stabilize your center while your arms and legs move. You learn to breathe with intention, keep your spine organized and notice small shifts in position.</p>
+      <p>Those skills matter the moment you pick up a weight. A deadlift, a goblet squat or an overhead press all depend on a stable trunk and good alignment. If you have spent time learning to find and hold that position on the mat, it is much easier to find it under load.</p>
+      <p>Pilates also builds endurance in the deep muscles that hold you upright. That endurance shows up in better posture through a long day, and that is part of why many people pair it with other training.</p>
+      <h2>What strength training brings: load</h2>
+      <p>Bodyweight and light props can take you a long way, but at some point your muscles need a bigger challenge to keep adapting. Strength training provides that challenge in a measurable way. You can add a few pounds, an extra rep or a slower tempo and know you are progressing.</p>
+      <p>Load builds the kind of capacity that daily life asks for: carrying, lifting, pushing and pulling things that are heavier than a resistance band. Strength training is also weight-bearing exercise, which is part of why so many people make it a long-term habit. For the full picture, read our guide to <a href="/learn/strength-training-for-women">strength training for women</a>.</p>
+      <h2>How they reinforce each other</h2>
+      <p>Here is where the combination earns its place:</p>
+      <ul>
+        <li><strong>Better lifting form.</strong> Breath and trunk control from Pilates help you brace and move cleanly under a load.</li>
+        <li><strong>More supported Pilates.</strong> Stronger legs, hips and shoulders make challenging mat exercises feel steadier.</li>
+        <li><strong>Balanced training.</strong> Pilates covers mobility, control and endurance. Strength training covers force and capacity.</li>
+        <li><strong>Body awareness.</strong> Pilates helps you feel when something is off, which makes it easier to adjust before a set goes sideways.</li>
+      </ul>
+      <p>The result is a body that gets longer and stronger at the same time.</p>
+      <h2>A sample weekly mix</h2>
+      <p>At Space Pilates + Wellness Society there are four class formats, each with a different job:</p>
+      <ul>
+        <li><strong>Space Pilates</strong>: classical mat Pilates with light props like rings, bands and light weights, 45 to 50 minutes.</li>
+        <li><strong>Space Sculpt</strong>: rhythm-driven strength work set to music with dumbbells, bands and bodyweight, 45 to 55 minutes.</li>
+        <li><strong>Space Strength</strong>: slower, heavier work with dumbbells, kettlebells and resistance bands, 45 to 50 minutes.</li>
+        <li><strong>Space Yoga</strong>: restorative yoga, 45 to 60 minutes.</li>
+      </ul>
+      <p>Here is one balanced mix across a week. Use it as a starting template, not a rule, and match it to the days on the <a href="/book-now">live schedule</a>.</p>
+      <ul>
+        <li><strong>Two <a href="/classes/strength">Space Strength</a> sessions</strong>, with at least a day between them, ideally when you are fresh.</li>
+        <li><strong>Two <a href="/classes/pilates">Space Pilates</a> sessions</strong> for control, alignment and breath, with lighter props.</li>
+        <li><strong>One <a href="/classes/sculpt">Space Sculpt</a> session</strong> for strength to music, with more pace and variety.</li>
+        <li><strong>One <a href="/classes/yoga">Space Yoga</a> session</strong> to recover and reset.</li>
+        <li><strong>At least one full rest day</strong>, or an easy walk.</li>
+      </ul>
+      <p>If five or six classes a week is more than your schedule allows, scale it down. Two strength-focused sessions and one or two Pilates sessions is a very solid week. The guide to <a href="/learn/how-often-should-you-do-pilates">how often you should do Pilates</a> covers frequency in more detail.</p>
+      <h3>A few guidelines for building your own mix</h3>
+      <ul>
+        <li>Leave a day between your two heaviest sessions.</li>
+        <li>Put restorative work after your most demanding days.</li>
+        <li>Keep at least one full rest day.</li>
+        <li>If you are new, start with fewer classes and add more as you recover well.</li>
+      </ul>
+      <h2>How Space Strength is programmed</h2>
+      <p>Space Strength is programmed by co-founder Adam Caratini, who has 14 years of experience coaching strength and conditioning, functional fitness, personal training and nutrition. His certifications include CrossFit Level 2, OPEX CCP, NASM CPT, Nutrition Coach and Pain Free Performance Specialist.</p>
+      <p>The approach is deliberately simple: fewer movements, heavier loads, and a deliberate pace.</p>
+      <h3>Fewer, heavier movements</h3>
+      <p>Rather than cycling through a long list of exercises, a strength class focuses on a small number of foundational movements. That gives you time to settle into each one, find good positions and work with a load that is genuinely challenging.</p>
+      <h3>A deliberate pace</h3>
+      <p>Space Strength moves slower than a sculpt class on purpose. Controlled lowering, intentional setup and real rest between sets let you lift with quality. The goal is capacity, not performance, so nobody is racing the clock.</p>
+      <p>That slower pace also makes it a natural partner for Pilates. The same attention to breath and alignment you practice on the mat carries straight into the strength room.</p>
+      <h2>Questions</h2>
+      <h3>Can beginners do both Pilates and strength training?</h3>
+      <p>Yes. Start with one session of each per week, learn the fundamentals, and add more as you feel ready. Coaches can scale any movement to your current level.</p>
+      <h3>Should I do Pilates or strength training first in the week?</h3>
+      <p>Many people prefer to do their heaviest strength session when they feel most rested, often early in the week. Beyond that, spread the two so you are not doing hard sessions back to back.</p>
+      <h3>What is the difference between a sculpt class and a strength class?</h3>
+      <p>Sculpt is rhythm-driven and set to music, with more movement variety and a quicker pace. Strength is slower and heavier, with fewer movements and more rest, so you can work with bigger loads.</p>
+      <h3>Do I need experience with weights to join a strength class?</h3>
+      <p>No. Coaches teach the movements and help you choose a load you can control. If you have an injury, pain or a medical condition, check with your doctor or physical therapist first so coaches can offer the right modifications.</p>
+      <p>To try the full mix of Pilates, Sculpt, Strength and Yoga, start with <a href="/intro">2 weeks unlimited for $69</a>.</p>
+      <div class="cta-box">
+        <p><strong>Try it at Space.</strong> Space Strength: slower, heavier strength training, 45 to 50 minutes. <a href="/classes/strength">About the class</a> &nbsp;·&nbsp; <a href="/intro">2 weeks unlimited for $69</a></p>
+      </div>
+      <p>Part of the guide: <a href="/learn/strength-training-for-women">Strength Training for Women: A Calm, Complete Guide to Start</a></p>
+      <h2 class="related">Related reading</h2>
+      <div class="card-list">
+        <a href="/learn/strength-training-for-women"><strong>Strength Training for Women: A Calm, Complete Guide to Start</strong><span>A practical guide to strength training for women: why strength matters at every age, how to start, progressive overload, recovery, and where Pilates fits.</span></a>
+        <a href="/learn/how-often-should-you-do-pilates"><strong>How Often Should You Do Pilates? A Weekly Guide by Your Goal</strong><span>How often should you do Pilates? For most people, two to three times a week. Here is how to set your frequency by goal, pair it with other training, and rest.</span></a>
+        <a href="/learn/benefits-of-pilates"><strong>Benefits of Pilates: A Complete Guide to What It Builds in You</strong><span>The benefits of Pilates, explained plainly: core strength, posture, mobility, balance, breathing and focus, and why it suits beginners and older adults.</span></a>
+      </div>
+      <p class="updated">Updated October 2026.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/intro">Try 2 Weeks for $69</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--cream); border-top: 1px solid var(--line);">
+    <div class="footer-logo">
+      <img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">307 E 2nd St, Sanford FL 32771<br>Downtown Sanford, FL — Historic District<br><a href="tel:+13212492262">(321) 249-2262</a><br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/team">The Team</a>
+      <a href="/book-now">Schedule</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

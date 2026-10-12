@@ -238,6 +238,13 @@
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
     @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
   </style>
   <script type="application/ld+json">
@@ -268,6 +275,44 @@
         "description": "Drop-in class",
         "url": "https://spacepilatesandwellness.com/buy-now"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/classes/pilates#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need Pilates experience?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Most people who walk in have never done Pilates. Instructors cue modifications throughout, and you can rest or adjust at any point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this reformer Pilates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Space is a mat studio. Space Pilates is classical mat Pilates with light props, and many classical exercises are harder on the mat because no springs assist you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Space Pilates different from Space Sculpt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Space Pilates is slower and precise, built on the classical mat repertoire with light props. Space Sculpt is continuous and set to music, with dumbbells and bands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I bring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grippy socks are required (they are sold at the studio). Bring water and wear something you can move in; everything else is provided."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -306,7 +351,9 @@
     </div>
     <div class="nav-right">
       <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
       <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
       <a class="nav-cta" href="/#join">Join the Society</a>
     </div>
   </nav>
@@ -342,8 +389,35 @@
       <p>Anyone new to Pilates, anyone returning to movement, and anyone who wants the foundation done properly. Most members start here.</p>
       <h2>Who teaches it</h2>
       <p>Alejandra Arispe, Camryn Stephens, Sherrell Carter. Meet them on <a href="/team">the team page</a>.</p>
+      <h2>Benefits</h2>
+      <ul>
+        <li><strong>Core strength and control:</strong> the deep abdominals, back and hips working together</li>
+        <li><strong>Alignment:</strong> better awareness of how you stand, sit and move</li>
+        <li><strong>Mobility:</strong> controlled movement through the spine and hips</li>
+        <li><strong>Low impact:</strong> no jumping, kind to joints, scalable for every level</li>
+        <li><strong>A foundation:</strong> the control you build here carries into Sculpt and Strength</li>
+      </ul>
       <h2>Book it</h2>
       <p>Classes run from 6:00 AM to 6:30 PM on weekdays, with Saturday and Sunday morning classes. <a href="/book-now">See the live schedule</a>. New to Space? <a href="/intro">Try 2 weeks unlimited for $69</a>.</p>
+      <h2>Questions</h2>
+      <h3>Do I need Pilates experience?</h3>
+      <p>No. Most people who walk in have never done Pilates. Instructors cue modifications throughout, and you can rest or adjust at any point.</p>
+      <h3>Is this reformer Pilates?</h3>
+      <p>No. Space is a mat studio. Space Pilates is classical mat Pilates with light props, and many classical exercises are harder on the mat because no springs assist you.</p>
+      <h3>How is Space Pilates different from Space Sculpt?</h3>
+      <p>Space Pilates is slower and precise, built on the classical mat repertoire with light props. Space Sculpt is continuous and set to music, with dumbbells and bands.</p>
+      <h3>What should I bring?</h3>
+      <p>Grippy socks are required (they are sold at the studio). Bring water and wear something you can move in; everything else is provided.</p>
+      <h2 class="related">Read more</h2>
+      <div class="card-list">
+        <a href="/learn/benefits-of-pilates"><strong>Benefits of Pilates: A Complete Guide to What It Builds in You</strong><span>The benefits of Pilates, explained plainly: core strength, posture, mobility, balance, breathing and focus, and why it suits beginners and older adults.</span></a>
+        <a href="/learn/breathwork-in-pilates-and-yoga"><strong>Breathwork in Pilates and Yoga: How Each Uses the Breath</strong><span>Breathwork in Pilates and yoga compared: lateral ribcage breathing, ujjayi, the extended exhale, simple drills, and mistakes like holding your breath.</span></a>
+        <a href="/learn/how-often-should-you-do-pilates"><strong>How Often Should You Do Pilates? A Weekly Guide by Your Goal</strong><span>How often should you do Pilates? For most people, two to three times a week. Here is how to set your frequency by goal, pair it with other training, and rest.</span></a>
+        <a href="/learn/mat-vs-reformer-pilates"><strong>Mat vs Reformer Pilates: The Honest Difference, Explained</strong><span>Mat vs reformer Pilates compared honestly: equipment, how springs assist or resist, difficulty, cost, class size, which suits beginners, and whether to do both.</span></a>
+        <a href="/learn/pilates-for-beginners"><strong>Pilates for Beginners: What to Expect at Your First Class</strong><span>New to Pilates? What happens in your first class, how to prepare, the beginner moves explained in plain words, and how to choose a class that fits you.</span></a>
+        <a href="/learn/pilates-for-posture"><strong>Pilates for Posture: How It Helps You Stand and Sit Taller</strong><span>Why posture slips with desks, phones and driving, what Pilates trains to support it, simple at-home cues, and when it is time to see a professional instead.</span></a>
+        <a href="/learn/what-to-wear-to-pilates"><strong>What to Wear to Pilates: Clothes, Grippy Socks and What to Bring</strong><span>What to wear to Pilates, sculpt, strength and yoga classes: fitted clothes you can move in, why grippy socks matter, hair, what to bring and what to leave home.</span></a>
+      </div>
       <p>Other formats: <a href="/classes/sculpt">Space Sculpt</a> &nbsp;·&nbsp; <a href="/classes/strength">Space Strength</a> &nbsp;·&nbsp; <a href="/classes/yoga">Space Yoga</a></p>
       <p class="updated">Updated October 2026.</p>
     </div>
@@ -367,6 +441,7 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
       <a href="/book-now">Schedule</a>

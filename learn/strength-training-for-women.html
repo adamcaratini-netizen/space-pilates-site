@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>Strength Training for Women: A Calm, Complete Guide to Start | Space Pilates Sanford</title>
+  <meta name="description" content="A practical guide to strength training for women: why strength matters at every age, how to start, progressive overload, recovery, and where Pilates fits." />
+  <link rel="canonical" href="https://spacepilatesandwellness.com/learn/strength-training-for-women" />
+  <meta property="og:title" content="Strength Training for Women: A Calm, Complete Guide to Start | Space Pilates Sanford" />
+  <meta property="og:description" content="A practical guide to strength training for women: why strength matters at every age, how to start, progressive overload, recovery, and where Pilates fits." />
+  <meta property="og:image" content="https://spacepilatesandwellness.com/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://spacepilatesandwellness.com/learn/strength-training-for-women" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-link {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.15s; }
+    .reveal-delay-3 { transition-delay: 0.2s; }
+    .reveal-delay-4 { transition-delay: 0.25s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 100px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-subtitle {
+      margin-top: 32px; max-width: 520px;
+      font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 60px;
+    }
+
+    /* ─── FOUNDER FEATURE ─── */
+    .founder { padding: 80px 40px 0; border-bottom: 1px solid var(--line); }
+    .founder-inner { max-width: 680px; margin: 0 auto; padding-bottom: 80px; text-align: center; }
+    .founder-layout { display: flex; flex-direction: column; align-items: center; }
+    .founder-photo-wrap {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      background: var(--line);
+      margin-bottom: 32px;
+    }
+    .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .founder-text { width: 100%; }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .founder-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 28px;
+    }
+    .founder-bio {
+      font-size: 0.92rem; font-weight: 300; line-height: 1.95; color: var(--text-mid); text-align: left;
+    }
+    .founder-bio p + p { margin-top: 18px; }
+
+    /* ─── TEAM GRID ─── */
+    .instructors { padding: 80px 40px 100px; }
+    .instructors-inner { max-width: 1100px; margin: 0 auto; }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 72px;
+      align-items: start;
+    }
+
+    /* ─── ARCHED PHOTO — instructors ─── */
+    .instructor-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      margin-bottom: 20px;
+      background: var(--line);
+    }
+    .instructor-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .instructor-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px;
+    }
+    .instructor-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block;
+    }
+    .instructor-bio {
+      margin-top: 16px;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 120px 40px; text-align: center;
+    }
+    .closing-cta-inner { max-width: 600px; margin: 0 auto; }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark); padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fce8ec; padding: 48px 40px; text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .page-header { padding: 130px 24px 72px; }
+      .instructors { padding: 60px 24px 80px; }
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+
+    .content { background: var(--white); padding: 72px 24px 96px; }
+    .content-inner { max-width: 760px; margin: 0 auto; }
+    .content h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; color: var(--text-dark); margin: 48px 0 16px; }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 1.2rem; color: var(--text-dark); margin: 28px 0 10px; }
+    .content p, .content li { font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+    .content p { margin-bottom: 16px; }
+    .content ul { margin: 0 0 20px 20px; }
+    .content li { margin-bottom: 8px; }
+    .content a { color: var(--text-dark); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 24px 0 32px; }
+    .facts div { background: var(--cream); padding: 16px 18px; }
+    .facts dt { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .facts dd { font-size: 0.98rem; color: var(--text-dark); }
+    .price-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+    .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+    .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
+    .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
+    .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
+    .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+    .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://spacepilatesandwellness.com/learn/strength-training-for-women#article",
+      "headline": "Strength Training for Women: A Calm, Complete Guide to Start",
+      "description": "A practical guide to strength training for women: why strength matters at every age, how to start, progressive overload, recovery, and where Pilates fits.",
+      "author": {
+        "@type": "Person",
+        "@id": "https://spacepilatesandwellness.com/team#carey",
+        "name": "Carey Caratini",
+        "jobTitle": "Founder and Pilates instructor, licensed mental health therapist",
+        "description": "Pilates instructor, NASM certified personal trainer and licensed mental health therapist with a master's in Clinical Mental Health Counseling.",
+        "worksFor": {
+          "@id": "https://spacepilatesandwellness.com/#studio"
+        },
+        "url": "https://spacepilatesandwellness.com/team"
+      },
+      "publisher": {
+        "@type": "ExerciseGym",
+        "@id": "https://spacepilatesandwellness.com/#studio",
+        "name": "Space Pilates + Wellness Society"
+      },
+      "datePublished": "2026-10-12",
+      "dateModified": "2026-10-12",
+      "mainEntityOfPage": "https://spacepilatesandwellness.com/learn/strength-training-for-women",
+      "image": "https://spacepilatesandwellness.com/assets/og-cover.jpg",
+      "wordCount": 2064,
+      "about": {
+        "@type": "Thing",
+        "name": "Strength Training for Women"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spacepilatesandwellness.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Learn",
+          "item": "https://spacepilatesandwellness.com/learn"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Strength Training for Women: A Calm, Complete Guide to Start",
+          "item": "https://spacepilatesandwellness.com/learn/strength-training-for-women"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/learn/strength-training-for-women#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often should women do strength training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two to three sessions a week, with a rest day between sessions that train the same muscles, is a good starting point for most people. Consistency over months matters far more than any single week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need heavy weights to get stronger?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You need weights that challenge you, which is different from heavy for its own sake. Start with a load you can control for all your reps, then increase it gradually as it becomes easy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I do strength training and Pilates in the same week?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and they work well together. Pilates builds control and alignment, while strength training builds the ability to handle load, so each supports the other."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is strength training safe if I have a health condition?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Talk to your doctor or physical therapist first if you have pain, an injury, a medical condition, or are pregnant or postpartum. Once you have their guidance, a qualified coach can offer modifications that suit you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if I feel sore after training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some soreness after a new challenge is common and usually fades within a few days. Gentle movement, sleep and good nutrition help. Sharp or lingering pain is a reason to stop and check in with a professional."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div></div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" /></a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
+      <a class="nav-cta" href="/#join">Join the Society</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Guide</span>
+      <h1 class="page-title">Strength Training for Women: A Calm, Complete Guide to Start</h1>
+      <p class="page-subtitle">A practical guide to strength training for women: why strength matters at every age, how to start, progressive overload, recovery, and where Pilates fits.</p>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="content-inner">
+      <p class="byline">By <strong>Carey Caratini</strong>, founder of Space Pilates + Wellness Society. Pilates instructor, NASM certified personal trainer and licensed mental health therapist.</p>
+      <p>Strength training for women is about building the capacity to carry, lift, climb and move through life with confidence, at every age. You start with a few foundational movements, use a load you can control, add a little more over time, and give your body time to recover. It is not about changing how you look. It is about what you can do.</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Strength is a life skill. It shows up in carrying groceries, lifting a child, getting up off the floor and staying steady on stairs.</li>
+        <li>Muscle mass naturally declines with age, and strength training is one of the most practical ways to keep the capacity you have.</li>
+        <li>Lifting weights does not automatically make anyone "bulky." Most people simply get more capable.</li>
+        <li>Start with a handful of basic movement patterns, learn them well, then add load gradually. That gradual increase is called progressive overload.</li>
+        <li>Rest is part of the program. Muscles adapt between sessions, not during them.</li>
+        <li>Pilates and strength training complement each other: one builds control and alignment, the other builds the ability to handle load.</li>
+      </ul>
+      <h2>Why strength matters for women</h2>
+      <p>Strength is the quiet foundation under almost everything you do in a day. Lifting a suitcase into an overhead bin, carrying a toddler on one hip, hauling a bag of soil across the yard, getting down on the floor to play and getting back up again. Each of these is a strength task.</p>
+      <p>When you train for strength, you are training for those moments. You are building a body that can meet the demands of your life without strain or hesitation. That is the whole point, and it is a good one.</p>
+      <h3>Capacity, not performance</h3>
+      <p>You do not need to compete, set records or post your numbers to benefit from strength training. The goal is capacity: having more in reserve than your day asks of you.</p>
+      <p>When your daily tasks take a smaller share of your total strength, they feel easier. You have energy left over. You move with less guarding and more ease. There is nothing to prove, only something to build.</p>
+      <h3>Strength across life stages</h3>
+      <p>What you need from strength shifts as life changes, but the need itself never goes away.</p>
+      <ul>
+        <li><strong>In your 20s and 30s</strong>, strength training builds a base. Learning good movement patterns early gives you a foundation you can draw on for decades.</li>
+        <li><strong>During busy, demanding years</strong>, whether that is a career, caregiving, parenting or all three, strength helps you handle physical tasks that are often repetitive and awkward.</li>
+        <li><strong>Through midlife and beyond</strong>, muscle mass and strength naturally decline with age. Consistent training is one of the most practical ways to hold on to what you have and keep doing the things you love.</li>
+      </ul>
+      <p>If you are pregnant, postpartum, managing a medical condition or returning from injury, talk to your doctor or physical therapist before you begin or change a program. A good coach can then offer modifications that fit your situation.</p>
+      <h2>Bones, joints and everyday durability</h2>
+      <p>Strength training is weight-bearing exercise. It places manageable demands on your muscles, tendons and skeleton, and your body responds to those demands over time.</p>
+      <p>Strong muscles around a joint help support and stabilize it. Think of the muscles around your hips and knees as the support system that keeps you steady on uneven ground, on stairs and when you change direction quickly.</p>
+      <p>This is what "built to make you durable" means. It is not a promise that you will never get hurt or that training will fix any condition. It is the simple idea that a stronger, better-prepared body tends to handle the bumps of daily life more gracefully. If you have concerns about bone density, osteoporosis or joint health, your doctor is the right person to guide what is appropriate for you.</p>
+      <h2>Confidence that carries over</h2>
+      <p>Something changes when you lift a weight you could not lift a month ago. It is a concrete, undeniable piece of evidence that you are capable of growth.</p>
+      <p>That confidence tends to travel. People often notice they carry themselves differently, take on physical tasks they used to avoid, and trust their bodies more. It is not about how you look in the mirror. It is about knowing what you can do.</p>
+      <h2>Myths, addressed respectfully</h2>
+      <p>Many women have heard a lot of conflicting advice about lifting. Here are a few common beliefs, and a calmer way to think about each.</p>
+      <h3>"Lifting weights will make me bulky"</h3>
+      <p>This is probably the most common concern, and it is understandable. In practice, building large amounts of muscle takes a very specific, sustained, high-volume approach over years. A typical strength routine a few times a week makes most people stronger and more capable, not dramatically larger.</p>
+      <p>More importantly, the question shifts when you focus on capacity. The goal is not a particular shape. The goal is being able to do more.</p>
+      <h3>"Light weights and high reps are better for women"</h3>
+      <p>There is nothing wrong with lighter work, and it has its place. But muscles respond to challenge. If a weight never feels demanding, your body has little reason to adapt. Women can and do train with meaningful loads, safely and with good form.</p>
+      <h3>"I'm too old to start"</h3>
+      <p>You are not. People begin strength training at every age. The approach may differ, with more attention to recovery and a slower build, but the principles are the same. Starting where you are is always the right place to start.</p>
+      <h2>How to start strength training</h2>
+      <p>Starting is simpler than it looks. You do not need a complex program or a garage full of equipment. You need a few movements, a sensible load and consistency.</p>
+      <h3>Learn the foundational movement patterns</h3>
+      <p>Almost every strength program is built on a handful of patterns that mirror how you move in real life:</p>
+      <ol>
+        <li><strong>Squat</strong>: sitting down and standing up, like getting out of a chair.</li>
+        <li><strong>Hinge</strong>: bending at the hips with a long spine, like picking a bag up off the floor.</li>
+        <li><strong>Push</strong>: pressing something away from you, like closing a heavy door or pushing yourself up off the ground.</li>
+        <li><strong>Pull</strong>: drawing something toward you, like opening a heavy door or lifting a box.</li>
+        <li><strong>Carry</strong>: holding a load while you walk, like carrying groceries from the car.</li>
+        <li><strong>Lunge or step</strong>: moving on one leg at a time, like climbing stairs.</li>
+      </ol>
+      <p>Learn these with bodyweight or a light load first. Form comes before weight, always.</p>
+      <h3>Choose a load you can control</h3>
+      <p>The right weight is one you can move with good form for your target number of repetitions, where the last couple feel challenging but still clean. If your form breaks down, the load is too heavy for now. If the set feels easy all the way through, it is probably time to go up.</p>
+      <h3>Start with two or three sessions a week</h3>
+      <p>Two or three strength sessions a week, with a rest day between them, is a sound starting point for most beginners. Each session might include four to six movements covering the patterns above. Quality matters more than quantity.</p>
+      <h3>Get coaching if you can</h3>
+      <p>A qualified coach can watch your form, adjust your setup and help you choose the right load. Small corrections early save a lot of frustration later. Group classes can be a great way to learn in a supportive setting, especially when class sizes are small enough for the coach to see everyone.</p>
+      <h2>Progressive overload, explained simply</h2>
+      <p>Progressive overload means gradually asking a little more of your body over time. That is how strength is built. If you always lift the same weight for the same number of reps, your body has no reason to change.</p>
+      <p>There are several ways to add challenge:</p>
+      <ul>
+        <li><strong>Add weight.</strong> Move from an 8 pound dumbbell to a 10 pound one once the lighter weight feels easy for all your reps.</li>
+        <li><strong>Add repetitions.</strong> Do 10 reps where you used to do 8, then increase the weight and drop back down.</li>
+        <li><strong>Add a set.</strong> Go from two rounds of a movement to three.</li>
+        <li><strong>Slow the tempo.</strong> Lowering a weight slowly over three or four seconds makes the same load more demanding.</li>
+        <li><strong>Improve range of motion.</strong> Squatting a little deeper or lunging a little longer, with control, adds challenge without adding weight.</li>
+      </ul>
+      <p>The key word is <em>gradual</em>. Small, steady increases over weeks and months add up. Big jumps invite poor form and setbacks. Progress is not a straight line either. Some weeks you will feel strong, others less so, and that is normal.</p>
+      <h2>Rest and recovery</h2>
+      <p>Training is the signal. Recovery is when your body actually responds to it. Muscles adapt in the time between sessions, which is why rest is part of the program rather than a break from it.</p>
+      <h3>Practical recovery habits</h3>
+      <ul>
+        <li><strong>Sleep.</strong> Consistent, good-quality sleep supports recovery more than almost anything else.</li>
+        <li><strong>Eat enough.</strong> Your body needs fuel, including adequate protein, to rebuild. If you have specific dietary needs, a registered dietitian can help.</li>
+        <li><strong>Space your sessions.</strong> Leave at least a day between hard sessions that train the same muscles.</li>
+        <li><strong>Move gently on rest days.</strong> Walking, stretching or a restorative yoga class keeps you moving without adding strain.</li>
+        <li><strong>Listen to your body.</strong> Some muscle soreness after a new challenge is common. Sharp pain, or pain that lingers, is a reason to stop and check in with a doctor or physical therapist.</li>
+      </ul>
+      <p>If you want a gentle rest-day practice, <a href="/learn/restorative-yoga-vs-vinyasa">restorative yoga</a> pairs naturally with strength work.</p>
+      <h2>How Pilates and strength training work together</h2>
+      <p>Pilates and strength training are often presented as separate worlds, but they are better together.</p>
+      <p>Pilates builds control, alignment, breath and awareness. You learn to stabilize your trunk, move from your center and notice how your body is organized. That awareness makes you a better lifter, because good strength training depends on exactly those qualities.</p>
+      <p>Strength training, in turn, adds load. It asks your muscles to handle more than your bodyweight, which builds a different kind of capacity. The control you develop in Pilates helps you handle that load safely, and the strength you build under load makes your Pilates practice feel more supported.</p>
+      <p>Put simply: Pilates teaches you how to move well, and strength training teaches you to move well under load. Together they help you get longer and stronger. For a deeper look at how to combine them, read <a href="/learn/pilates-and-strength-training">Pilates and strength training</a>, and for the foundations of the method, see <a href="/learn/benefits-of-pilates">the benefits of Pilates</a>.</p>
+      <h3>A simple way to combine them</h3>
+      <p>A balanced week might include two strength sessions, one or two Pilates sessions and one restorative session, with at least one full rest day. Adjust from there based on your schedule and how you recover. At Space Pilates + Wellness Society, <a href="/classes/strength">Space Strength</a> is the slower, heavier strength format, and Space Pilates is classical mat work, so the two fit together naturally in one week.</p>
+      <h2>Questions</h2>
+      <h3>How often should women do strength training?</h3>
+      <p>Two to three sessions a week, with a rest day between sessions that train the same muscles, is a good starting point for most people. Consistency over months matters far more than any single week.</p>
+      <h3>Do I need heavy weights to get stronger?</h3>
+      <p>You need weights that challenge you, which is different from heavy for its own sake. Start with a load you can control for all your reps, then increase it gradually as it becomes easy.</p>
+      <h3>Can I do strength training and Pilates in the same week?</h3>
+      <p>Yes, and they work well together. Pilates builds control and alignment, while strength training builds the ability to handle load, so each supports the other.</p>
+      <h3>Is strength training safe if I have a health condition?</h3>
+      <p>Talk to your doctor or physical therapist first if you have pain, an injury, a medical condition, or are pregnant or postpartum. Once you have their guidance, a qualified coach can offer modifications that suit you.</p>
+      <h3>What should I do if I feel sore after training?</h3>
+      <p>Some soreness after a new challenge is common and usually fades within a few days. Gentle movement, sleep and good nutrition help. Sharp or lingering pain is a reason to stop and check in with a professional.</p>
+      <p>If you would like coached strength and Pilates in classes capped at 15, try Space with <a href="/intro">2 weeks unlimited for $69</a>. Come as you are, start where you are, and build strength that lasts.</p>
+      <div class="cta-box">
+        <p><strong>Try it at Space.</strong> Space Strength: slower, heavier strength training, 45 to 50 minutes. <a href="/classes/strength">About the class</a> &nbsp;·&nbsp; <a href="/intro">2 weeks unlimited for $69</a></p>
+      </div>
+      <h2 class="related">Related reading</h2>
+      <div class="card-list">
+        <a href="/learn/pilates-and-strength-training"><strong>Pilates and Strength Training: Why the Combination Works</strong><span>Why Pilates and strength training work better together: control and alignment plus load, a sample weekly mix, and how a slower, heavier strength class is built.</span></a>
+        <a href="/learn/benefits-of-pilates"><strong>Benefits of Pilates: A Complete Guide to What It Builds in You</strong><span>The benefits of Pilates, explained plainly: core strength, posture, mobility, balance, breathing and focus, and why it suits beginners and older adults.</span></a>
+        <a href="/learn/pilates-for-beginners"><strong>Pilates for Beginners: What to Expect at Your First Class</strong><span>New to Pilates? What happens in your first class, how to prepare, the beginner moves explained in plain words, and how to choose a class that fits you.</span></a>
+      </div>
+      <p class="updated">Updated October 2026.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/intro">Try 2 Weeks for $69</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--cream); border-top: 1px solid var(--line);">
+    <div class="footer-logo">
+      <img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">307 E 2nd St, Sanford FL 32771<br>Downtown Sanford, FL — Historic District<br><a href="tel:+13212492262">(321) 249-2262</a><br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/team">The Team</a>
+      <a href="/book-now">Schedule</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

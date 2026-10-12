@@ -7,7 +7,10 @@ share its nav, footer and styles. Facts live in FACTS below; edit them there, re
 Prices come from the Mariana Tek storefront (/buy-now). Instructors per class come from
 the live schedule. Both change: re-check before editing copy that quotes them.
 """
-import html, json, pathlib, re
+import html, json, pathlib, re, sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import mdlite  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://spacepilatesandwellness.com"
@@ -48,6 +51,19 @@ CLASSES = {
             "A calm room: no leaderboard, nothing to prove",
         ],
         "for": "Anyone new to Pilates, anyone returning to movement, and anyone who wants the foundation done properly. Most members start here.",
+        "benefits": [
+            "**Core strength and control:** the deep abdominals, back and hips working together",
+            "**Alignment:** better awareness of how you stand, sit and move",
+            "**Mobility:** controlled movement through the spine and hips",
+            "**Low impact:** no jumping, kind to joints, scalable for every level",
+            "**A foundation:** the control you build here carries into Sculpt and Strength",
+        ],
+        "faq": [
+            ("Do I need Pilates experience?", "No. Most people who walk in have never done Pilates. Instructors cue modifications throughout, and you can rest or adjust at any point."),
+            ("Is this reformer Pilates?", "No. Space is a mat studio. Space Pilates is classical mat Pilates with light props, and many classical exercises are harder on the mat because no springs assist you."),
+            ("How is Space Pilates different from Space Sculpt?", "Space Pilates is slower and precise, built on the classical mat repertoire with light props. Space Sculpt is continuous and set to music, with dumbbells and bands."),
+            ("What should I bring?", "Grippy socks are required (they are sold at the studio). Bring water and wear something you can move in; everything else is provided."),
+        ],
     },
     "sculpt": {
         "name": "Space Sculpt",
@@ -64,6 +80,17 @@ CLASSES = {
             "The most scheduled format at Space, with classes most days of the week",
         ],
         "for": "People who like to move to music and want strength and stamina in one class. New members are welcome; instructors cue lighter options throughout.",
+        "benefits": [
+            "**Strength and endurance:** continuous work with dumbbells, bands and bodyweight",
+            "**Full-body control:** Pilates principles applied at a faster pace",
+            "**Coordination:** moving with the rhythm of the room",
+            "**Scalable:** lighter options cued for every move, beginner to advanced",
+        ],
+        "faq": [
+            ("Is Space Sculpt good for beginners?", "Yes. It is listed for beginner to advanced, and instructors cue lighter options throughout. If you are brand new, a Space Pilates class first is a good way to learn the basics."),
+            ("What is the music like?", "Sculpt is music-led. Expect upbeat playlists; Carey's classes lean on hip hop and dance remixes."),
+            ("How is Sculpt different from Space Strength?", "Sculpt is faster and continuous, set to music. Space Strength is slower and heavier, with fewer movements done at a deliberate pace."),
+        ],
     },
     "strength": {
         "name": "Space Strength",
@@ -80,6 +107,18 @@ CLASSES = {
             "Coaching on form so you can progress safely week to week",
         ],
         "for": "Anyone who wants to get stronger and more durable for daily life. No lifting experience needed.",
+        "benefits": [
+            "**Strength for daily life:** lifting, carrying and climbing with more ease",
+            "**Stability:** control around the hips, shoulders and core under load",
+            "**Progression:** programming that builds week to week",
+            "**Confidence with weights:** coaching on form from experienced coaches",
+        ],
+        "faq": [
+            ("Do I need lifting experience?", "No. Space Strength is open to all levels, and coaches teach form and offer lighter options."),
+            ("Who programs Space Strength?", "Co-founder Adam Caratini, who has 14 years of experience coaching strength and conditioning, functional fitness and personal training."),
+            ("What equipment is used?", "Heavier dumbbells, kettlebells and resistance bands. Everything is provided."),
+            ("How does it fit with Pilates?", "Pilates builds control and alignment; Strength adds load. Most members rotate through both during the week."),
+        ],
     },
     "yoga": {
         "name": "Space Yoga",
@@ -95,6 +134,17 @@ CLASSES = {
             "A natural counterpart to Pilates, Sculpt and Strength days",
         ],
         "for": "Anyone who wants recovery, mobility and a reset. Pairs well with the other three formats.",
+        "benefits": [
+            "**Mobility:** easing stiffness through hips, back and shoulders",
+            "**Breath:** slower, fuller breathing practiced on purpose",
+            "**Recovery:** a counterweight to Sculpt and Strength days",
+            "**A pause:** time to slow down, reset and reconnect",
+        ],
+        "faq": [
+            ("Do I need to be flexible?", "No. Space Yoga is restorative and open to all levels. Flexibility is something you build, not a requirement to start."),
+            ("Is Space Yoga a workout?", "It is a restoration, not a challenge to push through: mobility, breath and release, drawn from restorative and gentle vinyasa yoga."),
+            ("How often should I take yoga?", "A good starting pattern is one yoga class a week alongside Pilates, Sculpt or Strength, as a recovery day."),
+        ],
     },
 }
 
@@ -123,11 +173,19 @@ EXTRA_CSS = """
     .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
     .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
     .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
     @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
 """
 
 FOOTER_LINKS = """      <a href="/">Home</a>
       <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
       <a href="/book-now">Schedule</a>
@@ -135,6 +193,32 @@ FOOTER_LINKS = """      <a href="/">Home</a>
       <a href="/terms">Terms</a>"""
 
 UPDATED = "Updated October 2026."
+
+NAV_LINKS = ('<a class="nav-link" href="/classes">Classes</a>\n      <a class="nav-link" href="/learn">Learn</a>\n'
+             '      <a class="nav-link" href="/pricing">Pricing</a>\n      <a class="nav-link" href="/team">Team</a>')
+
+CAREY = {"@type": "Person", "@id": SITE + "/team#carey", "name": "Carey Caratini",
+         "jobTitle": "Founder and Pilates instructor, licensed mental health therapist",
+         "description": "Pilates instructor, NASM certified personal trainer and licensed mental health therapist with a master's in Clinical Mental Health Counseling.",
+         "worksFor": {"@id": SITE + "/#studio"}, "url": SITE + "/team"}
+AUTHOR_LINE = ('By <strong>Carey Caratini</strong>, founder of Space Pilates + Wellness Society. '
+               'Pilates instructor, NASM certified personal trainer and licensed mental health therapist.')
+
+# ---- articles (content/learn/*.md), loaded first so class pages can link to them
+ARTICLES = {}
+for f in sorted((ROOT / "content" / "learn").glob("*.md")):
+    meta, md = mdlite.parse(f.read_text(), f.name)
+    if meta["slug"] != f.stem:
+        raise SystemExit(f"{f.name}: slug {meta['slug']!r} does not match filename")
+    if meta["class"] not in CLASSES:
+        raise SystemExit(f"{f.name}: unknown class {meta['class']!r}")
+    body_html, faq = mdlite.render(md, f.name)
+    ARTICLES[f.stem] = dict(meta, html=body_html, faq=faq, words=len(re.findall(r"[A-Za-z']+", md)))
+for slug, a in ARTICLES.items():
+    for r in a["related"] + [a["pillar"]]:
+        if r not in ARTICLES:
+            raise SystemExit(f"{slug}: links to unknown article {r!r}")
+PILLARS = [s for s, a in ARTICLES.items() if a["type"] == "pillar"]
 
 
 def esc(s):
@@ -184,7 +268,7 @@ def page(path, title, description, eyebrow, h1, subtitle, body, schema):
     out = re.sub(r"  <!-- PAGE HEADER -->.*?(?=  <!-- CLOSING CTA -->)", lambda m: header, out, count=1, flags=re.S)
     out = re.sub(r'(<div class="footer-links">\n).*?(\n    </div>)', lambda m: m.group(1) + FOOTER_LINKS + m.group(2), out, count=1, flags=re.S)
     out = out.replace('src="assets/', 'src="/assets/')
-    out = out.replace('<a class="nav-link" href="/about">The Studio</a>', '<a class="nav-link" href="/classes">Classes</a>\n      <a class="nav-link" href="/pricing">Pricing</a>')
+    out = out.replace('<a class="nav-link" href="/about">The Studio</a>', NAV_LINKS)
     out = out.replace('href="/#join">Join the Society</a>\n    </div>\n  </section>', 'href="/intro">Try 2 Weeks for $69</a>\n    </div>\n  </section>')
     for ldblock in re.findall(r'<script type="application/ld\+json">(.*?)</script>', out, re.S):
         json.loads(ldblock)
@@ -201,6 +285,14 @@ def facts_block(rows):
 def faq_schema(qas, path):
     return {"@type": "FAQPage", "@id": SITE + path + "#faq", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qas]}
+
+
+def related_html(slugs, heading="Related reading"):
+    slugs = [x for x in slugs if x in ARTICLES]
+    if not slugs:
+        return ""
+    items = "\n".join(f'        <a href="/learn/{x}"><strong>{esc(ARTICLES[x]["title"])}</strong><span>{esc(ARTICLES[x]["description"])}</span></a>' for x in slugs)
+    return f'      <h2 class="related">{esc(heading)}</h2>\n      <div class="card-list">\n{items}\n      </div>'
 
 
 def faq_html(qas):
@@ -275,46 +367,25 @@ for k, c in CLASSES.items():
       <p>{esc(c['for'])}</p>
       <h2>Who teaches it</h2>
       <p>{esc(', '.join(c['teachers']))}. Meet them on <a href="/team">the team page</a>.</p>
+      <h2>Benefits</h2>
+      <ul>
+{chr(10).join('        <li>' + mdlite.inline(b) + '</li>' for b in c['benefits'])}
+      </ul>
       <h2>Book it</h2>
       <p>{FACTS['schedule']} <a href="/book-now">See the live schedule</a>. New to Space? <a href="/intro">Try 2 weeks unlimited for $69</a>.</p>
+      <h2>Questions</h2>
+{faq_html(c['faq'])}
+{related_html([s for s, a in ARTICLES.items() if a['class'] == k], 'Read more')}
       <p>Other formats: {others}</p>"""
     course = {"@type": "Service", "@id": f"{SITE}/classes/{k}#service", "name": f"{c['name']} class in Sanford, FL",
               "serviceType": c["short"], "description": c["lead"], "provider": business_ref(),
               "areaServed": ["Sanford, FL", "Lake Mary, FL", "Longwood, FL", "Heathrow, FL"],
               "offers": {"@type": "Offer", "price": "29", "priceCurrency": "USD", "description": "Drop-in class", "url": SITE + "/buy-now"}}
+    schema_extra = [faq_schema(c["faq"], f"/classes/{k}")]
     built.append(page(f"/classes/{k}", f"{c['name']}: {c['short']} in Sanford, FL | Space Pilates",
          f"{c['name']} at Space Pilates in Downtown Sanford: {c['short'].lower()}, {c['length']}, {c['level'].lower()}. Drop-in $29 or 2 weeks unlimited for $69.",
          "Classes", c["name"] + ".", c["short"] + ".", body,
-         [course, breadcrumb([("Home", "/"), ("Classes", "/classes"), (c["name"], f"/classes/{k}")])]))
-
-# ---- /mat-vs-reformer-pilates
-guide_qas = [
-    ("What is the difference between mat and reformer Pilates?", "Mat Pilates is done on a mat using your own bodyweight, sometimes with small props like rings, bands and light weights. Reformer Pilates is done on a machine with a sliding carriage and springs that add or reduce resistance. Both follow the same principles: breath, control, core strength and alignment."),
-    ("Is mat Pilates easier than reformer Pilates?", "Not necessarily. On a mat there are no springs to assist you, so many classical exercises are harder on the mat than on a reformer. Either can be scaled for beginners."),
-    ("Which is better for beginners?", "Both work. Mat Pilates teaches you to control your own body with nothing assisting, which carries over to everything else. It is also usually more affordable, because classes do not depend on expensive machines."),
-    ("Does Space Pilates have reformers?", "No. Space is a mat-based studio. Space Pilates is classical mat Pilates, and Space Sculpt and Space Strength add dumbbells, kettlebells and bands for strength."),
-]
-body = f"""      <p>If you are choosing a Pilates studio in Sanford, Lake Mary or Longwood, the first question is usually mat or reformer. Here is the honest difference, and where Space fits.</p>
-      <h2>Mat Pilates</h2>
-      <p>Mat Pilates is the original form of the method: a sequence of controlled exercises on a mat, using your own bodyweight. Small props such as rings, bands and light weights can add challenge. Because nothing assists you, it builds strength and control you can use anywhere.</p>
-      <h2>Reformer Pilates</h2>
-      <p>A reformer is a machine with a sliding carriage, springs and straps. The springs can add resistance or support, which lets an instructor change an exercise quickly. Reformer classes are usually smaller and priced higher, because each person needs a machine.</p>
-      <h2>How to choose</h2>
-      <ul>
-        <li><strong>Budget:</strong> mat classes usually cost less per class.</li>
-        <li><strong>Variety:</strong> at Space, mat Pilates sits alongside Sculpt, Strength and Yoga, so one membership covers core, strength and recovery.</li>
-        <li><strong>Carry-over:</strong> mat work trains you to control your body with no assistance.</li>
-        <li><strong>Preference:</strong> if you love the machine, a reformer studio is a good choice. Many people do both.</li>
-      </ul>
-      <h2>Questions</h2>
-{faq_html(guide_qas)}
-      <p>Try it yourself: <a href="/intro">2 weeks unlimited for $69</a> at {esc(FACTS['address'])}.</p>"""
-built.append(page("/mat-vs-reformer-pilates", "Mat vs Reformer Pilates: Which Is Right for You? | Space Pilates Sanford",
-     "Mat vs reformer Pilates explained: cost, difficulty and which suits beginners. From Space Pilates, a mat-based studio in Downtown Sanford, FL.",
-     "Guide", "Mat vs Reformer Pilates.", "The honest difference, and how to choose.", body,
-     [{"@type": "Article", "headline": "Mat vs Reformer Pilates: Which Is Right for You?", "author": {"@type": "Person", "name": "Carey Caratini"},
-       "publisher": business_ref(), "datePublished": "2026-10-12", "mainEntityOfPage": SITE + "/mat-vs-reformer-pilates"},
-      faq_schema(guide_qas, "/mat-vs-reformer-pilates"), breadcrumb([("Home", "/"), ("Mat vs Reformer Pilates", "/mat-vs-reformer-pilates")])]))
+         [course, *schema_extra, breadcrumb([("Home", "/"), ("Classes", "/classes"), (c["name"], f"/classes/{k}")])]))
 
 # ---- /pilates-lake-mary
 lm_qas = [
@@ -338,4 +409,110 @@ built.append(page("/pilates-lake-mary", "Pilates Near Lake Mary, FL | Space Pila
      STUDIO, "Pilates near Lake Mary.", "A short drive up I-4 to Historic Downtown Sanford.", body,
      [business_ref(), faq_schema(lm_qas, "/pilates-lake-mary"), breadcrumb([("Home", "/"), ("Pilates near Lake Mary", "/pilates-lake-mary")])]))
 
+
+# ---- /learn/<slug> articles
+PILLAR_LABEL = {s: re.sub(r"[:|].*$", "", ARTICLES[s]["title"]).strip() for s in PILLARS}
+
+for slug, a in ARTICLES.items():
+    c = CLASSES[a["class"]]
+    pillar = a["pillar"]
+    crumbs = [("Home", "/"), ("Learn", "/learn")]
+    if pillar != slug:
+        crumbs.append((PILLAR_LABEL.get(pillar, ARTICLES[pillar]["title"]), f"/learn/{pillar}"))
+    crumbs.append((a["title"], f"/learn/{slug}"))
+    back = "" if pillar == slug else f'      <p>Part of the guide: <a href="/learn/{pillar}">{esc(ARTICLES[pillar]["title"])}</a></p>\n'
+    body = f"""      <p class="byline">{AUTHOR_LINE}</p>
+{a['html']}
+      <div class="cta-box">
+        <p><strong>Try it at Space.</strong> {esc(c['name'])}: {esc(c['short'].lower())}, {esc(c['length'])}. <a href="/classes/{a['class']}">About the class</a> &nbsp;·&nbsp; <a href="/intro">2 weeks unlimited for $69</a></p>
+      </div>
+{back}{related_html(a['related'])}"""
+    art = {"@type": "Article", "@id": f"{SITE}/learn/{slug}#article", "headline": a["title"], "description": a["description"],
+           "author": CAREY, "publisher": business_ref(), "datePublished": a.get("date", "2026-10-12"),
+           "dateModified": a.get("date", "2026-10-12"), "mainEntityOfPage": f"{SITE}/learn/{slug}",
+           "image": f"{SITE}/assets/og-cover.jpg", "wordCount": a["words"],
+           "about": {"@type": "Thing", "name": PILLAR_LABEL.get(pillar, a["title"])}}
+    schema = [art, breadcrumb(crumbs)]
+    if a["faq"]:
+        schema.append(faq_schema(a["faq"], f"/learn/{slug}"))
+    built.append(page(f"/learn/{slug}", f"{a['title']} | Space Pilates Sanford", a["description"],
+                      "Guide" if a["type"] == "pillar" else "Learn", a["title"], a["description"], body, schema))
+
+# ---- /learn hub
+START_HERE = [x for x in ["pilates-for-beginners", "what-to-wear-to-pilates", "how-often-should-you-do-pilates",
+                          "mat-vs-reformer-pilates"] if x in ARTICLES]
+sections = [related_html(START_HERE, "Start here")]
+for pslug in PILLARS:
+    members = [pslug] + sorted(x for x, a in ARTICLES.items() if a["pillar"] == pslug and x != pslug and x not in START_HERE)
+    sections.append(related_html(members, PILLAR_LABEL[pslug]))
+NEAR_YOU = """      <h2 class="related">Near you</h2>
+      <div class="card-list">
+        <a href="/pilates-lake-mary"><strong>Pilates near Lake Mary</strong><span>A short drive up I-4 to Historic Downtown Sanford.</span></a>
+        <a href="/classes"><strong>The four Space formats</strong><span>Pilates, Sculpt, Strength and Yoga, explained.</span></a>
+      </div>"""
+sections.append(NEAR_YOU)
+body = ("      <p>Guides on Pilates, yoga and strength from Space Pilates + Wellness Society in Historic Downtown Sanford. "
+        "Written by founder Carey Caratini, a Pilates instructor and licensed mental health therapist, with strength programming "
+        "from co-founder Adam Caratini (14 years coaching).</p>\n" + "\n".join(x for x in sections if x))
+built.append(page("/learn", "Learn: Pilates, Yoga & Strength Guides | Space Pilates Sanford",
+                  "Guides to the benefits of Pilates, yoga and strength training, beginner tips and how to choose a class, from Space Pilates in Sanford, FL.",
+                  STUDIO, "Learn.", "Pilates, yoga and strength, explained by the people who teach it.", body,
+                  [{"@type": "CollectionPage", "@id": SITE + "/learn#hub", "name": "Learn", "publisher": business_ref(),
+                    "hasPart": [{"@type": "Article", "headline": a["title"], "url": f"{SITE}/learn/{s}"} for s, a in ARTICLES.items()]},
+                   breadcrumb([("Home", "/"), ("Learn", "/learn")])]))
+
+# ---- patch the hand-written pages (idempotent): same destinations everywhere
+MENU_ITEMS = "\n".join(f'      <li><a href="{href}" class="menu-link">{label}</a></li>' for href, label in [
+    ("/", "Home"), ("/classes", "Classes"), ("/learn", "Learn"), ("/pricing", "Pricing"),
+    ("/book-now", "Book a Class"), ("/buy-now", "Memberships"), ("/team", "Meet the Team")])
+CARD_TARGET = {"PILATES": "pilates", "STRENGTH": "strength", "SCULPT": "sculpt", "YOGA": "yoga"}
+generated = set(built)
+for f in sorted(ROOT.glob("*.html")):
+    if f.stem in ("mariana-tools", "book-a-call", "waiver", "about") or f"/{f.stem}" in generated:
+        continue
+    s = o = f.read_text()
+    s = re.sub(r'(<ul class="menu-nav">\n).*?(\n    </ul>)', lambda m: m.group(1) + MENU_ITEMS + m.group(2), s, count=1, flags=re.S)
+    s = s.replace('<a class="nav-link" href="/about">The Studio</a>', NAV_LINKS)
+    footer = re.search(r'<div class="footer-links">.*?</div>', s, re.S)
+    if footer and 'href="/learn"' not in footer.group(0):
+        s = s.replace(footer.group(0), footer.group(0).replace('<a href="/classes">Classes</a>', '<a href="/classes">Classes</a>\n      <a href="/learn">Learn</a>', 1), 1)
+    if f.name == "index.html":
+        def card(m):
+            name = re.search(r'<span class="card-bold">(PILATES|STRENGTH|SCULPT|YOGA)</span>', m.group(0))
+            if not name:
+                return m.group(0)
+            target = f"/classes/{CARD_TARGET[name.group(1)]}"
+            label = f'aria-label="About Space {name.group(1).title()}"'
+            return re.sub(r'<a class="circle-arrow" href="[^"]*"( aria-label="[^"]*")?>', f'<a class="circle-arrow" href="{target}" {label}>', m.group(0), count=1)
+        s = re.sub(r'<div class="class-card .*?<a class="circle-arrow"[^>]*>', card, s, flags=re.S)
+    if s != o:
+        f.write_text(s)
+
+# ---- sitemap, llms.txt, routes
+SITEMAP = ["/", "/intro", "/classes", *[f"/classes/{k}" for k in CLASSES], "/pricing", "/learn",
+           *[f"/learn/{s}" for s in ARTICLES], "/pilates-lake-mary", "/team", "/book-now", "/buy-now"]
+(ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>2026-10-12</lastmod></url>\n" for u in SITEMAP) + "</urlset>\n")
+
+llms = (ROOT / "llms.txt").read_text()
+llms = re.sub(r"\n## Guides \(by Carey Caratini\)\n.*\Z", "", llms, flags=re.S).rstrip("\n") + "\n"
+llms = llms.replace(f"- [Mat vs reformer Pilates guide]({SITE}/mat-vs-reformer-pilates)\n", f"- [Learn: guides on Pilates, yoga and strength]({SITE}/learn)\n")
+llms += "\n## Guides (by Carey Caratini)\n" + "".join(f"- [{a['title']}]({SITE}/learn/{s}): {a['description']}\n" for s, a in ARTICLES.items())
+(ROOT / "llms.txt").write_text(llms)
+
+v = json.loads((ROOT / "vercel.json").read_text())
+LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)")
+routes = [r for r in v["routes"] if r.get("src") not in LEARN_SRCS]
+catch = routes.pop()
+assert catch.get("src") == "/(.*)", "catch-all route must stay last"
+routes.insert(0, {"src": "/mat-vs-reformer-pilates", "status": 301, "headers": {"Location": "/learn/mat-vs-reformer-pilates"}})
+routes += [{"src": "/learn", "dest": "/learn.html"}, {"src": "/learn/(?<slug>[a-z0-9-]+)", "dest": "/learn/$slug.html"}, catch]
+v["routes"] = routes
+(ROOT / "vercel.json").write_text(json.dumps(v, indent=2) + "\n")
+stale = ROOT / "mat-vs-reformer-pilates.html"
+if stale.exists():
+    stale.unlink()
+
 print("\n".join(built))
+import subprocess  # noqa: E402
+sys.exit(subprocess.call([sys.executable, str(ROOT / "tools" / "check-site.py")]))
