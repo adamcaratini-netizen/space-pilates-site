@@ -1,7 +1,8 @@
 import nodemailer from 'nodemailer';
 
-const GMAIL_USER = 'adam.caratini@gmail.com';
-const GMAIL_PASS = 'qsqm fkje vzze rhqa';
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_PASS = process.env.GMAIL_PASS;
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -27,10 +28,10 @@ export default async function handler(req, res) {
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:32px;color:#2C1A0F;background:#FDFAF6;">
           <h2 style="margin:0 0 24px;font-size:1.3rem;font-weight:400;">New Presale Signup — Space Pilates</h2>
           <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;font-weight:600;width:160px;">Name</td><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;">${name}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;font-weight:600;">Email</td><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;"><a href="mailto:${email}" style="color:#B8785A;">${email}</a></td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;font-weight:600;">Phone</td><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;">${phone || '—'}</td></tr>
-            <tr><td style="padding:10px 0;font-weight:600;">How they heard</td><td style="padding:10px 0;">${source || '—'}</td></tr>
+            <tr><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;font-weight:600;width:160px;">Name</td><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;">${esc(name)}</td></tr>
+            <tr><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;font-weight:600;">Email</td><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;"><a href="mailto:${esc(email)}" style="color:#B8785A;">${esc(email)}</a></td></tr>
+            <tr><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;font-weight:600;">Phone</td><td style="padding:10px 0;border-bottom:1px solid #E8D9CA;">${esc(phone) || '—'}</td></tr>
+            <tr><td style="padding:10px 0;font-weight:600;">How they heard</td><td style="padding:10px 0;">${esc(source) || '—'}</td></tr>
           </table>
           <p style="margin-top:32px;font-size:0.75rem;color:#A07B62;">Space Pilates + Wellness Society — spacepilatesandwellness.com</p>
         </div>

@@ -1,7 +1,8 @@
 import nodemailer from 'nodemailer';
 
-const GMAIL_USER = 'adam.caratini@gmail.com';
-const GMAIL_PASS = 'qsqm fkje vzze rhqa';
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_PASS = process.env.GMAIL_PASS;
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -43,18 +44,18 @@ export default async function handler(req, res) {
             <tr style="background:#f0ede8;">
               <td colspan="2" style="padding:10px 14px;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4a4440;">Participant</td>
             </tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Full Name</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${fullName}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;"><a href="mailto:${email}" style="color:#4a4440;">${email}</a></td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;">Phone</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${phone || '—'}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;">Date of Birth</td><td style="padding:10px 14px;">${dob || '—'}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Full Name</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${esc(fullName)}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;">Email</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;"><a href="mailto:${esc(email)}" style="color:#4a4440;">${esc(email)}</a></td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;">Phone</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${esc(phone) || '—'}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;">Date of Birth</td><td style="padding:10px 14px;">${esc(dob) || '—'}</td></tr>
           </table>
 
           <table style="width:100%;border-collapse:collapse;margin-bottom:28px;">
             <tr style="background:#f0ede8;">
               <td colspan="2" style="padding:10px 14px;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4a4440;">Emergency Contact</td>
             </tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Name</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${emergencyName || '—'}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;">Phone</td><td style="padding:10px 14px;">${emergencyPhone || '—'}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Name</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${esc(emergencyName) || '—'}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;">Phone</td><td style="padding:10px 14px;">${esc(emergencyPhone) || '—'}</td></tr>
           </table>
 
           <table style="width:100%;border-collapse:collapse;margin-bottom:28px;">
@@ -62,16 +63,16 @@ export default async function handler(req, res) {
               <td colspan="2" style="padding:10px 14px;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4a4440;">Health & Consent</td>
             </tr>
             <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Medical Conditions</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${medicalConditions === 'yes' ? 'Yes — see details' : 'None reported'}</td></tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;">Medical Details</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${medicalDetails || '—'}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;">Photo/Video Release</td><td style="padding:10px 14px;">${photoText}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;">Medical Details</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;">${esc(medicalDetails) || '—'}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;">Photo/Video Release</td><td style="padding:10px 14px;">${esc(photoText)}</td></tr>
           </table>
 
           <table style="width:100%;border-collapse:collapse;margin-bottom:28px;">
             <tr style="background:#f0ede8;">
               <td colspan="2" style="padding:10px 14px;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4a4440;">Signature</td>
             </tr>
-            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Electronic Signature</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-style:italic;font-size:1.1rem;">${signature}</td></tr>
-            <tr><td style="padding:10px 14px;font-weight:600;">Signed At</td><td style="padding:10px 14px;">${signedAt || new Date().toISOString()}</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-weight:600;width:180px;">Electronic Signature</td><td style="padding:10px 14px;border-bottom:1px solid #e8e0d8;font-style:italic;font-size:1.1rem;">${esc(signature)}</td></tr>
+            <tr><td style="padding:10px 14px;font-weight:600;">Signed At</td><td style="padding:10px 14px;">${esc(signedAt || new Date().toISOString())}</td></tr>
           </table>
 
           <p style="margin-top:32px;font-size:0.72rem;color:#9a938c;line-height:1.7;">
