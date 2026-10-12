@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn More — Space Pilates + Wellness Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <!-- Mariana Tek Connect Form -->
+  <script type="application/javascript" src="https://forms.prd.xplorcs.com/assets/embed/xpl-form-api.js"></script>
+  <link href="https://forms.prd.xplorcs.com/assets/embed/embed.css" rel="stylesheet" type="text/css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf8f4;
+      --text-dark: #1a1614;
+      --text-mid: #4a4540;
+      --text-light: #9a9390;
+      --line: rgba(26,22,20,0.1);
+    }
+    html, body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      min-height: 100dvh;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 28px;
+      background: rgba(250,248,244,0.96); backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--line);
+    }
+    .nav-logo img { height: 28px; width: auto; display: block; }
+    .nav-back {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .nav-back:hover { color: var(--text-dark); }
+    .nav-back svg { width: 14px; height: 14px; }
+
+    /* MAIN */
+    main {
+      min-height: 100dvh;
+      padding: 100px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-header {
+      text-align: center;
+      max-width: 520px;
+      margin-bottom: 44px;
+    }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 16px;
+    }
+    .page-heading {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.1; color: var(--text-dark); margin-bottom: 16px;
+    }
+    .page-heading em { font-style: italic; }
+    .page-sub {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.85;
+      color: var(--text-mid);
+    }
+
+    /* FORM WRAPPER */
+    .form-wrap {
+      width: 100%; max-width: 480px;
+    }
+
+    /* MT FORM OVERRIDES — cream bg context */
+    #bb_form { display: flex; flex-direction: column; gap: 14px; }
+    #bb_form .form-group { margin-bottom: 0; }
+    #bb_form .form-group label { display: none; }
+    #bb_form .bb-name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 520px) { #bb_form .bb-name-row { grid-template-columns: 1fr; } }
+    #bb_form .form-control {
+      font-family: 'IBM Plex Sans', sans-serif !important; font-size: 1rem !important; font-weight: 300 !important;
+      color: var(--text-dark) !important; background: #fff !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 14px !important; padding: 18px 22px !important;
+      outline: none !important; -webkit-appearance: none; appearance: none;
+      transition: border-color 0.2s; width: 100% !important;
+      box-shadow: none !important;
+    }
+    #bb_form .form-control:focus { border-color: rgba(26,22,20,0.35) !important; outline: none !important; box-shadow: none !important; }
+    #bb_form .form-control::placeholder { color: rgba(26,22,20,0.3); }
+    #bb_form .bb-consent > div { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.78rem; font-weight: 300; line-height: 1.65; color: var(--text-mid); text-align: left; }
+    #bb_form input[type="checkbox"] { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; accent-color: var(--text-dark); cursor: pointer; }
+    #bb_form .bb-submit { display: flex; justify-content: center; margin-top: 8px; }
+    #bb_form .btn {
+      display: inline-flex !important; align-items: center !important; justify-content: center !important;
+      font-family: 'IBM Plex Sans', sans-serif !important; font-size: 0.6rem !important; font-weight: 700 !important;
+      letter-spacing: 0.16em !important; text-transform: uppercase !important;
+      color: var(--cream) !important;
+      background: var(--text-dark) !important;
+      border: none !important;
+      border-radius: 50px !important; padding: 18px 52px !important;
+      cursor: pointer !important; transition: opacity 0.2s !important;
+      width: auto !important;
+    }
+    #bb_form .btn:hover:not(:disabled) { opacity: 0.8 !important; }
+    #bb_form .btn:disabled { opacity: 0.5 !important; cursor: default !important; }
+    #alert { border-radius: 12px; margin-bottom: 4px; font-size: 0.88rem; font-weight: 300; line-height: 1.6; }
+    #alert.alert-danger, #alert.alert-error {
+      padding: 14px 18px !important;
+      background: rgba(200,80,80,0.07) !important; border: 1px solid rgba(200,80,80,0.25) !important;
+      color: var(--text-dark) !important;
+    }
+
+    /* SUCCESS STATE */
+    .success-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 32px; padding: 8px 0;
+      animation: fadeUp 0.5s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .success-check {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #fff; border: 1.5px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--text-dark);
+    }
+    .success-text { text-align: center; }
+    .success-headline {
+      font-family: 'Lora', serif; font-weight: 500; font-style: italic;
+      font-size: 1.6rem; color: var(--text-dark); margin-bottom: 10px;
+    }
+    .success-sub {
+      font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* SCHEDULER CARD */
+    .scheduler-card {
+      width: 100%; background: #fff; border: 1px solid var(--line);
+      border-radius: 20px; padding: 32px 28px; text-align: center;
+    }
+    .scheduler-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 12px;
+    }
+    .scheduler-heading {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: 1.25rem; line-height: 1.3; color: var(--text-dark); margin-bottom: 10px;
+    }
+    .scheduler-sub {
+      font-size: 0.85rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); margin-bottom: 24px;
+    }
+    .scheduler-btn {
+      display: inline-block;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--cream);
+      background: var(--text-dark);
+      padding: 16px 44px; border-radius: 50px;
+      transition: opacity 0.2s;
+    }
+    .scheduler-btn:hover { opacity: 0.8; }
+    .scheduler-note {
+      margin-top: 14px;
+      font-size: 0.75rem; font-weight: 300; color: var(--text-light);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      .scheduler-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-back" href="/">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 2L4 7l5 5"/>
+      </svg>
+      Back to site
+    </a>
+    <div style="width:80px"></div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <p class="page-eyebrow">Learn More</p>
+      <h1 class="page-heading">Have questions?<br><em>We'd love to help.</em></h1>
+      <p class="page-sub">Drop your info below and we'll reach out to answer your questions and help you find the right fit.</p>
+    </div>
+
+    <div class="form-wrap">
+      <form method="post" action="https://api.prd.xplorcs.com/forms-v2/forms/answers" onsubmit="onXplFormSubmit(event)" name="c3ed2f7d-870c-4db4-98f9-c9d7f1adf38d" id="bb_form">
+        <div id="alert"></div>
+        <input type="hidden" name="uuid" id="bb_uuid" value="c3ed2f7d-870c-4db4-98f9-c9d7f1adf38d" style="display:none;">
+        <div class="bb-name-row">
+          <div class="form-group"><label for="bb_first_name">First Name</label><div><input class="form-control" type="text" name="first_name" id="bb_first_name" placeholder="First Name" required></div></div>
+          <div class="form-group"><label for="bb_last_name">Last Name</label><div><input class="form-control" type="text" name="last_name" id="bb_last_name" placeholder="Last Name" required></div></div>
+        </div>
+        <div class="form-group"><label for="bb_email">Email Address</label><div><input class="form-control" type="email" name="email" id="bb_email" placeholder="Email Address" required></div></div>
+        <div class="form-group"><label for="bb_phone">Phone Number</label><div><input class="form-control" type="tel" name="phone" id="bb_phone" placeholder="Phone Number" required></div></div>
+        <div class="form-group bb-consent"><label for="bb_opt_in_email">Email Marketing Consent Checkbox</label><div><input type="checkbox" name="opt_in_email" id="bb_opt_in_email" placeholder="bb_opt_in_email" value="By selecting this option, you agree to receive marketing communications via email"> By selecting this option, you agree to receive marketing communications via email.</div></div>
+        <div class="form-group bb-consent"><label for="bb_opt_in_sms">Text Marketing Consent Checkbox</label><div><input type="checkbox" name="opt_in_sms" id="bb_opt_in_sms" placeholder="bb_opt_in_sms" value="By selecting this option, you agree to receive marketing communications via sms"> By selecting this option, you agree to receive marketing communications via SMS.</div></div>
+        <div class="form-group bb-submit"><button type="submit" class="btn" id="bb_submit" style="background-color:transparent;">Send my info</button></div>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" defer>
+    const FormServiceURL = 'https://api.prd.xplorcs.com/forms-v2/forms';
+    const formUuid = 'c3ed2f7d-870c-4db4-98f9-c9d7f1adf38d';
+    const formElement = document.forms[formUuid];
+    const formContainer = new XplFormContainer(FormServiceURL);
+    const loadRecaptcha = (formConfig) => {
+      const { template } = formConfig;
+      if (!template.use_recaptcha) return;
+      const advanced = !!template.advanced_recaptcha;
+      const key = advanced
+        ? template.recaptcha_v2_key || template.recaptcha_key
+        : template.recaptcha_key;
+      if (!key) return;
+      XplFormAPI.loadRecaptchaScript(key, { advanced });
+      if (advanced) XplFormAPI.mountRecaptchaV2(formElement, key);
+    };
+    formContainer.load(formUuid).then(loadRecaptcha);
+
+    const initSignatureCanvas = () => {
+      const canvas = document.getElementById('bb_signature_canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.strokeStyle = '#000'; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      let isDrawing = false, lastX = 0, lastY = 0;
+      const getCoordinates = (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return { x: Math.max(0, Math.min((clientX - rect.left) * scaleX, canvas.width)), y: Math.max(0, Math.min((clientY - rect.top) * scaleY, canvas.height)) };
+      };
+      const startDrawing = (e) => { e.preventDefault(); isDrawing = true; const c = getCoordinates(e); lastX = c.x; lastY = c.y; };
+      const draw = (e) => { if (!isDrawing) return; e.preventDefault(); const c = getCoordinates(e); ctx.beginPath(); ctx.moveTo(lastX, lastY); ctx.lineTo(c.x, c.y); ctx.stroke(); lastX = c.x; lastY = c.y; };
+      const stopDrawing = (e) => {
+        e.preventDefault(); isDrawing = false;
+        const form = canvas.closest('form') || document.getElementById('bb_form');
+        if (!form) return;
+        let sig = form.querySelector('input[name="signature_data"]');
+        if (!sig) { sig = document.createElement('input'); sig.type = 'hidden'; sig.name = 'signature_data'; form.appendChild(sig); }
+        sig.value = canvas.toDataURL();
+      };
+      window.clearSignature = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const form = canvas.closest('form') || document.getElementById('bb_form');
+        if (form) { const sig = form.querySelector('input[name="signature_data"]'); if (sig) sig.value = ''; }
+      };
+      canvas.addEventListener('mousedown', startDrawing); canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDrawing); canvas.addEventListener('mouseout', stopDrawing);
+      canvas.addEventListener('touchstart', startDrawing); canvas.addEventListener('touchmove', draw);
+      canvas.addEventListener('touchend', stopDrawing);
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSignatureCanvas);
+    else setTimeout(initSignatureCanvas, 100);
+
+    window.onXplFormLocationChange = (selectElement) => formContainer.load(selectElement.value);
+    window.onXplFormSubmit = async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const form = new XplFormAPI(FormServiceURL, event.target, formContainer);
+      const recaptchaKey = form.getRecaptchaKey();
+      if (!recaptchaKey) { form.submit(); return; }
+      if (form.usesAdvancedRecaptcha()) {
+        const token = XplFormAPI.getRecaptchaV2Response(event.target);
+        if (!token) { form.showErrorAlert('Please complete the reCAPTCHA challenge.'); return; }
+        try { await form.submit(token, form.getAdvancedRecaptchaKey()); }
+        finally { XplFormAPI.resetRecaptchaV2(event.target); }
+        return;
+      }
+      window.grecaptcha.ready(() =>
+        window.grecaptcha.execute(recaptchaKey, { action: 'submit' }).then((r) => form.submit(r))
+      );
+    };
+
+    // Watch for MT success, swap in 2-step confirmation + scheduler
+    const alertEl = document.getElementById('alert');
+    const formEl  = document.getElementById('bb_form');
+    const formWrap = formEl ? formEl.closest('.form-wrap') : null;
+    const pageHeader = document.querySelector('.page-header');
+
+    if (alertEl && formEl && formWrap) {
+      new MutationObserver((_, obs) => {
+        const text = (alertEl.textContent || '').trim();
+        if (!text) return;
+        obs.disconnect();
+        const isError = /danger|error/i.test(alertEl.className);
+        if (isError) {
+          const btn = document.getElementById('bb_submit');
+          if (btn) { btn.disabled = false; btn.textContent = 'Send my info'; }
+        } else {
+          // Fade out header + form, replace with success + scheduler
+          if (pageHeader) {
+            pageHeader.style.transition = 'opacity 0.3s ease';
+            pageHeader.style.opacity = '0';
+          }
+          formEl.style.transition = 'opacity 0.3s ease';
+          formEl.style.opacity = '0';
+          setTimeout(() => {
+            if (pageHeader) pageHeader.style.display = 'none';
+            formWrap.innerHTML = `
+              <div class="success-wrap">
+                <div class="success-check">&#10003;</div>
+                <div class="success-text">
+                  <p class="success-headline">We got you.</p>
+                  <p class="success-sub">Your info is in — we'll be in touch soon.<br>In the meantime, you can skip the back-and-forth<br>and grab a time that works for you right now.</p>
+                </div>
+                <div class="scheduler-card">
+                  <p class="scheduler-label">Optional Next Step</p>
+                  <p class="scheduler-heading">Want to pick a time now?</p>
+                  <p class="scheduler-sub">It's a free 15-minute call. We'll answer your questions and help you figure out the best fit.</p>
+                  <a class="scheduler-btn" href="https://calendar.app.google/v2P7rP4Z98VfqT7Y8" target="_blank" rel="noopener">Pick a time</a>
+                  <p class="scheduler-note">Opens Google Calendar &mdash; takes about 30 seconds.</p>
+                </div>
+              </div>
+            `;
+          }, 320);
+        }
+      }).observe(alertEl, { childList: true, subtree: true, characterData: true, attributes: true });
+    }
+  </script>
+
+</body>
+</html>

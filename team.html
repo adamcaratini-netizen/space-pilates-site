@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>Meet the Team — Space Pilates + Wellness Society</title>
+  <meta name="description" content="Meet the instructors behind Space Pilates + Wellness Society — a team built around movement, intention, and whole-person wellness." />
+  <meta property="og:title" content="Meet the Team — Space Pilates + Wellness Society" />
+  <meta property="og:description" content="Meet the instructors behind Space Pilates + Wellness Society." />
+  <meta property="og:image" content="https://spacepilatesandwellness.com/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://spacepilatesandwellness.com/team" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-link {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.15s; }
+    .reveal-delay-3 { transition-delay: 0.2s; }
+    .reveal-delay-4 { transition-delay: 0.25s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 100px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-subtitle {
+      margin-top: 32px; max-width: 520px;
+      font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 60px;
+    }
+
+    /* ─── FOUNDER FEATURE ─── */
+    .founder { padding: 80px 40px 0; border-bottom: 1px solid var(--line); }
+    .founder-inner { max-width: 680px; margin: 0 auto; padding-bottom: 80px; text-align: center; }
+    .founder-layout { display: flex; flex-direction: column; align-items: center; }
+    .founder-photo-wrap {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      background: var(--line);
+      margin-bottom: 32px;
+    }
+    .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .founder-text { width: 100%; }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .founder-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 28px;
+    }
+    .founder-bio {
+      font-size: 0.92rem; font-weight: 300; line-height: 1.95; color: var(--text-mid); text-align: left;
+    }
+    .founder-bio p + p { margin-top: 18px; }
+
+    /* ─── TEAM GRID ─── */
+    .instructors { padding: 80px 40px 100px; }
+    .instructors-inner { max-width: 1100px; margin: 0 auto; }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 72px;
+      align-items: start;
+    }
+
+    /* ─── ARCHED PHOTO — instructors ─── */
+    .instructor-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      margin-bottom: 20px;
+      background: var(--line);
+    }
+    .instructor-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .instructor-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px;
+    }
+    .instructor-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block;
+    }
+    .instructor-bio {
+      margin-top: 16px;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 120px 40px; text-align: center;
+    }
+    .closing-cta-inner { max-width: 600px; margin: 0 auto; }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark); padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fce8ec; padding: 48px 40px; text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .page-header { padding: 130px 24px 72px; }
+      .instructors { padding: 60px 24px 80px; }
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div></div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" /></a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="/about">The Studio</a>
+      <a class="nav-cta" href="/#join">Join the Society</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Space Pilates + Wellness Society</span>
+      <h1 class="page-title">The Team.</h1>
+      <p class="page-subtitle">The people who show up everyday to hold the room. Different instructors. Same space standard.</p>
+    </div>
+  </header>
+
+  <!-- FOUNDER FEATURE -->
+  <section class="founder">
+    <div class="founder-inner">
+      <div class="founder-layout reveal">
+        <div class="founder-photo-wrap">
+          <img class="founder-photo" src="assets/carey-new.jpg" alt="Carey Caratini" />
+        </div>
+        <div class="founder-text" style="width:100%;">
+          <h2 class="founder-name">Carey Caratini</h2>
+          <span class="founder-role">Founder &nbsp;·&nbsp; Instructor &nbsp;·&nbsp; Mental Health Therapist</span>
+          <div class="founder-bio">
+            <p>Carey is the founder of SPACE Pilates + Wellness, a NASM certified personal trainer, Pilates instructor, and licensed mental health therapist. With a Master's degree in Clinical Mental Health Counseling, she has always believed that feeling good goes way beyond a workout. Her approach to wellness is all about movement, mindset, connection, and finding ways to take care of yourself that actually fit into real life.</p>
+            <p>Her classes are upbeat, challenging, and full of personality. You'll hear a lot of hip hop and dance remixes, probably laugh at least once, and definitely leave feeling stronger than when you walked in.</p>
+            <p>Carey created SPACE to be more than a place to work out. It's a place to get stronger, connect with good people, and make a little more space for yourself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM GRID -->
+  <section class="instructors">
+    <div class="instructors-inner">
+      <div class="instructors-grid">
+
+        <!-- ADAM -->
+        <div class="reveal">
+          <div class="instructor-photo-wrap">
+            <img class="instructor-photo" src="assets/adam-new.jpg" alt="Adam Caratini" loading="lazy" />
+          </div>
+          <p class="instructor-name">Adam Caratini</p>
+          <span class="instructor-role">Co-Founder &nbsp;·&nbsp; Instructor</span>
+          <p class="instructor-bio">Adam is a fitness professional with 14 years of experience helping people get stronger, move better, and build confidence in what their bodies can do. His background spans strength and conditioning, functional fitness, personal training, and nutrition — with certifications including CrossFit Level 2, OPEX CCP, NASM CPT, Nutrition Coach, and Pain Free Performance Specialist.
+
+His coaching style is intentional, energetic, and built around making people move a little more and feel a lot more capable. Expect smart programming, clear coaching, plenty of encouragement, and workouts that meet you where you are while still pushing you a little further.
+
+You'll find Adam mostly coaching TRAIN, where he brings his strength and functional fitness background into the SPACE method. Expect good music, questionable jokes, and a class that leaves you feeling strong and accomplished.</p>
+        </div>
+
+        <!-- SHERRELL -->
+        <div class="reveal reveal-delay-1">
+          <div class="instructor-photo-wrap">
+            <img class="instructor-photo" src="assets/sherrell.jpg" alt="Sherrell" loading="lazy" />
+          </div>
+          <p class="instructor-name">Sherrell</p>
+          <span class="instructor-role">Instructor</span>
+          <p class="instructor-bio">Sherrell is a 500-hour comprehensively trained and nationally certified Pilates teacher with over eight years of experience in the fitness industry. She's also a certified Health Coach, and her background has shaped her belief that movement should not only challenge the body, but help you feel stronger, more confident, and connected to yourself.
+
+Her teaching style is energetic, encouraging, and intentional. She loves creating classes that challenge you while still making movement feel approachable and fun. Expect clear guidance, plenty of personality, and a class that leaves you feeling accomplished and maybe a little surprised by what your body can do.
+
+And the playlist matters — her classes are powered by a mix of hip-hop, R&B, and Caribbean vibes. Expect good music, good energy, and a workout that keeps you moving from start to finish.</p>
+        </div>
+
+        <!-- JAYSON -->
+        <div class="reveal reveal-delay-2">
+          <div class="instructor-photo-wrap">
+            <img class="instructor-photo" src="assets/jayson.jpg" alt="Jayson" loading="lazy" />
+          </div>
+          <p class="instructor-name">Jayson</p>
+          <span class="instructor-role">Instructor</span>
+          <p class="instructor-bio">Jayson is a certified Pilates instructor and NASM certified personal trainer. After nearly a decade in New York City working in the fashion industry, he returned home to DeLand and found a new passion in Pilates and fitness.
+
+He completed 350+ hours of comprehensive Pilates training through the Pilates Education Institute — including Mat and Reformer — plus Merrithew's Total Barre Foundations. His teaching style focuses on building strength through controlled, purposeful movement with an emphasis on clear cueing and proper form.
+
+Expect thoughtful programming, plenty of encouragement, and a good playlist to keep the energy up. Outside the studio, Jayson enjoys tennis, reading, and spending time with his French Bulldog, Oliver.</p>
+        </div>
+
+        <!-- JENNY -->
+        <div class="reveal">
+          <div class="instructor-photo-wrap">
+            <img class="instructor-photo" src="assets/jenny.jpg" alt="Jenny" loading="lazy" />
+          </div>
+          <p class="instructor-name">Jenny</p>
+          <span class="instructor-role">Instructor</span>
+          <p class="instructor-bio">Jenny is an RYT 200 Yoga Alliance registered yoga teacher with training in Vinyasa, Hatha, Chair, Adaptive and Inclusive yoga practices. Her classes are rooted in alignment, breath, and self-discovery — inviting students to slow down and turn inward, allowing the body to be the teacher and the breath to be the guide.
+
+She creates space to explore the practice from the inside out, building strength and mobility while honoring what the body needs in the moment, before gradually moving toward stillness, release, and the deep rest of savasana.
+
+Expect a grounded, welcoming practice with space for curiosity and ease. Her music is meditative and mantra-inspired, weaving in artists like Janet Stone, Satsang, and MC Yogi to complement the journey on the mat.</p>
+        </div>
+
+        <!-- CAMRYN -->
+        <div class="reveal reveal-delay-1">
+          <div class="instructor-photo-wrap">
+            <img class="instructor-photo" src="assets/camryn.jpg" alt="Camryn" loading="lazy" />
+          </div>
+          <p class="instructor-name">Camryn</p>
+          <span class="instructor-role">Instructor</span>
+          <p class="instructor-bio">Camryn is a certified Pilates instructor with a passion for intentional movement, mindful strength, and wellness. Her approach is rooted in the foundations of classical Pilates while bringing a fresh, contemporary feel to each class. She believes movement is an opportunity to connect with your body, quiet the mind, and build strength from within.
+
+Her teaching style is intentional, encouraging, and energizing. Expect thoughtful sequencing, purposeful movement, and plenty of encouragement throughout.
+
+Her playlist keeps things fun — nostalgic throwbacks, pop, R&B, and a little bit of everything in between. Her goal is for every class to leave you feeling stronger, more grounded, and connected to yourself.</p>
+        </div>
+
+        <!-- ALEJANDRA -->
+        <div class="reveal reveal-delay-2">
+          <div class="instructor-photo-wrap">
+            <img class="instructor-photo" src="assets/alejandra.jpg" alt="Alejandra" loading="lazy" />
+          </div>
+          <p class="instructor-name">Alejandra</p>
+          <span class="instructor-role">Instructor</span>
+          <p class="instructor-bio">Alejandra is a certified Pilates instructor whose love for Pilates began in Miami and quickly grew into a passion for creating classes that make people feel strong, confident, and connected to their bodies. Her teaching style is energetic, intentional, and challenging — with a focus on controlled movement, form, and that signature shake.
+
+She loves creating an atmosphere where you can push yourself, have fun, and leave feeling accomplished, no matter where you are in your Pilates journey.
+
+Expect a club scene. Her music is a box full of surprises — she really will play it all. Lots of encouragement, a few laughs, and a class that will have you coming back for another one.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/#join">Join the Society</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--cream); border-top: 1px solid var(--line);">
+    <div class="footer-logo">
+      <img src="assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">Downtown Sanford, FL — Historic District<br>Steps from 1st Street &amp; Park Avenue<br>Opening September 2026<br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/about">The Studio</a>
+      <a href="/team">The Team</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>

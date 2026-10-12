@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <title>2-Week Intro - $69 | Space Pilates + Wellness Society</title>
+  <meta name="description" content="Two weeks of unlimited classes in Downtown Sanford for $69. A special intro offer for new members at Space Pilates + Wellness Society." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Mariana Tek -->
+  <script type="application/javascript" src="https://forms.prd.xplorcs.com/assets/embed/xpl-form-api.js"></script>
+  <link href="https://forms.prd.xplorcs.com/assets/embed/embed.css" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/assets/hero-studio.jpg" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:     #faf8f4;
+      --white:     #ffffff;
+      --dark:      #1a1614;
+      --text-mid:  #4a4440;
+      --text-light:#9a938c;
+      --line:      #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--dark);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO ───
+       Let the baked-in SPACE logo be the visual.
+       Keep text minimal at the very bottom so nothing overlaps.
+       On desktop: constrain to natural image aspect ratio so the baked-in
+       SPACE logo stays proportional and doesn't dominate the viewport. */
+    .hero {
+      width: 100%;
+      aspect-ratio: 1280 / 853;
+      max-height: 92vh;
+      background: url('/assets/hero-studio.jpg') center center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle bottom vignette only */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.3) 100%);
+      pointer-events: none;
+    }
+    .hero-nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 40px;
+    }
+    .hero-logo img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+    .hero-nav-cta {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: transparent;
+      padding: 10px 26px;
+      border-radius: 50px;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .hero-nav-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      padding: 1.5px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.3));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .hero-nav-cta:hover { background: rgba(255,255,255,0.12); }
+
+    /* Bottom center — single CTA only, clear of the baked-in subtitle */
+    .hero-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 4%;
+      text-align: center;
+    }
+
+    /* Gradient pill - exact match to main site */
+    .gradient-pill {
+      display: inline-block;
+      position: relative;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: transparent;
+      padding: 13px 36px;
+      border-radius: 50px;
+      transition: background 0.2s;
+    }
+    .gradient-pill::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      padding: 1.5px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.75), rgba(255,255,255,0.3));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(255,255,255,0.12); }
+
+    /* Dark pill for cream sections */
+    .pill-dark {
+      display: inline-block;
+      position: relative;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dark);
+      background: transparent;
+      padding: 13px 36px;
+      border-radius: 50px;
+      transition: background 0.2s;
+    }
+    .pill-dark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      padding: 1.5px;
+      background: linear-gradient(90deg, rgba(26,22,20,0.5), rgba(26,22,20,0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .pill-dark:hover { background: rgba(26,22,20,0.06); }
+
+    /* ─── SHARED ─── */
+    .eyebrow {
+      display: block;
+      font-size: 0.56rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 14px;
+    }
+    .inner { max-width: 1100px; margin: 0 auto; }
+
+    /* ─── OFFER ─── */
+    .offer {
+      background: var(--cream);
+      padding: 96px 48px 80px;
+      text-align: center;
+    }
+    .offer-h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 500;
+      line-height: 1.08;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    .offer-h2 em { font-style: italic; font-weight: 400; }
+    .offer-big-price {
+      font-family: 'Lora', serif;
+      font-size: clamp(3.5rem, 10vw, 6rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .offer-tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 400;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .offer-sub {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-light);
+      margin-bottom: 36px;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials {
+      background: var(--white);
+      padding: 96px 48px;
+    }
+    .t-head { margin-bottom: 48px; }
+    .t-h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .t-h2 em { font-style: italic; font-weight: 400; }
+    .t-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .tcard {
+      background: var(--cream);
+      border-radius: 24px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .stars { display: flex; gap: 3px; }
+    .star { width: 13px; height: 13px; fill: var(--dark); }
+    .tcard-text {
+      font-size: 0.87rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-mid);
+      flex: 1;
+    }
+    .tcard-name {
+      font-size: 0.54rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* ─── FEATURES ─── */
+    .features {
+      background: var(--cream);
+      padding: 96px 48px;
+    }
+    .features-inner {
+      max-width: 680px;
+    }
+    .feat-h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 500; line-height: 1.15;
+      margin-bottom: 32px;
+    }
+    .feat-h2 em { font-style: italic; font-weight: 400; }
+    .feat-list { display: flex; flex-direction: column; gap: 24px; }
+    .feat-item { display: flex; align-items: flex-start; gap: 16px; }
+    .feat-check {
+      flex-shrink: 0; width: 26px; height: 26px;
+      border-radius: 50%; border: 1.5px solid rgba(26,22,20,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .feat-check svg { width: 11px; height: 11px; stroke: var(--dark); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .feat-text { font-size: 0.9rem; font-weight: 300; line-height: 1.65; color: var(--text-mid); }
+    .feat-text strong { font-weight: 600; color: var(--dark); }
+    .feat-cta { margin-top: 36px; }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--white); padding: 96px 48px; }
+    .faq-h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500; line-height: 1.1;
+      margin-bottom: 52px;
+    }
+    .faq-h2 em { font-style: italic; font-weight: 400; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 64px; }
+    .faq-item { border-top: 1px solid var(--line); padding-top: 22px; }
+    .faq-q { font-family: 'Lora', serif; font-size: 0.92rem; font-weight: 500; color: var(--dark); line-height: 1.4; margin-bottom: 9px; }
+    .faq-a { font-size: 0.8rem; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
+    .faq-a a { color: var(--dark); font-weight: 500; }
+
+    /* ─── FORM SECTION ─── */
+    /* Matches the main site's join form section */
+    .form-section {
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, #f0ece6 0%, #e8e0d6 50%, #ddd8d0 100%);
+      padding: 96px 48px;
+      text-align: center;
+      scroll-margin-top: 40px;
+    }
+    .form-section::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(200,190,175,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 80%, rgba(180,170,155,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.3) 0%, transparent 70%);
+    }
+    .form-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
+    .form-h2 {
+      font-family: 'Lora', serif; font-style: italic; font-weight: 400;
+      font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.1;
+      color: var(--dark); margin-bottom: 12px;
+    }
+    .form-sub {
+      font-size: 0.9rem; font-weight: 300; color: var(--text-mid);
+      line-height: 1.8; margin-bottom: 40px;
+      max-width: 400px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ── Mariana Tek form overrides - match main site styling ── */
+    #bb_form { display: flex; flex-direction: column; gap: 14px; }
+    #bb_form .form-group { margin-bottom: 0; }
+    #bb_form .form-group label { display: none; }
+    #bb_form .form-control {
+      font-family: 'IBM Plex Sans', sans-serif !important;
+      font-size: 1rem !important; font-weight: 300 !important;
+      color: var(--dark) !important;
+      background: rgba(255,255,255,0.65) !important;
+      border: 1px solid rgba(255,255,255,0.8) !important;
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      border-radius: 14px !important; padding: 18px 22px !important;
+      outline: none !important; -webkit-appearance: none; appearance: none;
+      transition: background 0.2s, border-color 0.2s;
+      width: 100% !important; box-shadow: none !important;
+    }
+    #bb_form .form-control:focus {
+      background: rgba(255,255,255,0.9) !important;
+      border-color: rgba(180,160,200,0.55) !important;
+      outline: none !important; box-shadow: none !important;
+    }
+    #bb_form .form-control::placeholder { color: rgba(26,22,20,0.3); }
+    #bb_form .bb-consent > div { display: flex; align-items: flex-start; gap: 10px; font-size: 0.78rem; font-weight: 300; line-height: 1.65; color: var(--text-mid); text-align: left; }
+    #bb_form input[type="checkbox"] { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; accent-color: var(--text-dark); cursor: pointer; }
+    #bb_form .form-group:last-of-type { display: flex; justify-content: center; margin-top: 12px; }
+    #bb_form .btn {
+      font-family: 'IBM Plex Sans', sans-serif !important;
+      font-size: 0.6rem !important; font-weight: 700 !important;
+      letter-spacing: 0.16em !important; text-transform: uppercase !important;
+      color: var(--dark) !important;
+      background: rgba(255,255,255,0.4) !important;
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(26,22,20,0.3) !important;
+      border-radius: 50px !important;
+      padding: 14px 44px !important;
+      cursor: pointer !important;
+      transition: background 0.2s, border-color 0.2s !important;
+      width: auto !important;
+    }
+    #bb_form .btn:hover { background: rgba(255,255,255,0.65) !important; border-color: rgba(26,22,20,0.5) !important; }
+    #alert { border-radius: 12px; margin-bottom: 4px; font-size: 0.88rem; font-weight: 300; line-height: 1.6; }
+    #alert.alert-danger, #alert.alert-error {
+      padding: 14px 18px !important;
+      background: rgba(200,80,80,0.08) !important;
+      border: 1px solid rgba(200,80,80,0.2) !important;
+      color: var(--dark) !important;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      padding: 40px 48px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .footer-logo img { height: 40px; width: auto; opacity: 0.75; }
+    .footer-addr { font-size: 0.54rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-light); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.54rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: 1fr; gap: 48px; }
+      .circle-graphic { width: 200px; height: 200px; }
+      .t-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (max-width: 640px) {
+      /* On mobile: let it breathe, footer hidden below */
+      .hero { max-height: none; }
+      .hero-nav { padding: 16px 20px; align-items: flex-start; }
+      .hero-logo img { height: 22px; }
+      .hero-back { display: none; }
+      /* Hide hero footer on mobile - CTA lives in the offer section instead */
+      .hero-footer { display: none; }
+      /* Bump up offer section on mobile to be the first action point */
+      .offer { padding-top: 56px; padding-bottom: 48px; }
+      .offer, .testimonials, .features, .faq, .form-section { padding-left: 24px; padding-right: 24px; }
+      .offer { padding-top: 72px; padding-bottom: 56px; }
+      .testimonials, .features, .faq, .form-section { padding-top: 72px; padding-bottom: 72px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <!-- Nav: small logo top-left, link top-right -->
+    <nav class="hero-nav">
+      <div class="hero-logo">
+        <img src="/assets/space-emblem.png" alt="Space Pilates + Wellness Society" />
+      </div>
+      <a href="/buy-now" class="hero-nav-cta">Join Now</a>
+    </nav>
+
+    <!-- Bottom center: single CTA, Z-principle anchor point -->
+    <div class="hero-footer">
+      <a href="/buy-now" class="gradient-pill">Sign Up — $69 Intro Offer</a>
+    </div>
+  </section>
+
+  <!-- ═══ OFFER ═══ -->
+  <section class="offer">
+    <span class="eyebrow">get started with our</span>
+    <h2 class="offer-h2">2-Week <em>Intro</em></h2>
+    <p class="offer-big-price">$69</p>
+    <p class="offer-tagline">where movement creates space</p>
+    <p class="offer-sub">Two weeks of unlimited classes &mdash; a special offer for new members.</p>
+    <a href="/buy-now" class="pill-dark">Claim Your Spot</a>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="testimonials">
+    <div class="inner">
+      <div class="t-head">
+        <span class="eyebrow">What members are saying</span>
+        <h2 class="t-h2"><em>Results</em> speak for themselves.</h2>
+      </div>
+      <div class="t-grid">
+
+        <div class="tcard">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="tcard-text">Took my first class here today. Such amazing vibes, you can tell there is a lot of love and care put into this space and the class kicked my butt in the best way. This is exactly what I have been looking for and so excited they decided to make their space here in Sanford.</p>
+          <p class="tcard-name">Lynette Diaz</p>
+        </div>
+
+        <div class="tcard">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="tcard-text">I cannot say enough amazing things about Space. The vibes are 10 out of 10. It is right in the heart of downtown Sanford, lots of parking, and walking distance to great restaurants. Carey makes working out so fun and picks the best music. If you are looking for an inclusive, safe, and vibey Pilates studio, look no further.</p>
+          <p class="tcard-name">Amy Makris</p>
+        </div>
+
+        <div class="tcard">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="tcard-text">Space has been a great experience for me so far. I am a few weeks in and I&rsquo;ve been enjoying going to the gym. The trainers are friendly, professional and knowledgable and the people are nice too. The gym is clean and spacious and has everything you need for a full body workout. The workouts are built for anyone&mdash;the everyday gym rat, the casual beginner, or anyone in between. Space is a friendly and encouraging environment and the trainers will help you adjust any workout to meet you where you&rsquo;re at. 5 Stars. Thanks guys!</p>
+          <p class="tcard-name">Sean Dunn</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ═══ -->
+  <section class="features">
+    <div class="inner features-inner">
+      <span class="eyebrow">What's included</span>
+      <h2 class="feat-h2">Two weeks to <em>find your space.</em></h2>
+      <div class="feat-list">
+        <div class="feat-item">
+          <div class="feat-check"><svg viewBox="0 0 11 11"><polyline points="2,5.5 4.5,8 9,2.5"/></svg></div>
+          <p class="feat-text"><strong>Unlimited classes for 14 days</strong> across all four formats - Pilates, Sculpt, Strength, and Yoga.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-check"><svg viewBox="0 0 11 11"><polyline points="2,5.5 4.5,8 9,2.5"/></svg></div>
+          <p class="feat-text"><strong>No experience required.</strong> Tell us it is your first time and we will walk you through it.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-check"><svg viewBox="0 0 11 11"><polyline points="2,5.5 4.5,8 9,2.5"/></svg></div>
+          <p class="feat-text"><strong>Someone from our team will reach out</strong> within 24 hours to get you scheduled.</p>
+        </div>
+      </div>
+      <div class="feat-cta">
+        <a href="/buy-now" class="pill-dark">Sign Up</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq">
+    <div class="inner">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2 class="faq-h2"><em>Everything</em> you need to know.</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <p class="faq-q">Do I need experience to join?</p>
+          <p class="faq-a">No. Most people who walk in for the first time have never done Pilates before. Every class is accessible - instructors cue modifications throughout. Just tell us it is your first time.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is included in the 2-week intro?</p>
+          <p class="faq-a">Unlimited access to all four class formats - Pilates, Sculpt, Strength, and Yoga - for 14 days. Take as many classes as you want across our full weekly schedule.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What should I bring?</p>
+          <p class="faq-a">Comfortable clothes you can move in, a water bottle, and a sweat towel. Grippy socks are required and available for purchase at the front desk.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What are the four class formats?</p>
+          <p class="faq-a">Space Pilates is classical mat Pilates - the foundation. Space Sculpt is rhythm-driven strength set to music. Space Strength is slower, heavier strength work programmed for lasting results. Space Yoga is restorative yoga focused on mobility and breath.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What happens after the 2 weeks?</p>
+          <p class="faq-a">Someone from our team will reach out to walk you through membership options. No pressure, no hard sell. We will find what fits your schedule.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Where are you located?</p>
+          <p class="faq-a">307 E 2nd St, Sanford FL 32771 — in the heart of Downtown Sanford's historic district.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Have a question?</p>
+          <p class="faq-a">Reach us anytime at <a href="mailto:hi@spacepilatesandwellness.com">hi@spacepilatesandwellness.com</a> and we will get back to you as soon as possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FORM ═══ -->
+  <section id="claim" class="form-section">
+    <div class="form-inner">
+      <span class="eyebrow">Ready to start?</span>
+      <h2 class="form-h2">Claim your spot.</h2>
+      <p class="form-sub">Drop your info below and we will get you set up within 24 hours.</p>
+
+      <!-- Mariana Tek Connect Signup Form -->
+      <form method="post" action="https://api.prd.xplorcs.com/forms-v2/forms/answers" onsubmit="onXplFormSubmit(event)" name="c3ed2f7d-870c-4db4-98f9-c9d7f1adf38d" id="bb_form">
+        <div id="alert"></div>
+        <input type="hidden" name="uuid" id="bb_uuid" value="c3ed2f7d-870c-4db4-98f9-c9d7f1adf38d" style="display:none;">
+        <div class="form-group"><label for="bb_first_name">First Name</label><div><input class="form-control" type="text" name="first_name" id="bb_first_name" placeholder="First Name" required></div></div>
+        <div class="form-group"><label for="bb_last_name">Last Name</label><div><input class="form-control" type="text" name="last_name" id="bb_last_name" placeholder="Last Name" required></div></div>
+        <div class="form-group"><label for="bb_email">Email Address</label><div><input class="form-control" type="email" name="email" id="bb_email" placeholder="Email Address" required></div></div>
+        <div class="form-group"><label for="bb_phone">Phone Number</label><div><input class="form-control" type="tel" name="phone" id="bb_phone" placeholder="Phone Number" required></div></div>
+        <div class="form-group bb-consent"><label for="bb_opt_in_email">Email Marketing Consent Checkbox</label><div><input type="checkbox" name="opt_in_email" id="bb_opt_in_email" placeholder="bb_opt_in_email" value="By selecting this option, you agree to receive marketing communications via email"> By selecting this option, you agree to receive marketing communications via email.</div></div>
+        <div class="form-group bb-consent"><label for="bb_opt_in_sms">Text Marketing Consent Checkbox</label><div><input type="checkbox" name="opt_in_sms" id="bb_opt_in_sms" placeholder="bb_opt_in_sms" value="By selecting this option, you agree to receive marketing communications via sms"> By selecting this option, you agree to receive marketing communications via SMS.</div></div>
+        <div class="form-group"><button type="submit" class="btn" id="bb_submit">Submit</button></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-logo"><img src="/assets/space-emblem.png" alt="Space Pilates + Wellness Society" /></div>
+    <p class="footer-addr">307 E 2nd St, Sanford FL 32771 &nbsp;&middot;&nbsp; hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/privacy-policy.html">Privacy</a>
+      <a href="/terms-and-conditions.html">Terms</a>
+      <a href="/">Main Site</a>
+    </div>
+  </footer>
+
+  <!-- Mariana Tek form script -->
+  <script type="module" defer>
+  const FormServiceURL = 'https://api.prd.xplorcs.com/forms-v2/forms';
+  const formUuid = 'c3ed2f7d-870c-4db4-98f9-c9d7f1adf38d';
+  const formElement = document.forms[formUuid];
+  const formContainer = new XplFormContainer(FormServiceURL);
+  const loadRecaptcha = (formConfig) => {
+    const { template } = formConfig;
+    if (!template.use_recaptcha) return;
+    const advanced = !!template.advanced_recaptcha;
+    const key = advanced ? template.recaptcha_v2_key || template.recaptcha_key : template.recaptcha_key;
+    if (!key) return;
+    XplFormAPI.loadRecaptchaScript(key, { advanced });
+    if (advanced) XplFormAPI.mountRecaptchaV2(formElement, key);
+  };
+  formContainer.load(formUuid).then(loadRecaptcha);
+
+  window.onXplFormLocationChange = (selectElement) => formContainer.load(selectElement.value);
+  window.onXplFormSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const form = new XplFormAPI(FormServiceURL, event.target, formContainer);
+    const recaptchaKey = form.getRecaptchaKey();
+    if (!recaptchaKey) { form.submit(); return; }
+    if (form.usesAdvancedRecaptcha()) {
+      const token = XplFormAPI.getRecaptchaV2Response(event.target);
+      if (!token) { form.showErrorAlert('Please complete the reCAPTCHA challenge.'); return; }
+      try { await form.submit(token, form.getAdvancedRecaptchaKey()); }
+      finally { XplFormAPI.resetRecaptchaV2(event.target); }
+      return;
+    }
+    window.grecaptcha.ready(() =>
+      window.grecaptcha.execute(recaptchaKey, { action: 'submit' }).then((r) => form.submit(r))
+    );
+  };
+  </script>
+
+</body>
+</html>

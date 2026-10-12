@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>About — Space Pilates + Wellness Society</title>
+  <meta name="description" content="The studio, the method, and the people behind Space Pilates + Wellness Society. Opening September 2026 in Historic Downtown Sanford, FL." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="About — Space Pilates + Wellness Society" />
+  <meta property="og:description" content="The studio, the method, and the people behind Space Pilates + Wellness Society." />
+  <meta property="og:image" content="https://space-pilates-site.vercel.app/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://space-pilates-site.vercel.app/about" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --pink-light: #fdddd4;
+      --sage-light: #d4e8d8;
+      --lav-light:  #e8d4ec;
+      --blue-light: #d4e4f0;
+      --pink-foot:  #fce8ec;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    /* PRE-LAUNCH: hidden until Monday */
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+
+    .nav-ham {
+      display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px;
+      position: relative; z-index: 201;
+    }
+    .nav-ham span {
+      display: block; width: 22px; height: 1.5px; background: var(--text-dark);
+      border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-ham.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-ham.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-ham.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-about {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid);
+      transition: color 0.2s;
+    }
+    .nav-about:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-cta { display: none; }
+      .nav-about { display: none; }
+    }
+
+    /* ─── MENU OVERLAY ─── */
+    .menu-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: var(--cream);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 48px 60px;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.35s cubic-bezier(0.22,1,0.36,1), transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .menu-overlay.open { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .menu-nav {
+      list-style: none; display: flex; flex-direction: column; gap: 4px; margin-bottom: 56px;
+    }
+    .menu-nav li { overflow: hidden; }
+    .menu-nav a {
+      display: block;
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.4rem, 9vw, 4rem); line-height: 1.15;
+      color: var(--text-dark); text-decoration: none; transition: color 0.2s;
+    }
+    .menu-nav a:hover { color: var(--text-light); }
+    .menu-footer { border-top: 1px solid var(--line); padding-top: 28px; }
+    .menu-footer p { font-size: 0.75rem; font-weight: 300; color: var(--text-light); line-height: 1.8; }
+    .menu-footer a { color: var(--text-light); text-decoration: none; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 80px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light);
+      display: block;
+      margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 1;
+      color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── STORY SECTION ─── */
+    .story {
+      padding: 100px 40px;
+      background: var(--cream);
+    }
+    .story-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 40px;
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .story-text h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 32px;
+    }
+    .story-text p {
+      font-size: 1rem; font-weight: 300; line-height: 1.95; color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+    .story-text p:last-child { margin-bottom: 0; }
+    .story-pullquote {
+      font-family: 'Lora', serif; font-style: italic; font-weight: 400;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      line-height: 1.45;
+      color: var(--text-dark);
+      border-left: 2px solid var(--line);
+      padding-left: 32px;
+      margin-top: 0;
+    }
+
+    /* ─── WIDE IMAGE BREAK ─── */
+    .image-break {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── METHOD SECTION ─── */
+    .method {
+      padding: 100px 40px;
+      background: var(--white);
+    }
+    .method-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .method-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+    .method-intro h2 {
+      font-family: 'Lora', serif; font-weight: 500;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: var(--text-dark);
+    }
+    .method-intro h2 em { font-style: italic; }
+    .method-intro p {
+      font-size: 1rem; font-weight: 300; line-height: 1.95; color: var(--text-mid);
+      margin-bottom: 16px;
+    }
+    .method-intro p:last-child { margin-bottom: 0; }
+
+    /* Format cards */
+    .formats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .format-card {
+      border-radius: 20px;
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .format-card.classic { background: var(--lav-light); }
+    .format-card.sculpt  { background: var(--sage-light); }
+    .format-card.form    { background: var(--pink-light); }
+    .format-card.flow    { background: var(--blue-light); }
+
+    .format-eyebrow {
+      font-size: 0.56rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: rgba(26,22,20,0.4);
+    }
+    .format-name {
+      display: flex; align-items: baseline; gap: 10px;
+    }
+    .format-italic {
+      font-family: 'Lora', serif; font-style: italic; font-weight: 400;
+      font-size: 1.5rem; color: var(--text-mid); line-height: 1;
+    }
+    .format-bold {
+      font-family: 'IBM Plex Sans', sans-serif; font-weight: 700;
+      font-size: 2.2rem; letter-spacing: -0.02em; text-transform: uppercase;
+      color: var(--text-dark); line-height: 1;
+    }
+    .format-rule { width: 20px; height: 1.5px; background: rgba(26,22,20,0.2); }
+    .format-tagline {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    .format-desc {
+      font-size: 0.9rem; font-weight: 300; line-height: 1.75; color: var(--text-mid);
+    }
+    .format-meta {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: auto;
+    }
+
+    /* ─── FOUNDERS ─── */
+    .founders {
+      padding: 100px 40px;
+      background: var(--cream);
+    }
+    .founders-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .founders-heading {
+      margin-bottom: 72px;
+    }
+    .founders-heading .h-italic {
+      display: block;
+      font-family: 'Lora', serif; font-style: italic; font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.4rem); color: var(--text-dark); line-height: 1;
+    }
+    .founders-heading .h-bold {
+      display: block;
+      font-family: 'IBM Plex Sans', sans-serif; font-weight: 700;
+      font-size: clamp(3.2rem, 8vw, 6rem); letter-spacing: -0.02em; text-transform: uppercase;
+      color: var(--text-dark); line-height: 0.95;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .founder-card {}
+    .founder-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+    .founder-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.8rem; color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .founder-title {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 28px; display: block;
+    }
+    .founder-bio {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: var(--text-mid);
+      margin-bottom: 16px;
+    }
+    .founder-creds {
+      list-style: none; display: flex; flex-direction: column; gap: 9px;
+      margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line);
+    }
+    .founder-creds li {
+      font-size: 0.82rem; font-weight: 300; color: var(--text-mid);
+      display: flex; gap: 10px; line-height: 1.6;
+    }
+    .founder-creds li::before { content: '—'; color: var(--text-light); flex-shrink: 0; }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: linear-gradient(145deg, #fde8d8 0%, #f8d4e8 40%, #e8d4f4 75%, #d4e8f4 100%);
+      padding: 120px 40px;
+      text-align: center;
+    }
+    .closing-cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem);
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      background: transparent;
+      padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--pink-foot);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .page-header { padding: 130px 24px 60px; }
+      .story { padding: 72px 24px; }
+      .story-grid { grid-template-columns: 1fr; gap: 48px; }
+      .method { padding: 72px 24px; }
+      .method-intro { grid-template-columns: 1fr; gap: 36px; }
+      .formats-grid { grid-template-columns: 1fr; }
+      .format-card { padding: 36px 28px; }
+      .founders { padding: 72px 24px; }
+      .founders-grid { grid-template-columns: 1fr; gap: 64px; }
+      .founder-photo-wrap { aspect-ratio: 4/5; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-logo">
+      <img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <div class="nav-right-group">
+      <div class="nav-auth">
+        <a href="/register">Register</a>
+        <span class="nav-auth-divider"></span>
+        <a href="/account">Login</a>
+      </div>
+      <div class="nav-ham" id="navHam" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <ul class="menu-nav">
+      <li><a href="/" class="menu-link">Home</a></li>
+      <li><a href="/book-now" class="menu-link">Book a Class</a></li>
+      <li><a href="/buy-now" class="menu-link">Memberships</a></li>
+    </ul>
+    <div class="menu-footer">
+      <p>Downtown Sanford, FL<br>Opening September 2026<br><a href="mailto:hi@spacepilatesandwellness.com">hi@spacepilatesandwellness.com</a></p>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Space Pilates + Wellness Society</span>
+      <h1 class="page-title">The Studio.</h1>
+    </div>
+  </header>
+
+  <!-- OUR STORY -->
+  <section class="story">
+    <div class="story-inner">
+      <span class="section-label reveal">Our Story</span>
+      <div class="story-grid">
+        <div class="story-text reveal">
+          <h2>SPACE is the pause between everything else.</h2>
+          <p>In Pilates, finding space means lengthening the spine, decompressing the joints, and finding mental clarity. It is where you return to your body, your breath, and your awareness — free from pressure, noise, and performance.</p>
+          <p>We built a studio around that idea. A room designed to give back more than it asks for. Movement here is not about changing yourself. It is about coming back into alignment with yourself.</p>
+          <p>Our mission is simple: to build strength, control, and mobility through unhurried, breath-led programming — and to give members back more room than they walked in with.</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <p class="story-pullquote">Movement here is not about changing yourself. It is about coming back into alignment with yourself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIDE IMAGE BREAK -->
+  <img
+    class="image-break"
+    src="assets/about-wide.jpg"
+    alt="Space Pilates studio — a moment in class"
+    loading="lazy"
+  />
+
+  <!-- THE METHOD -->
+  <section class="method" id="method">
+    <div class="method-inner">
+      <div class="method-intro reveal">
+        <h2>The SPACE <em>Method.</em></h2>
+        <div>
+          <p>Every class at SPACE is built around the same set of principles. Speed is not the goal. Fatigue is not the goal. Consistency beats intensity — every time.</p>
+          <p>We coach the center first. Then control. Then everything else follows. No leaderboard, no performance pressure. Fifteen people, one room, one intention.</p>
+          <p>Four formats, one method. Each one was designed to complement the others — so whether you come once a week or five times, the work compounds.</p>
+        </div>
+      </div>
+
+      <div class="formats-grid">
+        <!-- CLASSIC -->
+        <div class="format-card classic reveal">
+          <p class="format-eyebrow">01 &nbsp;—&nbsp; Mat Pilates</p>
+          <div class="format-name">
+            <span class="format-italic">Space</span>
+            <span class="format-bold">CLASSIC</span>
+          </div>
+          <div class="format-rule"></div>
+          <p class="format-tagline">Where Strength Begins</p>
+          <p class="format-desc">Classical mat Pilates built on breath, center, and precision. The full classical repertoire with light props — rings, bands, light weights. Master the foundation, and everything else gets easier. Good for beginners and anyone who wants the foundation done properly.</p>
+          <p class="format-meta">45–50 min &nbsp;·&nbsp; All levels</p>
+        </div>
+
+        <!-- SCULPT -->
+        <div class="format-card sculpt reveal reveal-delay-1">
+          <p class="format-eyebrow">02 &nbsp;—&nbsp; Strength &amp; Rhythm</p>
+          <div class="format-name">
+            <span class="format-italic">Space</span>
+            <span class="format-bold">SCULPT</span>
+          </div>
+          <div class="format-rule"></div>
+          <p class="format-tagline">Strength, Set to a Beat</p>
+          <p class="format-desc">The same Pilates-informed work as Form — dumbbells, bands, bodyweight — moved to music. Faster, more continuous, and built to prove that precision can keep up with the rhythm.</p>
+          <p class="format-meta">45–55 min &nbsp;·&nbsp; Beginner to advanced</p>
+        </div>
+
+        <!-- FORM -->
+        <div class="format-card form reveal">
+          <p class="format-eyebrow">03 &nbsp;—&nbsp; Strength</p>
+          <div class="format-name">
+            <span class="format-italic">Space</span>
+            <span class="format-bold">FORM</span>
+          </div>
+          <div class="format-rule"></div>
+          <p class="format-tagline">Strength, Programmed Properly</p>
+          <p class="format-desc">Pilates-informed strength with dumbbells, rings, and bands. Slower, heavier, and built to last. Strength is not the opposite of ease — it is what makes ease possible.</p>
+          <p class="format-meta">45–50 min &nbsp;·&nbsp; All levels</p>
+        </div>
+
+        <!-- FLOW -->
+        <div class="format-card flow reveal reveal-delay-1">
+          <p class="format-eyebrow">04 &nbsp;—&nbsp; Restore</p>
+          <div class="format-name">
+            <span class="format-italic">Space</span>
+            <span class="format-bold">FLOW</span>
+          </div>
+          <div class="format-rule"></div>
+          <p class="format-tagline">Yoga, Built to Restore</p>
+          <p class="format-desc">Where Classic, Sculpt, and Form build capacity, Flow gives it back — mobility, breath, and release given the room they don't get anywhere else in the week. Nothing to prove. Just space to land.</p>
+          <p class="format-meta">45–60 min &nbsp;·&nbsp; All levels</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDERS -->
+  <section class="founders">
+    <div class="founders-inner">
+      <div class="founders-heading reveal">
+        <span class="h-italic">The people</span>
+        <span class="h-bold">BEHIND IT.</span>
+      </div>
+
+      <div class="founders-grid">
+        <!-- CAREY -->
+        <div class="founder-card reveal">
+          <div class="founder-photo-wrap">
+            <img class="founder-photo" src="assets/carey-portrait.jpg" alt="Carey Caratini, co-founder" loading="lazy" />
+          </div>
+          <p class="founder-name">Carey Caratini</p>
+          <span class="founder-title">Co-Founder &nbsp;·&nbsp; Pilates Instructor &nbsp;·&nbsp; Licensed Therapist</span>
+          <p class="founder-bio">Carey is a certified Pilates instructor and a licensed mental health counselor with a master's in Clinical Mental Health Counseling from UCF. The way she teaches comes from a real, clinical understanding of the nervous system — not just how a body looks in a mirror.</p>
+          <p class="founder-bio">She and Adam spent a long time watching people push themselves in rooms that gave nothing back. SPACE is the other kind of room — built around breath, intention, and the belief that every person who walks in belongs exactly where they are.</p>
+          <ul class="founder-creds">
+            <li>NASM Certified Personal Trainer</li>
+            <li>Certified Pilates Instructor</li>
+            <li>Licensed Therapist (LMHC) — Clinical Mental Health Counseling, UCF</li>
+          </ul>
+        </div>
+
+        <!-- ADAM -->
+        <div class="founder-card reveal reveal-delay-1">
+          <div class="founder-photo-wrap">
+            <img class="founder-photo" src="assets/3R7A8501.jpg" alt="Adam Caratini, co-founder" loading="lazy" />
+          </div>
+          <p class="founder-name">Adam Caratini</p>
+          <span class="founder-title">Co-Founder &nbsp;·&nbsp; Strength Coach</span>
+          <p class="founder-bio">Adam has spent fourteen years as a strength coach — building and running two gyms, programming for athletes and everyday people, and learning what actually works when the goal is longevity, not just performance.</p>
+          <p class="founder-bio">He programs the strength side of every SPACE format the way strength should be programmed: slowly, deliberately, and with a reason for every set.</p>
+          <ul class="founder-creds">
+            <li>14 years as a strength and conditioning coach</li>
+            <li>Founded and operated two performance gyms</li>
+            <li>Programs all strength-based SPACE formats</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/#join">Join the Society</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img src="assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">Downtown Sanford, FL — Historic District<br>Steps from 1st Street &amp; Park Avenue<br>Opening September 2026<br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#classes">Classes</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Hamburger menu
+    const ham = document.getElementById('navHam');
+    const overlay = document.getElementById('menuOverlay');
+    function toggleMenu(open) {
+      ham.classList.toggle('open', open);
+      overlay.classList.toggle('open', open);
+      ham.setAttribute('aria-expanded', open);
+      overlay.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    ham.addEventListener('click', () => toggleMenu(!overlay.classList.contains('open')));
+    document.querySelectorAll('.menu-link').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+    // Reveal on scroll
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>
