@@ -112,6 +112,13 @@
       }
     },
     {
+      "src": "/8ef35e44390a17d80d901342f2220630.txt",
+      "dest": "/8ef35e44390a17d80d901342f2220630.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
       "src": "/(.*)",
       "dest": "/$1"
     }
