@@ -3,25 +3,117 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.spacepilatesandwellness.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.spacepilatesandwellness.com"
+        }
+      ],
       "destination": "https://spacepilatesandwellness.com/:path*",
       "permanent": true
     }
   ],
   "routes": [
-    { "src": "/api/chat", "dest": "/api/chat.js" },
-    { "src": "/start", "status": 302, "headers": { "Location": "/intro" } },
-    { "src": "/about", "status": 302, "headers": { "Location": "/" } },
-    { "src": "/book-now", "dest": "/book-now.html" },
-    { "src": "/buy-now",  "dest": "/buy-now.html"  },
-    { "src": "/book-a-call", "dest": "/book-a-call.html" },
-    { "src": "/account",  "dest": "/account.html"  },
-    { "src": "/register", "dest": "/register.html" },
-    { "src": "/privacy-policy", "dest": "/privacy-policy.html" },
-    { "src": "/terms", "dest": "/terms-and-conditions.html" },
-    { "src": "/team", "dest": "/team.html" },
-    { "src": "/mariana-tools", "dest": "/mariana-tools.html" },
-    { "src": "/intro", "dest": "/intro.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
+    },
+    {
+      "src": "/start",
+      "status": 302,
+      "headers": {
+        "Location": "/intro"
+      }
+    },
+    {
+      "src": "/about",
+      "status": 302,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/book-now",
+      "dest": "/book-now.html"
+    },
+    {
+      "src": "/buy-now",
+      "dest": "/buy-now.html"
+    },
+    {
+      "src": "/book-a-call",
+      "dest": "/book-a-call.html"
+    },
+    {
+      "src": "/account",
+      "dest": "/account.html"
+    },
+    {
+      "src": "/register",
+      "dest": "/register.html"
+    },
+    {
+      "src": "/privacy-policy",
+      "dest": "/privacy-policy.html"
+    },
+    {
+      "src": "/terms",
+      "dest": "/terms-and-conditions.html"
+    },
+    {
+      "src": "/team",
+      "dest": "/team.html"
+    },
+    {
+      "src": "/mariana-tools",
+      "dest": "/mariana-tools.html"
+    },
+    {
+      "src": "/intro",
+      "dest": "/intro.html"
+    },
+    {
+      "src": "/pricing",
+      "dest": "/pricing.html"
+    },
+    {
+      "src": "/classes",
+      "dest": "/classes.html"
+    },
+    {
+      "src": "/classes/pilates",
+      "dest": "/classes/pilates.html"
+    },
+    {
+      "src": "/classes/sculpt",
+      "dest": "/classes/sculpt.html"
+    },
+    {
+      "src": "/classes/strength",
+      "dest": "/classes/strength.html"
+    },
+    {
+      "src": "/classes/yoga",
+      "dest": "/classes/yoga.html"
+    },
+    {
+      "src": "/mat-vs-reformer-pilates",
+      "dest": "/mat-vs-reformer-pilates.html"
+    },
+    {
+      "src": "/pilates-lake-mary",
+      "dest": "/pilates-lake-mary.html"
+    },
+    {
+      "src": "/llms.txt",
+      "dest": "/llms.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ]
 }

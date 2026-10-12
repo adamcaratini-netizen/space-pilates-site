@@ -30,3 +30,7 @@ SPACE_Method_v1.0.md
 SPACE_Method_v1.0.docx
 SPACE_Method_v1.0.1.md
 SPACE_Method_v1.0.1.docx
+
+# Build tooling, not site content
+tools/
+node_modules/
