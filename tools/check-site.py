@@ -49,6 +49,8 @@ for f in pages:
             json.loads(block)
         except json.JSONDecodeError as e:
             errors.append(f"{me}: invalid JSON-LD ({e})")
+    if "/_vercel/insights/script.js" not in html:
+        errors.append(f"{me}: missing Vercel Web Analytics tag")
     for href in set(re.findall(r'href="(/[^"]*)"', html)):
         if href.startswith("//"):
             continue

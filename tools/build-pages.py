@@ -513,6 +513,16 @@ stale = ROOT / "mat-vs-reformer-pilates.html"
 if stale.exists():
     stale.unlink()
 
+# ---- Vercel Web Analytics on every page (idempotent)
+VA_TAG = ('  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>\n'
+          '  <script defer src="/_vercel/insights/script.js"></script>\n')
+for f in ROOT.rglob("*.html"):
+    if "node_modules" in f.parts or ".git" in f.parts:
+        continue
+    s = f.read_text()
+    if "/_vercel/insights/script.js" not in s and "</head>" in s:
+        f.write_text(s.replace("</head>", VA_TAG + "</head>", 1))
+
 print("\n".join(built))
 import subprocess  # noqa: E402
 sys.exit(subprocess.call([sys.executable, str(ROOT / "tools" / "check-site.py")]))
