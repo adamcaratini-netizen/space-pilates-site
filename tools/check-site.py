@@ -51,6 +51,8 @@ for f in pages:
             errors.append(f"{me}: invalid JSON-LD ({e})")
     if "/_vercel/insights/script.js" not in html:
         errors.append(f"{me}: missing Vercel Web Analytics tag")
+    if "data-space-events" not in html:
+        errors.append(f"{me}: missing conversion events script")
     for href in set(re.findall(r'href="(/[^"]*)"', html)):
         if href.startswith("//"):
             continue

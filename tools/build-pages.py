@@ -523,6 +523,24 @@ for f in ROOT.rglob("*.html"):
     if "/_vercel/insights/script.js" not in s and "</head>" in s:
         f.write_text(s.replace("</head>", VA_TAG + "</head>", 1))
 
+# ---- conversion events: which page sends people to buy, book, call or the lead form (idempotent)
+EVENTS_TAG = ('  <script data-space-events>(function () {\n'
+              '    var rules = [["/buy-now", "Buy click"], ["/book-now", "Book click"], ["/intro", "Intro click"], ["tel:", "Call click"], ["mailto:", "Email click"]];\n'
+              '    function send(name) { window.va("event", { name: name, data: { from: location.pathname } }); }\n'
+              '    document.addEventListener("click", function (e) {\n'
+              '      var a = e.target.closest && e.target.closest("a"); if (!a) return;\n'
+              '      var h = a.getAttribute("href") || "";\n'
+              '      for (var i = 0; i < rules.length; i++) if (h.indexOf(rules[i][0]) === 0) return send(rules[i][1]);\n'
+              '    }, true);\n'
+              '    document.addEventListener("submit", function (e) { if (e.target && e.target.id === "bb_form") send("Lead form submit"); }, true);\n'
+              '  })();</script>\n')
+for f in ROOT.rglob("*.html"):
+    if "node_modules" in f.parts or ".git" in f.parts:
+        continue
+    s = f.read_text()
+    if "data-space-events" not in s and "</head>" in s:
+        f.write_text(s.replace("</head>", EVENTS_TAG + "</head>", 1))
+
 print("\n".join(built))
 import subprocess  # noqa: E402
 sys.exit(subprocess.call([sys.executable, str(ROOT / "tools" / "check-site.py")]))
