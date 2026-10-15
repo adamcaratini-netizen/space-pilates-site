@@ -264,7 +264,7 @@ function initChat() {
       addMessage(reply, false);
       conversationHistory.push({ role: 'assistant', content: reply });
       if (conversationHistory.length <= 2) {
-        setQuickReplies(['Tell me about the classes', 'What are founding memberships?', 'Never done Pilates', 'When do you open?']);
+        setQuickReplies(['Tell me about the classes', 'How much is it?', 'Never done Pilates', 'Class times today']);
       } else {
         setQuickReplies(['How do I join?', 'Tell me more', 'What about pricing?']);
       }
@@ -289,11 +289,11 @@ function initChat() {
         hideTyping();
         addMessage(reply, false);
         conversationHistory.push({ role: 'assistant', content: reply });
-        setQuickReplies(['Tell me about the classes', 'What are founding memberships?', 'Never done Pilates', 'When do you open?']);
+        setQuickReplies(['Tell me about the classes', 'How much is it?', 'Never done Pilates', 'Class times today']);
       } catch {
         hideTyping();
-        addMessage(`Hey! Welcome to Space Pilates. We're opening in Downtown Sanford this September — what brings you here today?`, false);
-        setQuickReplies(['Tell me about the classes', 'What are founding memberships?', 'Never done Pilates', 'When do you open?']);
+        addMessage(`Hey! Welcome to Space Pilates. We're at 307 E 2nd St in Downtown Sanford. What brings you here today?`, false);
+        setQuickReplies(['Tell me about the classes', 'How much is it?', 'Never done Pilates', 'Class times today']);
       }
     }
   }
