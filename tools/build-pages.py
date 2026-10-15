@@ -462,9 +462,12 @@ built.append(page("/learn", "Learn: Pilates, Yoga & Strength Guides | Space Pila
                    breadcrumb([("Home", "/"), ("Learn", "/learn")])]))
 
 # ---- patch the hand-written pages (idempotent): same destinations everywhere
-MENU_ITEMS = "\n".join(f'      <li><a href="{href}" class="menu-link">{label}</a></li>' for href, label in [
+NEW_TAB = ' target="_blank"'
+MENU_ITEMS = "\n".join(f'      <li><a href="{href}"{NEW_TAB if href.startswith("http") else ""} class="menu-link">{label}</a></li>' for href, label in [
     ("/", "Home"), ("/classes", "Classes"), ("/learn", "Learn"), ("/pricing", "Pricing"),
-    ("/book-now", "Book a Class"), ("/buy-now", "Memberships"), ("/team", "Meet the Team")])
+    ("/book-now", "Book a Class"), ("/buy-now", "Memberships"), ("/team", "Meet the Team"),
+    # added by Adam in his 10/14 deploy; kept so a rebuild never drops it
+    ("https://spacewellnesscoaching.com", "Personal Training + Wellness Coaching")])
 CARD_TARGET = {"PILATES": "pilates", "STRENGTH": "strength", "SCULPT": "sculpt", "YOGA": "yoga"}
 generated = set(built)
 for f in sorted(ROOT.glob("*.html")):

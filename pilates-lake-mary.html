@@ -249,6 +249,16 @@
   </style>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script data-space-events>(function () {
+    var rules = [["/buy-now", "Buy click"], ["/book-now", "Book click"], ["/intro", "Intro click"], ["tel:", "Call click"], ["mailto:", "Email click"]];
+    function send(name) { window.va("event", { name: name, data: { from: location.pathname } }); }
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a"); if (!a) return;
+      var h = a.getAttribute("href") || "";
+      for (var i = 0; i < rules.length; i++) if (h.indexOf(rules[i][0]) === 0) return send(rules[i][1]);
+    }, true);
+    document.addEventListener("submit", function (e) { if (e.target && e.target.id === "bb_form") send("Lead form submit"); }, true);
+  })();</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -308,16 +318,6 @@
   ]
 }
   </script>
-  <script data-space-events>(function () {
-    var rules = [["/buy-now", "Buy click"], ["/book-now", "Book click"], ["/intro", "Intro click"], ["tel:", "Call click"], ["mailto:", "Email click"]];
-    function send(name) { window.va("event", { name: name, data: { from: location.pathname } }); }
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest("a"); if (!a) return;
-      var h = a.getAttribute("href") || "";
-      for (var i = 0; i < rules.length; i++) if (h.indexOf(rules[i][0]) === 0) return send(rules[i][1]);
-    }, true);
-    document.addEventListener("submit", function (e) { if (e.target && e.target.id === "bb_form") send("Lead form submit"); }, true);
-  })();</script>
 </head>
 <body>
 
