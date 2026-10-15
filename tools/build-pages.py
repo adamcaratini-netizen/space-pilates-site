@@ -449,6 +449,8 @@ NEAR_YOU = """      <h2 class="related">Near you</h2>
       <div class="card-list">
         <a href="/pilates-lake-mary"><strong>Pilates near Lake Mary</strong><span>A short drive up I-4 to Historic Downtown Sanford.</span></a>
         <a href="/classes"><strong>The four Space formats</strong><span>Pilates, Sculpt, Strength and Yoga, explained.</span></a>
+        <a href="/learn/saturday-morning-in-downtown-sanford"><strong>A Saturday morning in Downtown Sanford</strong><span>Class, coffee, the farmers market and the RiverWalk.</span></a>
+        <a href="/schedule"><strong>This week's class schedule</strong><span>Live from the booking system, one tap to book.</span></a>
       </div>"""
 sections.append(NEAR_YOU)
 body = ("      <p>Guides on Pilates, yoga and strength from Space Pilates + Wellness Society in Historic Downtown Sanford. "
