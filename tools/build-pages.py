@@ -470,8 +470,8 @@ SCHEDULE_CSS = """      <style>
         .sched-what { flex: 1; display: flex; flex-direction: column; min-width: 0; }
         .sched-what span { font-size: 0.9rem; opacity: 0.7; }
         .sched-what a { color: inherit; }
-        .sched-book { flex: 0 0 auto; padding: 9px 18px; border-radius: 999px; background: var(--text-dark); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.04em; }
-        .sched-book.is-full { background: transparent; color: var(--text-dark); border: 1px solid var(--text-dark); }
+        .content a.sched-book { flex: 0 0 auto; padding: 9px 18px; border-radius: 999px; background: var(--text-dark); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.04em; }
+        .content a.sched-book.is-full { background: transparent; color: var(--text-dark); border: 1px solid var(--text-dark); }
         @media (max-width: 480px) { .sched-item { gap: 10px; } .sched-time { flex-basis: 64px; font-size: 0.9rem; } }
       </style>"""
 schedule_qas = [
