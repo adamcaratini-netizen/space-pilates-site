@@ -22,6 +22,20 @@
       }
     },
     {
+      "src": "/schedule.html",
+      "headers": {
+        "X-Robots-Tag": "noindex"
+      },
+      "continue": true
+    },
+    {
+      "src": "/today",
+      "status": 302,
+      "headers": {
+        "Location": "/schedule"
+      }
+    },
+    {
       "src": "/api/chat",
       "dest": "/api/chat.js"
     },
@@ -120,6 +134,10 @@
       "headers": {
         "Content-Type": "text/plain; charset=utf-8"
       }
+    },
+    {
+      "src": "/schedule",
+      "dest": "/api/schedule.js"
     },
     {
       "src": "/learn",

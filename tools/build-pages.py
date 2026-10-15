@@ -188,7 +188,7 @@ FOOTER_LINKS = """      <a href="/">Home</a>
       <a href="/learn">Learn</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
-      <a href="/book-now">Schedule</a>
+      <a href="/schedule">Schedule</a>
       <a href="/privacy-policy">Privacy</a>
       <a href="/terms">Terms</a>"""
 
@@ -461,11 +461,44 @@ built.append(page("/learn", "Learn: Pilates, Yoga & Strength Guides | Space Pila
                     "hasPart": [{"@type": "Article", "headline": a["title"], "url": f"{SITE}/learn/{s}"} for s, a in ARTICLES.items()]},
                    breadcrumb([("Home", "/"), ("Learn", "/learn")])]))
 
+# ---- /schedule: static shell; api/schedule.js fills the LIVE block from Mariana Tek on every request
+SCHEDULE_CSS = """      <style>
+        .sched-day { margin-top: 40px; }
+        .sched-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(0,0,0,0.08); }
+        .sched-item { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .sched-time { flex: 0 0 76px; font-weight: 600; }
+        .sched-what { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .sched-what span { font-size: 0.9rem; opacity: 0.7; }
+        .sched-what a { color: inherit; }
+        .sched-book { flex: 0 0 auto; padding: 9px 18px; border-radius: 999px; background: var(--text-dark); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.04em; }
+        .sched-book.is-full { background: transparent; color: var(--text-dark); border: 1px solid var(--text-dark); }
+        @media (max-width: 480px) { .sched-item { gap: 10px; } .sched-time { flex-basis: 64px; font-size: 0.9rem; } }
+      </style>"""
+schedule_qas = [
+    ("How do I book a class at Space Pilates?", "Tap Book next to any class to reserve it in the Space booking system, or use the Space Pilates app on iPhone or Android. New members can start with 2 weeks of unlimited classes for $69."),
+    ("What happens if a class is full?", "Tap Join waitlist. If a spot opens, the booking system moves you in and lets you know."),
+    ("How early should I arrive for my first class?", "About 10 minutes early, so the instructor can meet you and set you up."),
+]
+body = f"""{SCHEDULE_CSS}
+      <p>Every class at Space Pilates + Wellness Society for the next 7 days, straight from the studio's booking system. Space Pilates, Sculpt, Strength and Yoga, all levels, at 307 E 2nd St in Historic Downtown Sanford. New here? <a href="/intro">Start with 2 weeks unlimited for $69</a>.</p>
+<!--LIVE-->
+      <p class="sched-empty">The live schedule is loading from the booking system. If it does not appear, see the <a href="/book-now">booking calendar</a>.</p>
+<!--/LIVE-->
+      <h2>Not sure which class to take?</h2>
+      <p><a href="/classes">The four Space formats, explained</a>. Most people start with <a href="/classes/pilates">Space Pilates</a>.</p>
+      <h2>Questions</h2>
+{faq_html(schedule_qas)}"""
+built.append(page("/schedule", "Pilates & Yoga Class Schedule, Sanford FL | Space Pilates",
+                  "Today's Pilates, Sculpt, Strength and Yoga classes at Space Pilates in Downtown Sanford, FL, live from the booking system. Book a spot in one tap.",
+                  "Live schedule", "Class schedule.", "This week at Space, updated live from the booking system.", body,
+                  [{"@type": "WebPage", "@id": SITE + "/schedule#page", "name": "Class schedule", "about": business_ref()},
+                   faq_schema(schedule_qas, "/schedule"), breadcrumb([("Home", "/"), ("Class schedule", "/schedule")])]))
+
 # ---- patch the hand-written pages (idempotent): same destinations everywhere
 NEW_TAB = ' target="_blank"'
 MENU_ITEMS = "\n".join(f'      <li><a href="{href}"{NEW_TAB if href.startswith("http") else ""} class="menu-link">{label}</a></li>' for href, label in [
     ("/", "Home"), ("/classes", "Classes"), ("/learn", "Learn"), ("/pricing", "Pricing"),
-    ("/book-now", "Book a Class"), ("/buy-now", "Memberships"), ("/team", "Meet the Team"),
+    ("/schedule", "Class Schedule"), ("/book-now", "Book a Class"), ("/buy-now", "Memberships"), ("/team", "Meet the Team"),
     # added by Adam in his 10/14 deploy; kept so a rebuild never drops it
     ("https://spacewellnesscoaching.com", "Personal Training + Wellness Coaching")])
 CARD_TARGET = {"PILATES": "pilates", "STRENGTH": "strength", "SCULPT": "sculpt", "YOGA": "yoga"}
@@ -479,6 +512,9 @@ for f in sorted(ROOT.glob("*.html")):
     footer = re.search(r'<div class="footer-links">.*?</div>', s, re.S)
     if footer and 'href="/learn"' not in footer.group(0):
         s = s.replace(footer.group(0), footer.group(0).replace('<a href="/classes">Classes</a>', '<a href="/classes">Classes</a>\n      <a href="/learn">Learn</a>', 1), 1)
+    footer = re.search(r'<div class="footer-links">.*?</div>', s, re.S)
+    if footer and 'href="/schedule"' not in footer.group(0) and 'href="/learn"' in footer.group(0):
+        s = s.replace(footer.group(0), footer.group(0).replace('<a href="/learn">Learn</a>', '<a href="/learn">Learn</a>\n      <a href="/schedule">Schedule</a>', 1), 1)
     if f.name == "index.html":
         def card(m):
             name = re.search(r'<span class="card-bold">(PILATES|STRENGTH|SCULPT|YOGA)</span>', m.group(0))
@@ -492,7 +528,7 @@ for f in sorted(ROOT.glob("*.html")):
         f.write_text(s)
 
 # ---- sitemap, llms.txt, routes
-SITEMAP = ["/", "/intro", "/classes", *[f"/classes/{k}" for k in CLASSES], "/pricing", "/learn",
+SITEMAP = ["/", "/intro", "/classes", *[f"/classes/{k}" for k in CLASSES], "/pricing", "/schedule", "/learn",
            *[f"/learn/{s}" for s in ARTICLES], "/pilates-lake-mary", "/team", "/book-now", "/buy-now"]
 (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                   + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>2026-10-12</lastmod></url>\n" for u in SITEMAP) + "</urlset>\n")
@@ -500,16 +536,20 @@ SITEMAP = ["/", "/intro", "/classes", *[f"/classes/{k}" for k in CLASSES], "/pri
 llms = (ROOT / "llms.txt").read_text()
 llms = re.sub(r"\n## Guides \(by Carey Caratini\)\n.*\Z", "", llms, flags=re.S).rstrip("\n") + "\n"
 llms = llms.replace(f"- [Mat vs reformer Pilates guide]({SITE}/mat-vs-reformer-pilates)\n", f"- [Learn: guides on Pilates, yoga and strength]({SITE}/learn)\n")
+llms = llms.replace(f"- [Live schedule]({SITE}/book-now)", f"- [Book a class]({SITE}/book-now)")
+llms = llms.replace(f"- [Pricing]", f"- [Live class schedule, next 7 days]({SITE}/schedule)\n- [Pricing]", 1) if "/schedule)" not in llms else llms
 llms += "\n## Guides (by Carey Caratini)\n" + "".join(f"- [{a['title']}]({SITE}/learn/{s}): {a['description']}\n" for s, a in ARTICLES.items())
 (ROOT / "llms.txt").write_text(llms)
 
 v = json.loads((ROOT / "vercel.json").read_text())
-LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)")
+LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)", "/schedule", "/today", "/schedule.html")
 routes = [r for r in v["routes"] if r.get("src") not in LEARN_SRCS]
 catch = routes.pop()
 assert catch.get("src") == "/(.*)", "catch-all route must stay last"
+routes.insert(0, {"src": "/today", "status": 302, "headers": {"Location": "/schedule"}})
+routes.insert(0, {"src": "/schedule.html", "headers": {"X-Robots-Tag": "noindex"}, "continue": True})
 routes.insert(0, {"src": "/mat-vs-reformer-pilates", "status": 301, "headers": {"Location": "/learn/mat-vs-reformer-pilates"}})
-routes += [{"src": "/learn", "dest": "/learn.html"}, {"src": "/learn/(?<slug>[a-z0-9-]+)", "dest": "/learn/$slug.html"}, catch]
+routes += [{"src": "/schedule", "dest": "/api/schedule.js"}, {"src": "/learn", "dest": "/learn.html"}, {"src": "/learn/(?<slug>[a-z0-9-]+)", "dest": "/learn/$slug.html"}, catch]
 v["routes"] = routes
 (ROOT / "vercel.json").write_text(json.dumps(v, indent=2) + "\n")
 stale = ROOT / "mat-vs-reformer-pilates.html"
