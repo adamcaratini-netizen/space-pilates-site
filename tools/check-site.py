@@ -16,18 +16,39 @@ vercel = json.loads((ROOT / "vercel.json").read_text())
 redirect_srcs = {r["src"] for r in vercel["routes"] if r.get("status") in (301, 302, 308)}
 
 
+def no_dup_keys(pairs):
+    # json.loads keeps the LAST of two equal keys without a word, so a second "sameAs" silently
+    # replaced the studio's real social links on the home page until 2026-10-21.
+    keys = [k for k, _ in pairs]
+    dups = sorted({k for k in keys if keys.count(k) > 1})
+    if dups:
+        raise ValueError(f"duplicate key(s) {dups}")
+    return dict(pairs)
+
+
 def route_exists(path):
     path = path.split("#")[0].split("?")[0]
     if path in ("", "/"):
         return True
     if path in redirect_srcs or path.startswith("/api/"):
         return True
-    rel = path.strip("/")
-    candidates = [ROOT / rel, ROOT / f"{rel}.html"]
+    # Mirror Vercel: the first route whose src matches wins, and the catch-all serves the path
+    # as-is. There is no automatic ".html", so /pilates-x needs its own route or it 404s.
     for r in vercel["routes"]:
-        if r.get("src") == path and r.get("dest"):
-            candidates.append(ROOT / r["dest"].strip("/"))
-    return any(c.is_file() for c in candidates)
+        src = re.sub(r"\(\?<(\w+)>", r"(?P<\1>", r["src"])
+        m = re.fullmatch(src, path)
+        if not m:
+            continue
+        if r.get("status") or not r.get("dest"):
+            if r.get("continue"):
+                continue
+            return bool(r.get("status"))
+        dest = r["dest"]
+        for k, val in m.groupdict().items():
+            dest = dest.replace(f"${k}", val)
+        dest = re.sub(r"\$1", m.group(1) if m.groups() else "", dest)
+        return dest.startswith("/api/") or (ROOT / dest.strip("/")).is_file()
+    return False
 
 
 def page_route(f):
@@ -46,8 +67,8 @@ for f in pages:
     me = page_route(f)
     for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
         try:
-            json.loads(block)
-        except json.JSONDecodeError as e:
+            json.loads(block, object_pairs_hook=no_dup_keys)
+        except (json.JSONDecodeError, ValueError) as e:
             errors.append(f"{me}: invalid JSON-LD ({e})")
     if "/_vercel/insights/script.js" not in html:
         errors.append(f"{me}: missing Vercel Web Analytics tag")

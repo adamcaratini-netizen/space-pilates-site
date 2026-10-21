@@ -189,6 +189,9 @@ FOOTER_LINKS = """      <a href="/">Home</a>
       <a href="/pricing">Pricing</a>
       <a href="/team">The Team</a>
       <a href="/schedule">Schedule</a>
+      <a href="/pilates-lake-mary">Lake Mary</a>
+      <a href="/pilates-heathrow">Heathrow</a>
+      <a href="/pilates-oviedo">Oviedo</a>
       <a href="/privacy-policy">Privacy</a>
       <a href="/terms">Terms</a>"""
 
@@ -346,7 +349,9 @@ body = f"""      <h2>Four formats, one method</h2>
         <li>Arrive ten minutes early. Wear something you can move in.</li>
         <li>Grippy socks are required (available at the studio). Bring water; everything else is provided.</li>
         <li>New members: <a href="/intro">2 weeks unlimited for $69</a>.</li>
-      </ul>"""
+      </ul>
+      <h2>Coming from nearby</h2>
+      <p>Space is at {FACTS['address']}. It is about 12 minutes from <a href="/pilates-lake-mary">Lake Mary</a> and about 20 minutes from <a href="/pilates-heathrow">Heathrow</a> and <a href="/pilates-oviedo">Oviedo</a>.</p>"""
 built.append(page("/classes", "Pilates, Sculpt, Strength & Yoga Classes in Sanford, FL | Space Pilates",
      "Four class formats at Space Pilates in Downtown Sanford: classical mat Pilates, Sculpt, Strength and restorative Yoga. Small classes, all levels.",
      STUDIO, "Classes.", "Space Pilates, Space Sculpt, Space Strength and Space Yoga.", body,
@@ -379,7 +384,7 @@ for k, c in CLASSES.items():
       <p>Other formats: {others}</p>"""
     course = {"@type": "Service", "@id": f"{SITE}/classes/{k}#service", "name": f"{c['name']} class in Sanford, FL",
               "serviceType": c["short"], "description": c["lead"], "provider": business_ref(),
-              "areaServed": ["Sanford, FL", "Lake Mary, FL", "Longwood, FL", "Heathrow, FL"],
+              "areaServed": ["Sanford, FL", "Lake Mary, FL", "Heathrow, FL", "Oviedo, FL", "Longwood, FL"],
               "offers": {"@type": "Offer", "price": "29", "priceCurrency": "USD", "description": "Drop-in class", "url": SITE + "/buy-now"}}
     schema_extra = [faq_schema(c["faq"], f"/classes/{k}")]
     built.append(page(f"/classes/{k}", f"{c['name']}: {c['short']} in Sanford, FL | Space Pilates",
@@ -387,27 +392,99 @@ for k, c in CLASSES.items():
          "Classes", c["name"] + ".", c["short"] + ".", body,
          [course, *schema_extra, breadcrumb([("Home", "/"), ("Classes", "/classes"), (c["name"], f"/classes/{k}")])]))
 
-# ---- /pilates-lake-mary
-lm_qas = [
-    ("How far is Space Pilates from Lake Mary?", "Space is at 307 E 2nd St in Historic Downtown Sanford, a short drive from Lake Mary via I-4 or US 17-92, typically 15 to 20 minutes depending on where you start and traffic."),
-    ("Are there early morning or after-work classes?", "Yes. Weekday classes start as early as 6:00 AM and run into the early evening, with Saturday and Sunday morning classes, which suits people commuting along I-4."),
-    ("What does it cost?", "New members get 2 weeks unlimited for $69. After that, drop-ins are $29 and memberships start at $89 a month."),
-]
-body = f"""      <p>Lake Mary has plenty of reformer and franchise studios. If you want something smaller and more personal, Space Pilates + Wellness Society is a short drive away in Historic Downtown Sanford.</p>
-      <h2>Why Lake Mary members make the drive</h2>
+# ---- /pilates-<city>: one page per nearby city. Routes, miles and minutes are OSRM driving
+# routes from each city centre to 307 E 2nd St, without traffic, read 2026-10-21. Competitor
+# notes come from the studios' own listings (search, 2026-10-21); never name them on the page.
+CITIES = {
+    "lake-mary": {
+        "name": "Lake Mary", "wiki": "https://en.wikipedia.org/wiki/Lake_Mary,_Florida",
+        "miles": "6.5", "minutes": "12 to 20",
+        "route": "east on West Lake Mary Boulevard to US 17-92, then north on Sanford Avenue into Historic Downtown Sanford",
+        "subtitle": "About 12 minutes from Lake Mary Boulevard to Historic Downtown Sanford.",
+        "intro": "Lake Mary has no shortage of Pilates. Much of it is reformer franchises and heated studios along Lake Mary Boulevard. If you want a smaller, more personal mat studio, Space Pilates + Wellness Society is about 12 minutes up US 17-92 in Historic Downtown Sanford.",
+        "why_heading": "Why Lake Mary members make the drive",
+        "why": [
+            f"<strong>Small classes</strong>, capped at {FACTS['class_size']}, where the instructor knows your name.",
+            "<strong>Mat, not machines.</strong> <a href=\"/classes/pilates\">Classical mat Pilates</a> with light props. No springs assisting you, so the core does the work. Read <a href=\"/learn/mat-vs-reformer-pilates\">mat vs reformer Pilates</a> if you are deciding.",
+            "<strong>Four formats in one membership</strong>: Pilates, <a href=\"/classes/sculpt\">Sculpt</a>, <a href=\"/classes/strength\">Strength</a> and <a href=\"/classes/yoga\">restorative Yoga</a>.",
+            "<strong>Founded by a licensed mental health therapist</strong>, Carey Caratini, with strength programming by co-founder Adam Caratini (14 years coaching).",
+        ],
+        "week_heading": "Fitting it around a Lake Mary work week",
+        "week": "Weekday classes start at 6:00 AM, so an early class in Sanford still gets you to an office on Lake Mary Boulevard or the I-4 corridor by 8:00. Evening classes run until about 6:30 PM for the drive home, and Saturday and Sunday mornings pair well with coffee and a walk on the Sanford RiverWalk.",
+        "faq": [
+            ("How far is Space Pilates from Lake Mary?", "About 6.5 miles. From central Lake Mary, take West Lake Mary Boulevard east to US 17-92 and head north into Historic Downtown Sanford: around 12 minutes without traffic, closer to 20 at rush hour."),
+            ("Is Space a reformer studio?", "No. Space is a mat studio. Space Pilates is classical mat Pilates with light props, and Space Sculpt, Strength and Yoga are mat and free-weight classes."),
+            ("Are there early morning or after-work classes?", "Yes. Weekday classes start at 6:00 AM and run until about 6:30 PM, with Saturday and Sunday morning classes."),
+            ("What does it cost?", "New members get 2 weeks unlimited for $69. After that, drop-ins are $29 and memberships start at $89 a month, month to month."),
+        ],
+    },
+    "heathrow": {
+        "name": "Heathrow", "wiki": "https://en.wikipedia.org/wiki/Heathrow,_Florida",
+        "miles": "9", "minutes": "20 to 25",
+        "route": "Heathrow Boulevard to International Parkway, then east on SR 46 straight into Downtown Sanford",
+        "subtitle": "One road, SR 46, from International Parkway to Historic Downtown Sanford.",
+        "intro": "From Heathrow, Downtown Sanford is a straight run east on SR 46. Space Pilates + Wellness Society is a small mat Pilates and strength studio on East 2nd Street, about 20 minutes from the Heathrow gates.",
+        "why_heading": "Why Heathrow members choose Space",
+        "why": [
+            f"<strong>Small, coached classes</strong>, capped at {FACTS['class_size']}, with modifications cued for every level.",
+            "<strong>Strength that lasts</strong>: <a href=\"/classes/strength\">Space Strength</a> is programmed for progression by co-founder Adam Caratini, who has coached strength and conditioning for 14 years.",
+            "<strong>Recovery built in</strong>: <a href=\"/classes/yoga\">restorative Yoga</a> sits alongside <a href=\"/classes/pilates\">mat Pilates</a> and <a href=\"/classes/sculpt\">Sculpt</a> in one membership.",
+            "<strong>A reason to go downtown</strong>: coffee, brunch and the riverfront are a short walk from the studio.",
+        ],
+        "week_heading": "Weekend mornings in Sanford",
+        "week": "Saturday and Sunday morning classes are the easy way in from Heathrow: class, then the Saturday farmers market, a coffee downtown and the RiverWalk. On weekdays, classes run from 6:00 AM to about 6:30 PM. Read <a href=\"/learn/saturday-morning-in-downtown-sanford\">a Saturday morning in Downtown Sanford</a> for the full route.",
+        "faq": [
+            ("How far is Space Pilates from Heathrow?", "About 9 miles. Take International Parkway north to SR 46 and head east into Downtown Sanford: around 20 minutes without traffic."),
+            ("Do I need Pilates experience?", "No. Most people who walk in have never done Pilates. Tell your instructor it is your first class and they will cue options throughout."),
+            ("Are there weekend classes?", "Yes, on Saturday and Sunday mornings. See the live schedule for this week's times."),
+            ("What does it cost?", "New members get 2 weeks unlimited for $69. After that, drop-ins are $29 and memberships start at $89 a month, month to month."),
+        ],
+    },
+    "oviedo": {
+        "name": "Oviedo", "wiki": "https://en.wikipedia.org/wiki/Oviedo,_Florida",
+        "miles": "12", "minutes": "20 to 25",
+        "route": "SR 434 or SR 419 to the SR 417 toll road, then north to Sanford",
+        "subtitle": "Mat Pilates in Historic Downtown Sanford, about 20 minutes up SR 417.",
+        "intro": "Most Pilates studios in Oviedo are reformer-based. If you want classical mat Pilates, strength training and restorative yoga under one membership, Space Pilates + Wellness Society is about 20 minutes north on SR 417 in Historic Downtown Sanford.",
+        "why_heading": "What Oviedo members get at Space",
+        "why": [
+            "<strong>Mat Pilates done properly.</strong> <a href=\"/classes/pilates\">Space Pilates</a> is the classical mat repertoire with light props. Many of those exercises are harder on the mat because no springs assist you. See <a href=\"/learn/mat-vs-reformer-pilates\">mat vs reformer Pilates</a>.",
+            "<strong>Strength and yoga in the same membership</strong>: <a href=\"/classes/strength\">Space Strength</a>, <a href=\"/classes/sculpt\">Space Sculpt</a> and <a href=\"/classes/yoga\">Space Yoga</a>.",
+            f"<strong>Small classes</strong>, capped at {FACTS['class_size']}, led by certified instructors.",
+            "<strong>Month to month</strong>: no long-term contract, and drop-ins are $29.",
+        ],
+        "week_heading": "Making the drive worth it",
+        "week": "From Oviedo, a realistic week is two or three classes rather than every day: a weekday class at 6:00 AM or after work, plus a Saturday or Sunday morning class with time downtown after. The <a href=\"/pricing\">Routine membership</a> (8 classes a month) fits that pattern.",
+        "faq": [
+            ("How far is Space Pilates from Oviedo?", "About 12 miles. From central Oviedo, take SR 434 or SR 419 to the SR 417 toll road and head north to Sanford: around 20 minutes without traffic."),
+            ("Is Space a reformer studio?", "No. Space is a mat studio. Space Pilates is classical mat Pilates with light props; there are no reformer machines."),
+            ("Which membership suits someone driving from Oviedo?", "Routine ($149 a month, 8 classes) suits two classes a week. Start with the 2 week intro for $69 to find the formats and times that work for you."),
+            ("What does it cost?", "New members get 2 weeks unlimited for $69. After that, drop-ins are $29 and memberships start at $89 a month, month to month."),
+        ],
+    },
+}
+for slug, cty in CITIES.items():
+    path = f"/pilates-{slug}"
+    others = " &nbsp;·&nbsp; ".join(f'<a href="/pilates-{o}">Pilates near {esc(oc["name"])}</a>' for o, oc in CITIES.items() if o != slug)
+    body = f"""{facts_block([("Studio", esc(FACTS['address'])), ("From " + esc(cty['name']), f"{cty['miles']} miles, {cty['minutes']} minutes"), ("Class size", f"Up to {FACTS['class_size']}"), ("New members", '<a href="/intro">2 weeks unlimited, $69</a>')])}
+      <p>{cty['intro']}</p>
+      <h2>{esc(cty['why_heading'])}</h2>
       <ul>
-        <li><strong>Small classes</strong>, capped at {FACTS['class_size']}, taught by certified instructors.</li>
-        <li><strong>Four formats in one membership</strong>: <a href="/classes/pilates">classical mat Pilates</a>, <a href="/classes/sculpt">Sculpt</a>, <a href="/classes/strength">Strength</a> and <a href="/classes/yoga">restorative Yoga</a>.</li>
-        <li><strong>Founded by a licensed mental health therapist</strong>, Carey Caratini, with strength programming by Adam Caratini (14 years coaching).</li>
-        <li><strong>Downtown Sanford after class</strong>: coffee, restaurants and the riverfront are a walk away.</li>
+{chr(10).join('        <li>' + w + '</li>' for w in cty['why'])}
       </ul>
+      <h2>Getting here from {esc(cty['name'])}</h2>
+      <p>Take {cty['route']}. It is about {cty['miles']} miles, {cty['minutes']} minutes depending on traffic. The studio is at {esc(FACTS['address'])}, with street parking and public lots a short walk away in the historic district.</p>
+      <h2>{esc(cty['week_heading'])}</h2>
+      <p>{cty['week']}</p>
       <h2>Questions</h2>
-{faq_html(lm_qas)}
-      <p><a href="/book-now">See the schedule</a> &nbsp;·&nbsp; <a href="/intro">Start 2 weeks for $69</a></p>"""
-built.append(page("/pilates-lake-mary", "Pilates Near Lake Mary, FL | Space Pilates + Wellness Society, Sanford",
-     "Looking for Pilates near Lake Mary? Space Pilates in Downtown Sanford: small mat Pilates, Sculpt, Strength and Yoga classes. 2 weeks unlimited for $69.",
-     STUDIO, "Pilates near Lake Mary.", "A short drive up I-4 to Historic Downtown Sanford.", body,
-     [business_ref(), faq_schema(lm_qas, "/pilates-lake-mary"), breadcrumb([("Home", "/"), ("Pilates near Lake Mary", "/pilates-lake-mary")])]))
+{faq_html(cty['faq'])}
+      <p><a href="/schedule">See this week's classes</a> &nbsp;·&nbsp; <a href="/intro">Start 2 weeks for $69</a></p>
+      <p>Also nearby: {others}</p>"""
+    built.append(page(path, f"Pilates Near {cty['name']}, FL | Space Pilates, Downtown Sanford",
+         f"Pilates near {cty['name']}, FL: small mat Pilates, Strength, Sculpt and Yoga classes in Historic Downtown Sanford, {cty['miles']} miles away. 2 weeks unlimited for $69.",
+         STUDIO, f"Pilates near {cty['name']}.", cty["subtitle"], body,
+         [dict(business_ref(), areaServed={"@type": "City", "name": f"{cty['name']}, FL", "sameAs": cty["wiki"]}),
+          faq_schema(cty["faq"], path), breadcrumb([("Home", "/"), (f"Pilates near {cty['name']}", path)])]))
 
 
 # ---- /learn/<slug> articles
@@ -447,7 +524,9 @@ for pslug in PILLARS:
     sections.append(related_html(members, PILLAR_LABEL[pslug]))
 NEAR_YOU = """      <h2 class="related">Near you</h2>
       <div class="card-list">
-        <a href="/pilates-lake-mary"><strong>Pilates near Lake Mary</strong><span>A short drive up I-4 to Historic Downtown Sanford.</span></a>
+        <a href="/pilates-lake-mary"><strong>Pilates near Lake Mary</strong><span>About 12 minutes up US 17-92 to Historic Downtown Sanford.</span></a>
+        <a href="/pilates-heathrow"><strong>Pilates near Heathrow</strong><span>A straight run east on SR 46.</span></a>
+        <a href="/pilates-oviedo"><strong>Pilates near Oviedo</strong><span>Mat Pilates about 20 minutes up SR 417.</span></a>
         <a href="/classes"><strong>The four Space formats</strong><span>Pilates, Sculpt, Strength and Yoga, explained.</span></a>
         <a href="/learn/saturday-morning-in-downtown-sanford"><strong>A Saturday morning in Downtown Sanford</strong><span>Class, coffee, the farmers market and the RiverWalk.</span></a>
         <a href="/schedule"><strong>This week's class schedule</strong><span>Live from the booking system, one tap to book.</span></a>
@@ -517,6 +596,9 @@ for f in sorted(ROOT.glob("*.html")):
     footer = re.search(r'<div class="footer-links">.*?</div>', s, re.S)
     if footer and 'href="/schedule"' not in footer.group(0) and 'href="/learn"' in footer.group(0):
         s = s.replace(footer.group(0), footer.group(0).replace('<a href="/learn">Learn</a>', '<a href="/learn">Learn</a>\n      <a href="/schedule">Schedule</a>', 1), 1)
+    footer = re.search(r'<div class="footer-links">.*?</div>', s, re.S)
+    if footer and 'href="/pilates-lake-mary"' not in footer.group(0) and 'href="/schedule"' in footer.group(0):
+        s = s.replace(footer.group(0), footer.group(0).replace('<a href="/schedule">Schedule</a>', '<a href="/schedule">Schedule</a>\n      ' + "\n      ".join(f'<a href="/pilates-{c}">{CITIES[c]["name"]}</a>' for c in CITIES), 1), 1)
     if f.name == "index.html":
         def card(m):
             name = re.search(r'<span class="card-bold">(PILATES|STRENGTH|SCULPT|YOGA)</span>', m.group(0))
@@ -531,9 +613,13 @@ for f in sorted(ROOT.glob("*.html")):
 
 # ---- sitemap, llms.txt, routes
 SITEMAP = ["/", "/intro", "/classes", *[f"/classes/{k}" for k in CLASSES], "/pricing", "/schedule", "/learn",
-           *[f"/learn/{s}" for s in ARTICLES], "/pilates-lake-mary", "/team", "/book-now", "/buy-now"]
+           *[f"/learn/{s}" for s in ARTICLES], *[f"/pilates-{c}" for c in CITIES], "/team", "/book-now", "/buy-now"]
+# pages whose content changed after the 10/12 launch; everything else keeps the launch date
+LASTMOD = {"/": "2026-10-21", "/intro": "2026-10-21", "/classes": "2026-10-21", "/learn": "2026-10-21", "/team": "2026-10-21",
+           "/book-now": "2026-10-21", "/buy-now": "2026-10-21", "/schedule": "2026-10-15",
+           "/learn/saturday-morning-in-downtown-sanford": "2026-10-15", **{f"/pilates-{c}": "2026-10-21" for c in CITIES}}
 (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                                  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>2026-10-12</lastmod></url>\n" for u in SITEMAP) + "</urlset>\n")
+                                  + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{LASTMOD.get(u, '2026-10-12')}</lastmod></url>\n" for u in SITEMAP) + "</urlset>\n")
 
 llms = (ROOT / "llms.txt").read_text()
 llms = re.sub(r"\n## Guides \(by Carey Caratini\)\n.*\Z", "", llms, flags=re.S).rstrip("\n") + "\n"
@@ -544,13 +630,15 @@ llms += "\n## Guides (by Carey Caratini)\n" + "".join(f"- [{a['title']}]({SITE}/
 (ROOT / "llms.txt").write_text(llms)
 
 v = json.loads((ROOT / "vercel.json").read_text())
-LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)", "/schedule", "/today", "/schedule.html")
+CITY_SRCS = tuple(f"/pilates-{c}" for c in CITIES)
+LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)", "/schedule", "/today", "/schedule.html") + CITY_SRCS
 routes = [r for r in v["routes"] if r.get("src") not in LEARN_SRCS]
 catch = routes.pop()
 assert catch.get("src") == "/(.*)", "catch-all route must stay last"
 routes.insert(0, {"src": "/today", "status": 302, "headers": {"Location": "/schedule"}})
 routes.insert(0, {"src": "/schedule.html", "headers": {"X-Robots-Tag": "noindex"}, "continue": True})
 routes.insert(0, {"src": "/mat-vs-reformer-pilates", "status": 301, "headers": {"Location": "/learn/mat-vs-reformer-pilates"}})
+routes += [{"src": c, "dest": f"{c}.html"} for c in CITY_SRCS]
 routes += [{"src": "/schedule", "dest": "/api/schedule.js"}, {"src": "/learn", "dest": "/learn.html"}, {"src": "/learn/(?<slug>[a-z0-9-]+)", "dest": "/learn/$slug.html"}, catch]
 v["routes"] = routes
 (ROOT / "vercel.json").write_text(json.dumps(v, indent=2) + "\n")

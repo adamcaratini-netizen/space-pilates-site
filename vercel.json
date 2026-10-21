@@ -118,10 +118,6 @@
       "dest": "/classes/yoga.html"
     },
     {
-      "src": "/pilates-lake-mary",
-      "dest": "/pilates-lake-mary.html"
-    },
-    {
       "src": "/llms.txt",
       "dest": "/llms.txt",
       "headers": {
@@ -134,6 +130,18 @@
       "headers": {
         "Content-Type": "text/plain; charset=utf-8"
       }
+    },
+    {
+      "src": "/pilates-lake-mary",
+      "dest": "/pilates-lake-mary.html"
+    },
+    {
+      "src": "/pilates-heathrow",
+      "dest": "/pilates-heathrow.html"
+    },
+    {
+      "src": "/pilates-oviedo",
+      "dest": "/pilates-oviedo.html"
     },
     {
       "src": "/schedule",

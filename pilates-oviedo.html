@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#faf8f4" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>Pilates Near Oviedo, FL | Space Pilates, Downtown Sanford</title>
+  <meta name="description" content="Pilates near Oviedo, FL: small mat Pilates, Strength, Sculpt and Yoga classes in Historic Downtown Sanford, 12 miles away. 2 weeks unlimited for $69." />
+  <link rel="canonical" href="https://spacepilatesandwellness.com/pilates-oviedo" />
+  <meta property="og:title" content="Pilates Near Oviedo, FL | Space Pilates, Downtown Sanford" />
+  <meta property="og:description" content="Pilates near Oviedo, FL: small mat Pilates, Strength, Sculpt and Yoga classes in Historic Downtown Sanford, 12 miles away. 2 weeks unlimited for $69." />
+  <meta property="og:image" content="https://spacepilatesandwellness.com/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://spacepilatesandwellness.com/pilates-oviedo" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #faf8f4;
+      --white:      #ffffff;
+      --text-dark:  #1a1614;
+      --text-mid:   #4a4440;
+      --text-light: #9a938c;
+      --line:       #e8e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'IBM Plex Sans', sans-serif; color: var(--text-dark); background: var(--cream); -webkit-font-smoothing: antialiased; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 28px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { background: rgba(250,248,244,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--line); }
+    .nav-ham { display: none !important; }
+    .menu-overlay { display: none !important; }
+    .nav-center img { height: 28px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+    .nav-link {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text-dark); }
+    .nav-cta {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark);
+      border: 1.5px solid var(--text-dark);
+      padding: 10px 20px; border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--text-dark); color: var(--white); }
+    @media (max-width: 768px) {
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.15s; }
+    .reveal-delay-3 { transition-delay: 0.2s; }
+    .reveal-delay-4 { transition-delay: 0.25s; }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 160px 40px 100px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-header-inner { max-width: 1100px; margin: 0 auto; }
+    .page-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-title {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--text-dark);
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+    .page-subtitle {
+      margin-top: 32px; max-width: 520px;
+      font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 60px;
+    }
+
+    /* ─── FOUNDER FEATURE ─── */
+    .founder { padding: 80px 40px 0; border-bottom: 1px solid var(--line); }
+    .founder-inner { max-width: 680px; margin: 0 auto; padding-bottom: 80px; text-align: center; }
+    .founder-layout { display: flex; flex-direction: column; align-items: center; }
+    .founder-photo-wrap {
+      width: min(340px, 72vw);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      background: var(--line);
+      margin-bottom: 32px;
+    }
+    .founder-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .founder-text { width: 100%; }
+    .founder-name {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 8px;
+    }
+    .founder-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block; margin-bottom: 28px;
+    }
+    .founder-bio {
+      font-size: 0.92rem; font-weight: 300; line-height: 1.95; color: var(--text-mid); text-align: left;
+    }
+    .founder-bio p + p { margin-top: 18px; }
+
+    /* ─── TEAM GRID ─── */
+    .instructors { padding: 80px 40px 100px; }
+    .instructors-inner { max-width: 1100px; margin: 0 auto; }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 40px;
+      row-gap: 72px;
+      align-items: start;
+    }
+
+    /* ─── ARCHED PHOTO — instructors ─── */
+    .instructor-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+      margin-bottom: 20px;
+      background: var(--line);
+    }
+    .instructor-photo {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .instructor-name {
+      font-family: 'Lora', serif; font-weight: 400;
+      font-size: 1.25rem; color: var(--text-dark); margin-bottom: 5px;
+    }
+    .instructor-role {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); display: block;
+    }
+    .instructor-bio {
+      margin-top: 16px;
+      font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--text-mid);
+    }
+
+    /* ─── CLOSING CTA ─── */
+    .closing-cta {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 120px 40px; text-align: center;
+    }
+    .closing-cta-inner { max-width: 600px; margin: 0 auto; }
+    .closing-cta h2 {
+      font-family: 'Lora', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1;
+      color: var(--text-dark); margin-bottom: 40px;
+    }
+    .gradient-pill {
+      display: inline-block; position: relative;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; color: var(--text-dark); padding: 17px 48px; border-radius: 50px;
+    }
+    .gradient-pill::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 1.5px;
+      background: linear-gradient(90deg, #f0a0c0, #f8c890);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .gradient-pill:hover { background: rgba(26,22,20,0.04); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #fce8ec; padding: 48px 40px; text-align: center;
+    }
+    .footer-logo img { height: 22px; width: auto; opacity: 0.5; margin-bottom: 14px; }
+    .footer-address { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dark); margin-bottom: 8px; }
+    .footer-info { font-size: 0.82rem; font-weight: 300; line-height: 1.7; color: var(--text-mid); margin-bottom: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.6rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-mid); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .page-header { padding: 130px 24px 72px; }
+      .instructors { padding: 60px 24px 80px; }
+      .instructors-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .closing-cta { padding: 80px 24px; }
+      footer { padding: 40px 24px; }
+    }
+
+    .content { background: var(--white); padding: 72px 24px 96px; }
+    .content-inner { max-width: 760px; margin: 0 auto; }
+    .content h2 { font-family: 'Lora', serif; font-weight: 400; font-size: 1.7rem; color: var(--text-dark); margin: 48px 0 16px; }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 { font-family: 'Lora', serif; font-weight: 500; font-size: 1.2rem; color: var(--text-dark); margin: 28px 0 10px; }
+    .content p, .content li { font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--text-mid); }
+    .content p { margin-bottom: 16px; }
+    .content ul { margin: 0 0 20px 20px; }
+    .content li { margin-bottom: 8px; }
+    .content a { color: var(--text-dark); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 24px 0 32px; }
+    .facts div { background: var(--cream); padding: 16px 18px; }
+    .facts dt { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+    .facts dd { font-size: 0.98rem; color: var(--text-dark); }
+    .price-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    .price-table th, .price-table td { text-align: left; padding: 14px 10px; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+    .price-table th { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); font-weight: 500; }
+    .price-table td.price { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--text-dark); white-space: nowrap; }
+    .price-desc { display: block; font-size: 0.86rem; font-weight: 300; color: var(--text-light); margin-top: 4px; }
+    .card-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .card-list a { display: block; border: 1px solid var(--line); padding: 22px; text-decoration: none; background: var(--cream); }
+    .card-list strong { display: block; font-family: 'Lora', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
+    .card-list span { font-size: 0.92rem; color: var(--text-mid); font-weight: 300; line-height: 1.6; }
+    .updated { font-size: 0.8rem; color: var(--text-light); margin-top: 40px; }
+    .content ol { margin: 0 0 20px 22px; }
+    .byline { font-size: 0.86rem; color: var(--text-light); margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .byline strong { color: var(--text-dark); font-weight: 500; }
+    .cta-box { background: var(--cream); border: 1px solid var(--line); padding: 26px; margin: 40px 0 8px; }
+    .cta-box p { margin-bottom: 10px; }
+    .related { margin-top: 40px; }
+    .hub-section { margin-bottom: 8px; }
+    @media (max-width: 640px) { .facts, .card-list { grid-template-columns: 1fr; } }
+  </style>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script data-space-events>(function () {
+    var rules = [["/buy-now", "Buy click"], ["/book-now", "Book click"], ["/intro", "Intro click"], ["tel:", "Call click"], ["mailto:", "Email click"]];
+    function send(name) { window.va("event", { name: name, data: { from: location.pathname } }); }
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a"); if (!a) return;
+      var h = a.getAttribute("href") || "";
+      for (var i = 0; i < rules.length; i++) if (h.indexOf(rules[i][0]) === 0) return send(rules[i][1]);
+    }, true);
+    document.addEventListener("submit", function (e) { if (e.target && e.target.id === "bb_form") send("Lead form submit"); }, true);
+  })();</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ExerciseGym",
+      "@id": "https://spacepilatesandwellness.com/#studio",
+      "name": "Space Pilates + Wellness Society",
+      "areaServed": {
+        "@type": "City",
+        "name": "Oviedo, FL",
+        "sameAs": "https://en.wikipedia.org/wiki/Oviedo,_Florida"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spacepilatesandwellness.com/pilates-oviedo#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How far is Space Pilates from Oviedo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About 12 miles. From central Oviedo, take SR 434 or SR 419 to the SR 417 toll road and head north to Sanford: around 20 minutes without traffic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Space a reformer studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Space is a mat studio. Space Pilates is classical mat Pilates with light props; there are no reformer machines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which membership suits someone driving from Oviedo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Routine ($149 a month, 8 classes) suits two classes a week. Start with the 2 week intro for $69 to find the formats and times that work for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "New members get 2 weeks unlimited for $69. After that, drop-ins are $29 and memberships start at $89 a month, month to month."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://spacepilatesandwellness.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pilates near Oviedo",
+          "item": "https://spacepilatesandwellness.com/pilates-oviedo"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div></div>
+    <div class="nav-center">
+      <a href="/"><img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" /></a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/learn">Learn</a>
+      <a class="nav-link" href="/pricing">Pricing</a>
+      <a class="nav-link" href="/team">Team</a>
+      <a class="nav-cta" href="/#join">Join the Society</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <span class="page-eyebrow">Space Pilates + Wellness Society</span>
+      <h1 class="page-title">Pilates near Oviedo.</h1>
+      <p class="page-subtitle">Mat Pilates in Historic Downtown Sanford, about 20 minutes up SR 417.</p>
+    </div>
+  </header>
+
+  <section class="content">
+    <div class="content-inner">
+      <dl class="facts">
+        <div><dt>Studio</dt><dd>307 E 2nd St, Sanford, FL 32771</dd></div>
+        <div><dt>From Oviedo</dt><dd>12 miles, 20 to 25 minutes</dd></div>
+        <div><dt>Class size</dt><dd>Up to 15</dd></div>
+        <div><dt>New members</dt><dd><a href="/intro">2 weeks unlimited, $69</a></dd></div>
+      </dl>
+      <p>Most Pilates studios in Oviedo are reformer-based. If you want classical mat Pilates, strength training and restorative yoga under one membership, Space Pilates + Wellness Society is about 20 minutes north on SR 417 in Historic Downtown Sanford.</p>
+      <h2>What Oviedo members get at Space</h2>
+      <ul>
+        <li><strong>Mat Pilates done properly.</strong> <a href="/classes/pilates">Space Pilates</a> is the classical mat repertoire with light props. Many of those exercises are harder on the mat because no springs assist you. See <a href="/learn/mat-vs-reformer-pilates">mat vs reformer Pilates</a>.</li>
+        <li><strong>Strength and yoga in the same membership</strong>: <a href="/classes/strength">Space Strength</a>, <a href="/classes/sculpt">Space Sculpt</a> and <a href="/classes/yoga">Space Yoga</a>.</li>
+        <li><strong>Small classes</strong>, capped at 15, led by certified instructors.</li>
+        <li><strong>Month to month</strong>: no long-term contract, and drop-ins are $29.</li>
+      </ul>
+      <h2>Getting here from Oviedo</h2>
+      <p>Take SR 434 or SR 419 to the SR 417 toll road, then north to Sanford. It is about 12 miles, 20 to 25 minutes depending on traffic. The studio is at 307 E 2nd St, Sanford, FL 32771, with street parking and public lots a short walk away in the historic district.</p>
+      <h2>Making the drive worth it</h2>
+      <p>From Oviedo, a realistic week is two or three classes rather than every day: a weekday class at 6:00 AM or after work, plus a Saturday or Sunday morning class with time downtown after. The <a href="/pricing">Routine membership</a> (8 classes a month) fits that pattern.</p>
+      <h2>Questions</h2>
+      <h3>How far is Space Pilates from Oviedo?</h3>
+      <p>About 12 miles. From central Oviedo, take SR 434 or SR 419 to the SR 417 toll road and head north to Sanford: around 20 minutes without traffic.</p>
+      <h3>Is Space a reformer studio?</h3>
+      <p>No. Space is a mat studio. Space Pilates is classical mat Pilates with light props; there are no reformer machines.</p>
+      <h3>Which membership suits someone driving from Oviedo?</h3>
+      <p>Routine ($149 a month, 8 classes) suits two classes a week. Start with the 2 week intro for $69 to find the formats and times that work for you.</p>
+      <h3>What does it cost?</h3>
+      <p>New members get 2 weeks unlimited for $69. After that, drop-ins are $29 and memberships start at $89 a month, month to month.</p>
+      <p><a href="/schedule">See this week's classes</a> &nbsp;·&nbsp; <a href="/intro">Start 2 weeks for $69</a></p>
+      <p>Also nearby: <a href="/pilates-lake-mary">Pilates near Lake Mary</a> &nbsp;·&nbsp; <a href="/pilates-heathrow">Pilates near Heathrow</a></p>
+      <p class="updated">Updated October 2026.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner reveal">
+      <h2>Come into your space.</h2>
+      <a class="gradient-pill" href="/intro">Try 2 Weeks for $69</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--cream); border-top: 1px solid var(--line);">
+    <div class="footer-logo">
+      <img src="/assets/logo-icon-final.png" alt="Space Pilates + Wellness Society" />
+    </div>
+    <p class="footer-address">Studio Address</p>
+    <p class="footer-info">307 E 2nd St, Sanford FL 32771<br>Downtown Sanford, FL — Historic District<br><a href="tel:+13212492262">(321) 249-2262</a><br>hi@spacepilatesandwellness.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/classes">Classes</a>
+      <a href="/learn">Learn</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/team">The Team</a>
+      <a href="/schedule">Schedule</a>
+      <a href="/pilates-lake-mary">Lake Mary</a>
+      <a href="/pilates-heathrow">Heathrow</a>
+      <a href="/pilates-oviedo">Oviedo</a>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+
+</body>
+</html>
