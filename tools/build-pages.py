@@ -631,11 +631,12 @@ llms += "\n## Guides (by Carey Caratini)\n" + "".join(f"- [{a['title']}]({SITE}/
 
 v = json.loads((ROOT / "vercel.json").read_text())
 CITY_SRCS = tuple(f"/pilates-{c}" for c in CITIES)
-LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)", "/schedule", "/today", "/schedule.html") + CITY_SRCS
+LEARN_SRCS = ("/mat-vs-reformer-pilates", "/learn", "/learn/(?<slug>[a-z0-9-]+)", "/schedule", "/today", "/schedule.html", "/review") + CITY_SRCS
 routes = [r for r in v["routes"] if r.get("src") not in LEARN_SRCS]
 catch = routes.pop()
 assert catch.get("src") == "/(.*)", "catch-all route must stay last"
 routes.insert(0, {"src": "/today", "status": 302, "headers": {"Location": "/schedule"}})
+routes.insert(0, {"src": "/review", "status": 302, "headers": {"Location": "https://search.google.com/local/writereview?placeid=ChIJ_ULvHiQT54gRpRrNSc9j0-U"}})
 routes.insert(0, {"src": "/schedule.html", "headers": {"X-Robots-Tag": "noindex"}, "continue": True})
 routes.insert(0, {"src": "/mat-vs-reformer-pilates", "status": 301, "headers": {"Location": "/learn/mat-vs-reformer-pilates"}})
 routes += [{"src": c, "dest": f"{c}.html"} for c in CITY_SRCS]

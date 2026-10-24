@@ -29,6 +29,13 @@
       "continue": true
     },
     {
+      "src": "/review",
+      "status": 302,
+      "headers": {
+        "Location": "https://search.google.com/local/writereview?placeid=ChIJ_ULvHiQT54gRpRrNSc9j0-U"
+      }
+    },
+    {
       "src": "/today",
       "status": 302,
       "headers": {
