@@ -89,7 +89,7 @@ If you have a medical condition, an injury or are pregnant, check with your doct
 
 ## Why this topic matters to Space
 
-Space was founded by Carey Caratini, a Pilates instructor and licensed mental health therapist. That background shapes how classes feel: calm, unhurried and focused on how you feel rather than how you look. Classes are general wellness, not therapy, and they are a supportive complement to professional care, never a replacement for it.
+Space was founded by Carey Caratini, a Pilates instructor and mental health therapist practicing as a Registered Mental Health Counselor Intern in Florida. That background shapes how classes feel: calm, unhurried and focused on how you feel rather than how you look. Classes are general wellness, not therapy, and they are a supportive complement to professional care, never a replacement for it.
 
 Space Yoga is a restorative class that draws from restorative and gentle vinyasa, with a focus on mobility, breath and release. You can learn more on the [yoga class page](/classes/yoga) or meet the instructors on the [team page](/team).
 

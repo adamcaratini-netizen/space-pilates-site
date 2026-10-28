@@ -42,5 +42,5 @@
 - Website: spacepilatesandwellness.com / space-pilates-site.vercel.app
 
 ## Founders
-- **Carey Caratini** — Certified Pilates instructor + licensed mental health counselor (master's from UCF). Teaches from understanding of the nervous system.
+- **Carey Caratini** — Certified Pilates instructor + mental health therapist (Registered Mental Health Counselor Intern, Florida; not licensed) (master's from UCF). Teaches from understanding of the nervous system.
 - **Adam Caratini** — 14 years as strength coach, built and run two gyms. Programs the strength side.

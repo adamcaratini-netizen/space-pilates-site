@@ -201,11 +201,11 @@ NAV_LINKS = ('<a class="nav-link" href="/classes">Classes</a>\n      <a class="n
              '      <a class="nav-link" href="/pricing">Pricing</a>\n      <a class="nav-link" href="/team">Team</a>')
 
 CAREY = {"@type": "Person", "@id": SITE + "/team#carey", "name": "Carey Caratini",
-         "jobTitle": "Founder and Pilates instructor, licensed mental health therapist",
-         "description": "Pilates instructor, NASM certified personal trainer and licensed mental health therapist with a master's in Clinical Mental Health Counseling.",
+         "jobTitle": "Founder and Pilates instructor, mental health therapist (Registered Mental Health Counselor Intern, Florida)",
+         "description": "Pilates instructor, NASM certified personal trainer and mental health therapist practicing as a Registered Mental Health Counselor Intern in Florida with a master's in Clinical Mental Health Counseling.",
          "worksFor": {"@id": SITE + "/#studio"}, "url": SITE + "/team"}
 AUTHOR_LINE = ('By <strong>Carey Caratini</strong>, founder of Space Pilates + Wellness Society. '
-               'Pilates instructor, NASM certified personal trainer and licensed mental health therapist.')
+               'Pilates instructor, NASM certified personal trainer and mental health therapist practicing as a Registered Mental Health Counselor Intern in Florida.')
 
 # ---- articles (content/learn/*.md), loaded first so class pages can link to them
 ARTICLES = {}
@@ -407,7 +407,7 @@ CITIES = {
             f"<strong>Small classes</strong>, capped at {FACTS['class_size']}, where the instructor knows your name.",
             "<strong>Mat, not machines.</strong> <a href=\"/classes/pilates\">Classical mat Pilates</a> with light props. No springs assisting you, so the core does the work. Read <a href=\"/learn/mat-vs-reformer-pilates\">mat vs reformer Pilates</a> if you are deciding.",
             "<strong>Four formats in one membership</strong>: Pilates, <a href=\"/classes/sculpt\">Sculpt</a>, <a href=\"/classes/strength\">Strength</a> and <a href=\"/classes/yoga\">restorative Yoga</a>.",
-            "<strong>Founded by a licensed mental health therapist</strong>, Carey Caratini, with strength programming by co-founder Adam Caratini (14 years coaching).",
+            "<strong>Founded by a mental health therapist</strong>, Carey Caratini, with strength programming by co-founder Adam Caratini (14 years coaching).",
         ],
         "week_heading": "Fitting it around a Lake Mary work week",
         "week": "Weekday classes start at 6:00 AM, so an early class in Sanford still gets you to an office on Lake Mary Boulevard or the I-4 corridor by 8:00. Evening classes run until about 6:30 PM for the drive home, and Saturday and Sunday mornings pair well with coffee and a walk on the Sanford RiverWalk.",
@@ -533,7 +533,7 @@ NEAR_YOU = """      <h2 class="related">Near you</h2>
       </div>"""
 sections.append(NEAR_YOU)
 body = ("      <p>Guides on Pilates, yoga and strength from Space Pilates + Wellness Society in Historic Downtown Sanford. "
-        "Written by founder Carey Caratini, a Pilates instructor and licensed mental health therapist, with strength programming "
+        "Written by founder Carey Caratini, a Pilates instructor and mental health therapist, with strength programming "
         "from co-founder Adam Caratini (14 years coaching).</p>\n" + "\n".join(x for x in sections if x))
 built.append(page("/learn", "Learn: Pilates, Yoga & Strength Guides | Space Pilates Sanford",
                   "Guides to the benefits of Pilates, yoga and strength training, beginner tips and how to choose a class, from Space Pilates in Sanford, FL.",
